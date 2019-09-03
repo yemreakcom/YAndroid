@@ -2,14 +2,6 @@
 
 Component olarak adlandırılan Android bileşenlerinin isimleri yer alır.
 
-## İçerikler <!-- omit in toc -->
-
-- [SeekBar](#SeekBar)
-- [ProgressBar](#ProgressBar)
-- [Navigation Bar](#Navigation-Bar)
-- [Navigation View](#Navigation-View)
-- [AlertDialog](#AlertDialog)
-
 ### SeekBar
 
 ![SeekBar](../res/android_seekbar.png)

@@ -1,39 +1,5 @@
 # Android <!-- omit in toc -->
 
-## İçerikler <!-- omit in toc -->
-
-- [Faydalı Eğitim Setleri](#Faydal%C4%B1-E%C4%9Fitim-Setleri)
-- [Telefonu WiFi Üzerinden PC'ye Bağlama](#Telefonu-WiFi-%C3%9Czerinden-PCye-Ba%C4%9Flama)
-- [Animasyonlar](#Animasyonlar)
-  - [Aşağıdan Gelme Animasyonu](#A%C5%9Fa%C4%9F%C4%B1dan-Gelme-Animasyonu)
-  - [Soluk Belirme](#Soluk-Belirme)
-- [Kaydırmalı Uygulama (ViewPager ve PageAdapter)](#Kayd%C4%B1rmal%C4%B1-Uygulama-ViewPager-ve-PageAdapter)
-- [SharedPreference ile Veri Saklama](#SharedPreference-ile-Veri-Saklama)
-  - [Veri Oluşturma ve Alma](#Veri-Olu%C5%9Fturma-ve-Alma)
-  - [Veri Güncelleme](#Veri-G%C3%BCncelleme)
-  - [Veri Silme](#Veri-Silme)
-- [SQLite ile Database Oluşturma](#SQLite-ile-Database-Olu%C5%9Fturma)
-  - [SQLite Giriş Temelleri](#SQLite-Giri%C5%9F-Temelleri)
-  - [SQLite ile Basit DB Oluşturma](#SQLite-ile-Basit-DB-Olu%C5%9Fturma)
-  - [SQLite DB Oluşturma Kodları](#SQLite-DB-Olu%C5%9Fturma-Kodlar%C4%B1)
-  - [SQLite DB İşlemleri Değiştirme](#SQLite-DB-%C4%B0%C5%9Flemleri-De%C4%9Fi%C5%9Ftirme)
-  - [SQLite DB Okuma](#SQLite-DB-Okuma)
-- [Karma Notlar](#Karma-Notlar)
-  - [Component İsimleri](#Component-%C4%B0simleri)
-    - [SeekBar](#SeekBar)
-    - [ProgressBar](#ProgressBar)
-    - [Navigation Bar](#Navigation-Bar)
-    - [Navigation View](#Navigation-View)
-    - [AlertDialog](#AlertDialog)
-  - [Gecikmeli Activity Başlatma](#Gecikmeli-Activity-Ba%C5%9Flatma)
-  - [Bütün Eski Activity'leri Sonlandırıp Yeni Activity Açma](#B%C3%BCt%C3%BCn-Eski-Activityleri-Sonland%C4%B1r%C4%B1p-Yeni-Activity-A%C3%A7ma)
-  - [Projeyi Oluşturduktan Sonra Package İsmi Değiştirme](#Projeyi-Olu%C5%9Fturduktan-Sonra-Package-%C4%B0smi-De%C4%9Fi%C5%9Ftirme)
-- [Online Android Emulator](#Online-Android-Emulator)
-- [Google Play Store](#Google-Play-Store)
-- [Harici Bağlantılar](#Harici-Ba%C4%9Flant%C4%B1lar)
-  - [Kotlin için Harici Bağlatılar](#Kotlin-i%C3%A7in-Harici-Ba%C4%9Flat%C4%B1lar)
-- [Karma Notlar](#Karma-Notlar-1)
-
 ## Faydalı Eğitim Setleri
 
 - [Udemy](https://www.udemy.com/android-o-mobil-uygulama-dersi-kotlin-java/learn/v4/overview) (Ücretli)

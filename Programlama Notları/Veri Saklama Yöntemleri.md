@@ -1,18 +1,5 @@
 # Veri Saklama Yöntemleri <!-- omit in toc -->
 
-## İçerikler <!-- omit in toc -->
-
-- [SharedPreference ile Veri Saklama](#SharedPreference-ile-Veri-Saklama)
-  - [Veri Oluşturma ve Alma](#Veri-Olu%C5%9Fturma-ve-Alma)
-  - [Veri Güncelleme](#Veri-G%C3%BCncelleme)
-  - [Veri Silme](#Veri-Silme)
-- [SQLite ile Database Oluşturma](#SQLite-ile-Database-Olu%C5%9Fturma)
-  - [SQLite Giriş Temelleri](#SQLite-Giri%C5%9F-Temelleri)
-  - [SQLite ile Basit DB Oluşturma](#SQLite-ile-Basit-DB-Olu%C5%9Fturma)
-  - [SQLite DB Oluşturma Kodları](#SQLite-DB-Olu%C5%9Fturma-Kodlar%C4%B1)
-  - [SQLite DB İşlemleri Değiştirme](#SQLite-DB-%C4%B0%C5%9Flemleri-De%C4%9Fi%C5%9Ftirme)
-  - [SQLite DB Okuma](#SQLite-DB-Okuma)
-
 ## SharedPreference ile Veri Saklama
 
 ### Veri Oluşturma ve Alma

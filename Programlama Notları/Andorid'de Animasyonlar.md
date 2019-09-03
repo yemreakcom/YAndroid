@@ -1,8 +1,6 @@
 # Android'de Animasyonlar
 
-## Animasyonlar
-
-### Aşağıdan Gelme Animasyonu
+## Aşağıdan Gelme Animasyonu
 
 ![Aşağıdan Gelme Animasyonu](../res/android_anim1.gif)
 
@@ -34,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 - `btn_start` = Get Started adlı view'ın ID'si
 - `frombutton` = üstteki kodların yazıldığı dosyanın adı
 
-### Soluk Belirme
+## Soluk Belirme
 
 ![Soluk Belirme](../res/android_anim2.gif)
 

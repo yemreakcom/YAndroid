@@ -2,12 +2,6 @@
 
 Android üzerinde her sayfa activity olarak adlandırılır, burada da onlar hakkında bilgilere yer verilecektir.
 
-## İçerikler <!-- omit in toc -->
-
-- [Gecikmeli Activity Başlatma](#Gecikmeli-Activity-Ba%C5%9Flatma)
-- [Arkaplanda Çalıştırma](#Arkaplanda-%C3%87al%C4%B1%C5%9Ft%C4%B1rma)
-- [Bütün Eski Activity'leri Sonlandırıp Yeni Activity Açma](#B%C3%BCt%C3%BCn-Eski-Activityleri-Sonland%C4%B1r%C4%B1p-Yeni-Activity-A%C3%A7ma)
-
 ## Gecikmeli Activity Başlatma
 
 ```kt
