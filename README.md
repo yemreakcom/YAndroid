@@ -25,10 +25,12 @@ Veri yığılmasını 📚 engellemek için içeriği fazla olan 📈 bilgiler f
 
 > Sol alt köşedeki alandan da bunlara erişebilirsin ✨
 
-- [Python Notlarım](https://python.yemreak.com/)
-- [Yapay Zeka Notlarım](https://ai.yemreak.com/)
-- [İstanbul Üniversitesi - Bilgisayar Mühendisliği Notları](https://iuce.yemreak.com)
-- [React ve Firebase projem](https://github.com/yedhrab/YReact-Firebase)
+- [📖 Kişisel Ansiklopedim](https://wiki.yemreak.com/)
+- [🐍 Python Notlarım](https://python.yemreak.com/)
+- [🧠 Yapay Zeka Notlarım](https://ai.yemreak.com/)
+- [📊 Veri Bilimi Notlarım](https://ds.yemreak.com/)
+- [🏫 İstanbul Üniversitesi - Bilgisayar Mühendisliği Notları](https://iuce.yemreak.com)
+- [⚛ React ve 🔥 Firebase projem](https://github.com/yedhrab/YReact-Firebase)
 
 ## 💖 Destek ve İletişim
 
