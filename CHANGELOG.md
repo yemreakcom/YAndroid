@@ -19,6 +19,8 @@ description: Sitede neler olup bittiğinin raporudur.
 
 * 🗼 Açıklama aşağı alındı. [Yunus Emre]
 
+* ✨ Diğer dökümanların linkleri daha görsel hale getirildi. [Yunus Emre]
+
 * 📖 YWiki'deki android notları aktarıldı. [Yunus Emre]
 
 * 📖 YWiki'ye aktarıldı. [Yunus Emre]
@@ -28,8 +30,6 @@ description: Sitede neler olup bittiğinin raporudur.
   https://github.com/yedhrab/YBilgiler adlı repodan aktarıldı 🚀
 
 ### 📡 Diğerler
-
-* ✨ Diğer dökümanların linkleri daha görsel hale getirildi. [Yunus Emre]
 
 * 📖 GitBook. [Yunus Emre]
 
