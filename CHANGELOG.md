@@ -27,6 +27,8 @@ description: Sitede neler olup bittiğinin raporudur.
 
 ### 📡 Diğerler
 
+* ✨ Diğer dökümanların linkleri daha görsel hale getirildi. [Yunus Emre]
+
 * 📖 GitBook. [Yunus Emre]
 
 * Initial commit. [Yunus Emre]
