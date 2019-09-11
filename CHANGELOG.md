@@ -17,6 +17,8 @@ description: Sitede neler olup bittiğinin raporudur.
 
 ### 🌌 Değişikler
 
+* 🗼 Açıklama aşağı alındı. [Yunus Emre]
+
 * 📖 YWiki'deki android notları aktarıldı. [Yunus Emre]
 
 * 📖 YWiki'ye aktarıldı. [Yunus Emre]
