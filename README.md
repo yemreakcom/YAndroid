@@ -4,10 +4,6 @@ description: Mobil 📱 programlama notları
 
 # 📱 Android
 
-## 🗽 Açıklama
-
-- Faydalı kaynaklar listem için [buraya 🌟](Kişisel%20Notlar/0%20-%20Faydalı%20Kaynaklar.md) bakabilirsin.
-
 ## 🗽 Hoş Geldin
 
 - Sağ üstteki [🔍 Arama Buton](https://android.yemreak.com/?q=)'nu kullanmayı asla asla ihmal etme
@@ -18,6 +14,10 @@ description: Mobil 📱 programlama notları
 - İyi okumalar 👻
 
 > [🚀 Awesome](./Awesome) etiketi ile adlandırılan, bir konu veya yazılım üzerine detaylı açıklamaların yapıldığı projelere bakmana fayda var
+
+## 🗼 Açıklama
+
+- Faydalı kaynaklar listem için [buraya 🌟](Kişisel%20Notlar/0%20-%20Faydalı%20Kaynaklar.md) bakabilirsin.
 
 ## 🚙 Diğer Özenle Hazırladığım Notlar
 
