@@ -4,6 +4,7 @@
 
 - [📱 Android](./README.md)
   - [👀 Neler değişti](./CHANGELOG.md)
+  - [🚀 Awesome Android](./0%20-%20Awesome/README.md)
   - [Dökümanlar](./D%C3%B6k%C3%BCmanlar/README.md)
   - [Ek bilgiler](./Ek%20bilgiler)
     - [Android](./Ek%20bilgiler/0%20-%20T%C3%BCm%20Notlar.md)
