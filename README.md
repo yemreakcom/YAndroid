@@ -13,10 +13,10 @@ description: Android programlama için notlarım
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/changelog) alanından projeye katkıda bulunabilirsin
 * Tüm emojiler [🚀 YEmoji](https://learn.yemreak.com/yonetim/yemoji) sözlüğüne uygun olarak seçilmektedir
 
-> Konuları öğrenmek için ideal yolları araştırdığımız [👨‍🏫 YLearn](https://learn.yemreak.com/) projesine bakmanda fayda var.
+> Her sayfanın en altında bulunan memnuniyet anketi ile ✨ gelişime ortak olabilirsin.
 
 {% hint style="success" %}
-Her sayfanın en altında bulunan memnuniyet anketi ile ✨ gelişime ortak olabilirsin.
+Konuları öğrenmek için ideal yolları araştırdığımız [👨‍🏫 YLearn](https://learn.yemreak.com/) projesine bakmanda fayda var.
 {% endhint %}
 
 ## ✨ Yeni İçerikler
