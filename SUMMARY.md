@@ -15,6 +15,7 @@
 * [⏩ Activity ve Intent'ler](programlama-notlari-1/activity-ve-intentler.md)
 * [💫 Activity lifecycle and state](programlama-notlari-1/activity-lifecycle-and-state.md)
 * [🏹 Implicit intents](programlama-notlari-1/implicit-intents.md)
+* [🚧 AsyncTask ve AsyncTaskLoader](programlama-notlari-1/asynctask-ve-asynctaskloader.md)
 
 ## Faydalı Bilgiler
 
