@@ -2,7 +2,7 @@
 
 ## ⏫ Aşağıdan Gelme Animasyonu
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 Proje dizinine `anim` adlı klasör oluşturup içinde bir `resource file'`a bu kodları yazıyoruz.
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
 ## 👁‍🗨 Soluk Belirme
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 ```markup
 <?xml version="1.0" encoding="utf-8"?>

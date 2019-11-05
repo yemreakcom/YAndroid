@@ -39,7 +39,7 @@ Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitH
 
 ## 🌍 Tüm [YEmreAk ](https://wiki.yemreak.com)İçerikleri
 
-![YEmreAk t&#xFC;m i&#xE7;erikleri \(her s&#xFC;tun bir web sitesidir\)](.gitbook/assets/image%20%2810%29.png)
+![YEmreAk t&#xFC;m i&#xE7;erikleri \(her s&#xFC;tun bir web sitesidir\)](.gitbook/assets/image%20%2815%29.png)
 
 ## 💖 Destek ve İletişim
 
@@ -51,5 +51,5 @@ Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitH
 
 **The** [**MIT License**](https://choosealicense.com/licenses/mit/) **© Yunus Emre Ak**
 
-![](.gitbook/assets/image%20%281%29.png)
+![](.gitbook/assets/image%20%282%29.png)
 
