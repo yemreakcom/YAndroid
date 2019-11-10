@@ -2,16 +2,20 @@
 description: Arkaplan işlemleri için kullanılan yapıları
 ---
 
-# 🔂 AsyncTask ve AsyncTaskLoader
+# 💫 AsyncTask ve AsyncTaskLoader
 
 ## 🆚 İkisi Arasındaki Temel Farklar
+
+Her ikisi de sistemi bloklamadan çalışan bir yapıya sahiptir
 
 | `AsyncTask` | `AsyncTaskLoader` |
 | :--- | :--- |
 | Direkt olan çalışır | Dolaylı olarak çalışır |
-| Sistemi bloklar | Sistemden bağımsız çalışır |
+| Yapılandırma ayarları değiştiğinde iptal olur ve yeniden başlatılır | Yapılandırma ayarlarından etkilenmez |
 | Geri dönüş vermeyecek işlemlerde kullanılır | Geri dönüşümlü işlemlerde kullanılır |
 | Kısa ve iptal edilebilir işlemlerde tercih edilir | Uzun ve iptal edilemeyecek işlemlerde tercih edilir |
+
+> Telefonu döndürme gibi işlemler yapılandırma ayarlarını değiştirir.
 
 {% hint style="success" %}
 Genel olarak `AsyncTaskLoader` en sık kullanılan yapıdır.
@@ -32,6 +36,17 @@ Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](ht
 {% endhint %}
 
 ## 🔁 AsyncTask
+
+Verilen işlemi arkaplanda, sistemi bloklamadan tamamlar.
+
+* Yapılandırma ayarlarından etkilenir, işlem yok edilip yeniden başlatılır
+  * Telefonu döndürme vs gibi işlemler yapılandırma ayarlarını değiştirir
+  * Aynı işlemin çokça yapılması RAM tüketimini arttırır
+* Uygulama kapatıldığında cancel\(\) metodu çalıştırılmadığı sürece çalışmaya devam eder
+
+{% hint style="warning" %}
+Önemli ve kritik işlemler için `AsyncTaskLoader` tercih edilir
+{% endhint %}
 
 {% tabs %}
 {% tab title="🎈 Kullanım" %}
@@ -64,6 +79,19 @@ public class MyAsyncTask extends AsyncTask <String, Void, Bitmap>{}
 
 {% hint style="warning" %}
 Son iki parametre \(`Void` ve `Bitmap`\) dışarıdan verilmez, sınıf içi parametrelerdir
+{% endhint %}
+{% endtab %}
+
+{% tab title="❌ İşlemi İptal Etme" %}
+İşlemi istediğin zaman  [`cancel()`](https://developer.android.com/reference/android/os/AsyncTask.html#cancel%28boolean%29) metodu ile iptal edebilirsin
+
+*  [`cancel()`](https://developer.android.com/reference/android/os/AsyncTask.html#cancel%28boolean%29) metodu işlem tamamlanmışsa `False` döndürür 
+  * Biten işlemi iptal edemezsin 🙄
+* İşlemin iptal edilme durumunu `doInBackground` metodunda `isCancalled()` metodu kontrol etmemiz gerekmektedir
+* İşlem iptal edildiğin `doInBackground` metodundan sonra `onPostExecute` yerine  [`onCancelled(Object)`](https://developer.android.com/reference/android/os/AsyncTask.html#onCancelled%28Result%29) metodu döndürülür
+
+{% hint style="info" %}
+Varsayılan olarak [`onCancelled(Object)`](https://developer.android.com/reference/android/os/AsyncTask.html#onCancelled%28Result%29) metodu `onCancelled()` metodunu çağırır, sonuç görmezden gelinir.
 {% endhint %}
 {% endtab %}
 

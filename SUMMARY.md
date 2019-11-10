@@ -4,7 +4,7 @@
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [🌟 Faydalı Kaynaklar](https://learn.yemreak.com/icerikler/android)
 * [🌄 Arkaplan'da Çalışma](arkaplanda-calisma/README.md)
-  * [🔂 AsyncTask ve AsyncTaskLoader](arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
+  * [💫 AsyncTask ve AsyncTaskLoader](arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
 * [✨ Faydalı Bilgiler](faydali-bilgiler/README.md)
   * [✍ Kişisel Notlarım](faydali-bilgiler/kisisel-notlarim.md)
   * [📲 Telefonu Bilgisayara Bağlama](faydali-bilgiler/telefonu-bilgisayara-baglama.md)
