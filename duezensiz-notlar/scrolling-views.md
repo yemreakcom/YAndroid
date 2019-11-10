@@ -1,12 +1,12 @@
 # ⏬ Scrolling views
 
-## ScrollView with a TextView <a id="scrollview-with-a-textview"></a>
+## 🔤 ScrollView with a TextView <a id="scrollview-with-a-textview"></a>
 
 To display a scrollable magazine article on the screen, you might use a [`RelativeLayout`](https://developer.android.com/reference/android/widget/RelativeLayout.html) that includes a separate `TextView` for the article heading, another for the article subheading, and a third `TextView` for the scrolling article text \(see the figure below\), set within a `ScrollView`. The only part of the screen that would scroll would be the `ScrollView` with the article text.
 
 ![ The layout with a ScrollView](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/images/1-3-c-text-and-scrolling-views/dg_layout_diagram1.png)
 
-## ScrollView with a LinearLayout <a id="scrollview-with-a-linearlayout"></a>
+## 🎿 ScrollView with a LinearLayout <a id="scrollview-with-a-linearlayout"></a>
 
 A `ScrollView` can contain only one child `View`; however, that `View` can be a [`ViewGroup`](https://developer.android.com/reference/android/view/ViewGroup.html) that contains several `View` elements, such as [`LinearLayout`](https://developer.android.com/reference/android/widget/LinearLayout.html). You can _nest_ a `ViewGroup` such as `LinearLayout` _within_ the `ScrollView`, thereby scrolling everything that is inside the `LinearLayout`.
 

@@ -21,11 +21,11 @@
   * [🐛 Hata Notları](faydali-bilgiler/hata-notlari.md)
   * [🔗 Karışık Bağlantılar](faydali-bilgiler/karisik-baglantilar.md)
 * [🥴 Düzensiz Notlar](duezensiz-notlar/README.md)
-  * [📜 XML Örneği](duezensiz-notlar/xml-oernegi.md)
-  * [⏬ Scrolling views](duezensiz-notlar/scrolling-views.md)
-  * [🔤 TextView](duezensiz-notlar/textview.md)
-  * [👶 İlk Etkileşimli UI](duezensiz-notlar/ilk-etkilesimli-ui.md)
   * [🔰 Giriş](duezensiz-notlar/giris.md)
+  * [👶 İlk Etkileşimli UI](duezensiz-notlar/ilk-etkilesimli-ui.md)
+  * [🔤 TextView](duezensiz-notlar/textview.md)
+  * [⏬ Scrolling views](duezensiz-notlar/scrolling-views.md)
+  * [📜 XML Örneği](duezensiz-notlar/xml-oernegi.md)
 
 ## Eski Notlarım <a id="programlama-notlari"></a>
 

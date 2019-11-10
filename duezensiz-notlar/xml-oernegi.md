@@ -54,38 +54,3 @@
 </LinearLayout>
 ```
 
-## 🎿 ScrollView
-
-```markup
-<ScrollView
-   android:layout_width="wrap_content"
-   android:layout_height="wrap_content"
-   android:layout_below="@id/article_heading">
-
-   <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <TextView
-         android:id="@+id/article_subheading"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:padding="@dimen/padding_regular"
-         android:text="@string/article_subtitle"
-         android:textAppearance=
-                       "@android:style/TextAppearance.DeviceDefault" />
-
-      <TextView
-         android:id="@+id/article"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:autoLink="web"
-         android:lineSpacingExtra="@dimen/line_spacing"
-         android:padding="@dimen/padding_regular"
-         android:text="@string/article_text" />
-   </LinearLayout>
-
-</ScrollView>
-```
-
