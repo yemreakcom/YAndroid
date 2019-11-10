@@ -2,7 +2,7 @@
 description: "Derlenmemiş, karışık notları barındırır \U0001F625"
 ---
 
-# 🥴 Karışık Notlar
+# 🔗 Karışık Bağlantılar
 
 ## 🌍 Faydalı Bağlantılar
 

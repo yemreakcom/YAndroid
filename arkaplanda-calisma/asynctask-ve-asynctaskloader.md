@@ -29,7 +29,7 @@ Android'teki tüm görüntü işlemlerinin yapıldı alandır.
 * UI Thread sadece görsel işlemler için kullanılmalıdır
 * Tüm işlemler 16ms'den kısa bir sürede tamamlanmalıdır
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2820%29.png)
 
 {% hint style="danger" %}
 Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](http://developer.android.com/guide/practices/responsiveness.html)" \(ANR\) diyaloğunu oluşturur ve kullanıcı bunu görmesi durumunda uygulamayı kapatıp, siler 😥
@@ -50,9 +50,9 @@ Verilen işlemi arkaplanda, sistemi bloklamadan tamamlar.
 
 {% tabs %}
 {% tab title="🎈 Kullanım" %}
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 | 💠 Metot | 📜 Açıklama |
 | :--- | :--- |
@@ -126,5 +126,7 @@ private class DownloadFilesTask extends AsyncTask<URL, Integer, Long> {
 {% endtab %}
 {% endtabs %}
 
+## 🔗 Harici Bağlantılar
 
+{% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-1-c-asynctask-and-asynctaskloader/7-1-c-asynctask-and-asynctaskloader.html" %}
 

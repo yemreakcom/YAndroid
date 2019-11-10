@@ -1,10 +1,9 @@
 # ⏩ Activity ve Intent'ler
 
-##  Create the Activity
+## ✨ Activity Oluşturma
 
-When you create a new project in Android Studio and choose the **Backwards Compatibility \(AppCompat\)** option, the `MainActivity` is, by default, a subclass of the [`AppCompatActivity`](https://developer.android.com/reference/android/support/v7/app/AppCompatActivity.html) class. The `AppCompatActivity` class lets you use up-to-date Android app features such as the app bar and Material Design, while still enabling your app to be compatible with devices running older versions of Android.
-
-Here is a skeleton subclass of `AppCompatActivity`:
+* Normal olarak **Activity** class'ı extend edilir
+* Eski sürümleri desteklemek için **AppCompat** class'ı extend edilir
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### 📑 Declare the Activity in AndroidManifest.xml
+## 📑 Activity Tanımlama
+
+Activity `AndroidManifest.xml` dosyasına aşağıdaki gibi tanıtılmalıdır
 
 ```java
 <activity android:name=".MainActivity" >
@@ -27,17 +28,24 @@ public class MainActivity extends AppCompatActivity {
 </activity>
 ```
 
-## ⏫ Starting an Activity with an explicit Intent
+## ⏫ Explicit Intent ile Activity Başlatma
 
-Yeni aktivity oluşturulduğunda eskisi **Paused** olur
+Yeni `Activity` oluşturulduğunda eskisi **paused** olur
 
 ```java
 Intent messageIntent = new Intent(this, ShowMessageActivity.class);
 startActivity(messageIntent);
 ```
 
-## 💾 Add data to the Intent
+{% tabs %}
+{% tab title="🎈 Basit Kullanım" %}
+```java
+Intent messageIntent = new Intent(this, ShowMessageActivity.class);
+startActivity(messageIntent);
+```
+{% endtab %}
 
+{% tab title="Data Ekleme" %}
 ```java
 Intent messageIntent = new Intent(this, ShowMessageActivity.class);
 // A web page URL
@@ -51,9 +59,9 @@ messageIntent.setData(Uri.parse("custom:" + dataID + buttonId));
 
 startActivity(messageIntent);
 ```
+{% endtab %}
 
-### Add extras to the Intent
-
+{% tab title="Extras Ekleme" %}
 ```java
 Intent messageIntent = new Intent(this, ShowMessageActivity.class);
 
@@ -72,8 +80,28 @@ messageIntent.putExtras(extras);
 
 startActivity(messageIntent);
 ```
+{% endtab %}
 
-### Retrieve the data from the Intent in the started Activity
+{% tab title="👨‍💻 " %}
+```java
+Intent intent = getIntent();
+
+// Data alma
+Uri locationUri = intent.getData();
+
+// Extra alma
+String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); 
+int positionX = intent.getIntExtra(MainActivity.EXTRA_POSITION_X);
+int positionY = intent.getIntExtra(MainActivity.EXTRA_POSITION_Y);
+
+// Bundle alma
+Bundle extras = intent.getExtras();
+String message = extras.getString(MainActivity.EXTRA_MESSAGE);
+```
+{% endtab %}
+{% endtabs %}
+
+## 🔙 Başlatılan Activity Üzerinden Intent Verilerini Alma
 
 ```java
 Intent intent = getIntent();
@@ -91,9 +119,9 @@ Bundle extras = intent.getExtras();
 String message = extras.getString(MainActivity.EXTRA_MESSAGE);
 ```
 
-## 🔙 Getting data back from an Activity
+## 🔙 Intent Verilerini Eski Activity'e Aktarma
 
-### Use startActivityForResult\(\) to launch the Activity
+### 🎈 Activity'i `startActivityForResult()` ile Başlatma
 
 ```java
 startActivityForResult(messageIntent, TEXT_REQUEST);
@@ -104,7 +132,7 @@ public static final int PHOTO_PICK_REQUEST = 2;
 public static final int TEXT_REQUEST = 3;
 ```
 
-### Return a response from the launched Activity
+### 🖐 Başlatılan Activity'den Sonucu Alma
 
 ```java
 Intent returnIntent = new Intent();
@@ -120,11 +148,12 @@ finish();
 ```
 
 {% hint style="warning" %}
-To avoid confusing sent data with returned data, use a new `Intent` object rather than reusing the original sending `Intent` object.
+Gönderilen ve alınan verilerin karışmaması için yeni Intent oluşturarak `new Intent()` işlemler yapın
 {% endhint %}
 
-### Read response data in onActivityResult\(\)
+### 👀 Sonuç Verisini Okuma
 
+* `onActivityResult()` yapısından gelen veriyi işleyerek sonucu ele alırız
 * Aktivity'den yanıt geldiğinde çalışır
 
 ```java
@@ -177,6 +206,6 @@ public void onActivityResult(int requestCode, int resultCode,  Intent data) {
 ```
 
 {% hint style="info" %}
-To support older versions of Android, include `<meta-data>` information to define the parent `Activity` explicitly
+Eski android sürümlerini desteklemek için `<meta-data>` yapısı kullanılır
 {% endhint %}
 

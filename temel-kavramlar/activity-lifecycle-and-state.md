@@ -1,10 +1,10 @@
-# 💫 Activity lifecycle and state
+# 💫 Activity Yaşam Döngüsü
 
-## Activity states and lifecycle callback methods
+## 🔄 Activity Yaşam Döngüsü
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
-### Temel Kullanım
+## 🧱 Metot Prototipi
 
 ```java
 @Override
@@ -14,7 +14,9 @@ public void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-## Saving Activity instance state
+## 💾 Uygulama Verilerini Koruma
+
+`Activity`'deki `InstanceState` yapısı ile veriler geçici olarak saklanır
 
 * Lifecycle metodlarından değildir
 * Kullanıcı `Activity`'den ayrılıken çağırılır.
@@ -31,7 +33,7 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
 }
 ```
 
-### Restoring Activity instance state
+## 🔙 Verileri Geri Alma
 
 * Kaydedilen `Bundle` verileri `onCreate()` callback metodunda kullanılmakta
 * `Activity` oluşturulduktan sonra çalışan `onStart()` metodunun ardından çalışan `onRestoreInstanceState()`callback metodunda da kullanılabilir

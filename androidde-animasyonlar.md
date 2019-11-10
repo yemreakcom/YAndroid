@@ -2,10 +2,17 @@
 
 ## ⏫ Aşağıdan Gelme Animasyonu
 
-![](../.gitbook/assets/image%20%2817%29.png)
+* Proje dizinine `anim` adlı klasör oluşturup içinde bir `resource file'`a bu kodları yazıyoruz.
+* `Main`'e alttakiler eklenmeli:
+  * `btn_start` = Get Started adlı view'ın ID'si
+  * `frombutton` = üstteki kodların yazıldığı dosyanın adı
 
-Proje dizinine `anim` adlı klasör oluşturup içinde bir `resource file'`a bu kodları yazıyoruz.
+{% tabs %}
+{% tab title="⭐ Görsel" %}
+![](.gitbook/assets/image%20%289%29.png)
+{% endtab %}
 
+{% tab title="📜 XML Kodları" %}
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
@@ -15,10 +22,10 @@ Proje dizinine `anim` adlı klasör oluşturup içinde bir `resource file'`a bu 
           android:fromYDelta="100%p"/>
 </set>
 ```
+{% endtab %}
 
-`Main`'e alttakiler eklenmeli:
-
-```text
+{% tab title="👨‍💻 Main Kodları" %}
+```java
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +35,17 @@ class MainActivity : AppCompatActivity() {
     ...
 }
 ```
-
-* `btn_start` = Get Started adlı view'ın ID'si
-* `frombutton` = üstteki kodların yazıldığı dosyanın adı
+{% endtab %}
+{% endtabs %}
 
 ## 👁‍🗨 Soluk Belirme
 
-![](../.gitbook/assets/image%20%2822%29.png)
+{% tabs %}
+{% tab title="⭐ Görsel" %}
+![](.gitbook/assets/image%20%2810%29.png)
+{% endtab %}
 
+{% tab title="📜 XML Kodları" %}
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
 <alpha xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,4 +53,6 @@ class MainActivity : AppCompatActivity() {
     android:fromAlpha="0.0"
     android:toAlpha="1.0"    />
 ```
+{% endtab %}
+{% endtabs %}
 

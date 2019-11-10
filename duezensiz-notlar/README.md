@@ -1,0 +1,2 @@
+# 🥴 Düzensiz Notlar
+
