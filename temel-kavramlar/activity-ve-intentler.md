@@ -1,4 +1,4 @@
-# ⏩ Activity ve Intent'ler
+# 📃 Activity ve Intent'ler
 
 ## ✨ Activity Oluşturma
 

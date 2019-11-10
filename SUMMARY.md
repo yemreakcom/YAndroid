@@ -6,7 +6,7 @@
 
 ## Temel Kavramlar
 
-* [⏩ Activity ve Intent'ler](temel-kavramlar/activity-ve-intentler.md)
+* [📃 Activity ve Intent'ler](temel-kavramlar/activity-ve-intentler.md)
 * [💫 Activity Yaşam Döngüsü](temel-kavramlar/activity-yasam-doenguesue.md)
 * [🏹 Implicit intents](temel-kavramlar/implicit-intents.md)
 * [🧐 Component İsimleri](temel-kavramlar/component-isimleri.md)
