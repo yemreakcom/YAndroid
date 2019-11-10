@@ -13,7 +13,6 @@
 * [💾 Veri Saklama Yöntemleri](temel-kavramlar/veri-saklama-yoentemleri.md)
 * [🎪 Android'de Animasyonlar](temel-kavramlar/androidde-animasyonlar.md)
 * [🌄 Arkaplan'da Çalışma](temel-kavramlar/arkaplanda-calisma/README.md)
-  * [Untitled](temel-kavramlar/arkaplanda-calisma/untitled.md)
   * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
 
 ## Faydalı Bilgiler
