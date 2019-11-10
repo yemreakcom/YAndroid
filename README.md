@@ -27,9 +27,11 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 ## ✨ Yeni İçerikler
 
-{% hint style="warning" %}
-Şu anda yapımı tamamlanmamıştır. \(Her şey yeni 😅\)
-{% endhint %}
+{% page-ref page="temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md" %}
+
+{% page-ref page="faydali-bilgiler/activity-oernekleri.md" %}
+
+
 
 ## 🧐 Değişikliklere Detaylı Bakın
 

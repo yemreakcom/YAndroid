@@ -1,2 +1,0 @@
-# ✨ Faydalı Bilgiler
-
