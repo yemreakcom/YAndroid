@@ -1,9 +1,16 @@
 # Table of contents
 
 * [📱 YAndroid](README.md)
+* [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [🌟 Faydalı Kaynaklar](https://learn.yemreak.com/icerikler/android)
-* [✍ Kişisel Notlarım](kisisel-notlarim.md)
-* [Untitled](untitled.md)
+* [🌄 Arkaplan'da Çalışma](arkaplanda-calisma/README.md)
+  * [🔂 AsyncTask ve AsyncTaskLoader](arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
+* [✨ Faydalı Bilgiler](faydali-bilgiler/README.md)
+  * [✍ Kişisel Notlarım](faydali-bilgiler/kisisel-notlarim.md)
+  * [📲 Telefonu Bilgisayara Bağlama](faydali-bilgiler/telefonu-bilgisayara-baglama.md)
+  * [👜 Google Play Store](faydali-bilgiler/google-play-store.md)
+  * [🐛 Hata Notları](faydali-bilgiler/hata-notlari.md)
+  * [🥴 Karışık Notlar](faydali-bilgiler/karisik-notlar.md)
 
 ## Programlama Notları <a id="programlama-notlari-1"></a>
 
@@ -16,13 +23,6 @@
 * [💫 Activity lifecycle and state](programlama-notlari-1/activity-lifecycle-and-state.md)
 * [🏹 Implicit intents](programlama-notlari-1/implicit-intents.md)
 * [🚧 AsyncTask ve AsyncTaskLoader](programlama-notlari-1/asynctask-ve-asynctaskloader.md)
-
-## Faydalı Bilgiler
-
-* [📲 Telefonu Bilgisayara Bağlama](faydali-bilgiler/telefonu-bilgisayara-baglama.md)
-* [👜 Google Play Store](faydali-bilgiler/google-play-store.md)
-* [🐛 Hata Notları](faydali-bilgiler/hata-notlari.md)
-* [🥴 Karışık Notlar](faydali-bilgiler/karisik-notlar.md)
 
 ## Eski Notlarım <a id="programlama-notlari"></a>
 

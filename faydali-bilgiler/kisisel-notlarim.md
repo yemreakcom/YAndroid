@@ -6,11 +6,11 @@ description: Elle yazılmış notlarımı barındırır
 
 ## 🏫 Üniversite Notlarım
 
-{% file src=".gitbook/assets/2019-vize-mp-yemreak.pdf" %}
+{% file src="../.gitbook/assets/2019-vize-mp-yemreak.pdf" %}
 
 ## 📃 Sayfa İçerikleri
 
-{% file src=".gitbook/assets/tuem-notlar.pdf" %}
+{% file src="../.gitbook/assets/tuem-notlar.pdf" %}
 
 
 

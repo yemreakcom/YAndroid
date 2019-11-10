@@ -2,7 +2,7 @@
 
 ## Activity states and lifecycle callback methods
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 ### Temel Kullanım
 

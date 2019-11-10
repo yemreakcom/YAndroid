@@ -19,6 +19,12 @@ description: Android programlama için notlarım
 Konuları öğrenmek için ideal yolları araştırdığımız [👨‍🏫 YLearn](https://learn.yemreak.com/) projesine bakmanda fayda var.
 {% endhint %}
 
+## 📢 Duyuru
+
+Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmıştır.
+
+{% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/index.html" %}
+
 ## ✨ Yeni İçerikler
 
 {% hint style="warning" %}
@@ -39,7 +45,7 @@ Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitH
 
 ## 🌍 Tüm [YEmreAk ](https://wiki.yemreak.com)İçerikleri
 
-![YEmreAk t&#xFC;m i&#xE7;erikleri \(her s&#xFC;tun bir web sitesidir\)](.gitbook/assets/image%20%2815%29.png)
+![YEmreAk t&#xFC;m i&#xE7;erikleri \(her s&#xFC;tun bir web sitesidir\)](.gitbook/assets/image%20%2819%29.png)
 
 ## 💖 Destek ve İletişim
 
