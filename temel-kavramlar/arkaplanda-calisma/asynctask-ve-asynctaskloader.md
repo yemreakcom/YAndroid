@@ -1,5 +1,5 @@
 ---
-description: Arkaplan işlemleri için kullanılan yapıları
+description: "Arkaplan işlemleri için kullanılan yapıları (\U0001F6A7 yapım aşamasında)"
 ---
 
 # 💫 AsyncTask ve AsyncTaskLoader
