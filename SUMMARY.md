@@ -14,6 +14,7 @@
 * [🎪 Android'de Animasyonlar](temel-kavramlar/androidde-animasyonlar.md)
 * [🌄 Arkaplan'da Çalışma](temel-kavramlar/arkaplanda-calisma/README.md)
   * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
+  * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
 
 ## Faydalı Bilgiler
 
