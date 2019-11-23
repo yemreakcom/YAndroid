@@ -17,7 +17,7 @@
   * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
   * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
   * [🌞 Foreground Service](temel-kavramlar/arkaplanda-calisma/foreground-service.md)
-  * [🌠 Android Servisleri](temel-kavramlar/arkaplanda-calisma/android-servisleri.md)
+  * [🔰 Android Servislerine Giriş](temel-kavramlar/arkaplanda-calisma/android-servisleri.md)
 
 ## Faydalı Bilgiler
 
