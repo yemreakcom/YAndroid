@@ -16,18 +16,5 @@
 * 🌑 Cihaz uyku moduna girdiğinde arka plan işlemleri aksamaya başlar, bundan dolayı [WakeLock](https://developer.android.com/training/scheduling/wakelock#java) özelliğinin aktif olması gerekir
 * ⏳ Uzun süreli işlemler için hızı ve verimliliği artırma adına [multi-threading](https://developer.android.com/training/multiple-threads/) yapısı tercih edilmelidir
 
-## 🌞 Foreground Services
 
-Kullanıcının bildirim veya arayüz ile haberi olan arkaplan görevleridir
-
-* Önceli servislerdir ve öncelik seviyesi bildirilmelidir
-* Kullanıcıya [kaldırılamayan bir bildirim](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#foreground-service) gösterilmesi zorunludur
-* Kullanıcının arkaplan işlemlerinden haberdar olması amaçlanır
-* Servisin çalıştırılması için [`FOREGROUND_SERVICE`](https://developer.android.com/reference/android/Manifest.permission.html#FOREGROUND_SERVICE) iznine ihtiyaç duyulur
-  * Android'in [izin isteme hiyerarşisine](https://developer.android.com/guide/topics/permissions/overview) uygun ilerler
-  * İzin alınmadığı taktirde [`SecurityException`](https://developer.android.com/reference/java/lang/SecurityException.html) hatası verir
-
-{% hint style="info" %}
-🧙‍♂️ Android dokümanında [Running a service in the foreground](https://developer.android.com/guide/components/services#Foreground) alanında işlenmektedir
-{% endhint %}
 
