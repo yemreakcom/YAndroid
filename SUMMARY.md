@@ -13,11 +13,11 @@
 * [💾 Veri Saklama Yöntemleri](temel-kavramlar/veri-saklama-yoentemleri.md)
 * [🎪 Android'de Animasyonlar](temel-kavramlar/androidde-animasyonlar.md)
 * [👮‍♂️ İzinlerin Yönetimi](temel-kavramlar/izinlerin-yoenetimi.md)
+* [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/asynctask-ve-asynctaskloader.md)
 * [🌄 Arkaplan'da Çalışma](temel-kavramlar/arkaplanda-calisma/README.md)
-  * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md)
-  * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
-  * [🌞 Foreground Service](temel-kavramlar/arkaplanda-calisma/foreground-service.md)
   * [🔰 Android Servislerine Giriş](temel-kavramlar/arkaplanda-calisma/android-servisleri.md)
+  * [🌞 Foreground Service](temel-kavramlar/arkaplanda-calisma/foreground-service.md)
+  * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
 
 ## Faydalı Bilgiler
 

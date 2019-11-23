@@ -29,7 +29,7 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 {% page-ref page="temel-kavramlar/arkaplanda-calisma/multithreading.md" %}
 
-{% page-ref page="temel-kavramlar/arkaplanda-calisma/asynctask-ve-asynctaskloader.md" %}
+{% page-ref page="temel-kavramlar/asynctask-ve-asynctaskloader.md" %}
 
 {% page-ref page="faydali-bilgiler/activity-oernekleri.md" %}
 
