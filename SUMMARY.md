@@ -27,6 +27,7 @@
 * [👜 Google Play Store](faydali-bilgiler/google-play-store.md)
 * [🚧 Proje İşlemleri](faydali-bilgiler/proje-islemleri.md)
 * [🐛 Hata Notları](faydali-bilgiler/hata-notlari.md)
+* [🤖 Android Things](faydali-bilgiler/android-things.md)
 * [🔗 Karışık Bağlantılar](faydali-bilgiler/karisik-baglantilar.md)
 * [🥴 Düzensiz Notlar](faydali-bilgiler/duezensiz-notlar/README.md)
   * [🔰 Giriş](faydali-bilgiler/duezensiz-notlar/giris.md)
