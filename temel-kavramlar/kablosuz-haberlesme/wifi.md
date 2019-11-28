@@ -1,4 +1,8 @@
-# 📶 WiFi
+---
+description: Destekleyen cihazlar için android WiFi P2P bağlantısı
+---
+
+# 📶 WiFi P2P
 
 ## 📻 WiFi için Broadcast Reciever Tanımlama
 
