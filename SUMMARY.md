@@ -14,12 +14,12 @@
 * [🎪 Android'de Animasyonlar](temel-kavramlar/androidde-animasyonlar.md)
 * [👮‍♂️ İzinlerin Yönetimi](temel-kavramlar/izinlerin-yoenetimi.md)
 * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/asynctask-ve-asynctaskloader.md)
-* [📶 Kablosuz Haberleşme](temel-kavramlar/kablosuz-haberlesme/README.md)
-  * [📶 WiFi P2P](temel-kavramlar/kablosuz-haberlesme/wifi.md)
 * [🌄 Arkaplan'da Çalışma](temel-kavramlar/arkaplanda-calisma/README.md)
   * [🔰 Android Servislerine Giriş](temel-kavramlar/arkaplanda-calisma/android-servisleri.md)
   * [🌞 Foreground Service](temel-kavramlar/arkaplanda-calisma/foreground-service.md)
   * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
+* [📶 Kablosuz Haberleşme](temel-kavramlar/kablosuz-haberlesme/README.md)
+  * [📶 WiFi P2P](temel-kavramlar/kablosuz-haberlesme/wifi.md)
 
 ## Faydalı Bilgiler
 
