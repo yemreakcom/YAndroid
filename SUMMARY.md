@@ -15,7 +15,6 @@
 * [👮‍♂️ İzinlerin Yönetimi](temel-kavramlar/izinlerin-yoenetimi.md)
 * [💫 AsyncTask ve AsyncTaskLoader](temel-kavramlar/asynctask-ve-asynctaskloader.md)
 * [🌄 Arkaplan'da Çalışma](temel-kavramlar/arkaplanda-calisma/README.md)
-  * [📶 WiFi Direct](temel-kavramlar/arkaplanda-calisma/wifi-direct.md)
   * [🔰 Android Servislerine Giriş](temel-kavramlar/arkaplanda-calisma/android-servisleri.md)
   * [🌞 Foreground Service](temel-kavramlar/arkaplanda-calisma/foreground-service.md)
   * [🌠 MultiThreading](temel-kavramlar/arkaplanda-calisma/multithreading.md)
