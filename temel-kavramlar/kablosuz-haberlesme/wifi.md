@@ -6,28 +6,22 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 
 ## 👮‍♂️ Gerekli İzinler
 
-Manifest dosyasından aşağıdaki gibi izinleri isteyin:
+Manifest dosyasının içeriğine aşağıdaki kodu ekleyin
 
-* `android:required="true"` açıklaması, bu izin olmadan uygulamanın açılmayacağını ifade eder
-
+{% code title="AndroidManifest.xml" %}
 ```markup
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.nsdchat"
     ...
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission
-        android:required="true"
-        android:name="android.permission.INTERNET"/>
+    
+    <!-- Wi-Fi Direct (P2P) bağlatısı için eklendi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     ...
 ```
+{% endcode %}
 
 ### 🧰 API için Ek Olarak Gereken İzinler
 
@@ -37,10 +31,11 @@ Aşağıdaki metotlar **Location Mode** iznine de ihtiyaç duyar
 * [`discoverServices`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager#discoverServices%28android.net.wifi.p2p.WifiP2pManager.Channel,%2520android.net.wifi.p2p.WifiP2pManager.ActionListener%29)
 * [`requestPeers`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager#requestPeers%28android.net.wifi.p2p.WifiP2pManager.Channel,%2520android.net.wifi.p2p.WifiP2pManager.PeerListListener%29)
 
-## 📻 WiFi için Broadcast Reciever Tanımlama
+## 📻 WiFi için Broadcast Receiver Tanımlama
 
-WiFi Broadcast Reciever ile wifi durumlarını kontrol edebiliriz
+Broadcast Receiver ile Wi-Fi durumlarını kontrol edebiliriz
 
+{% code title="WifiActivity.java" %}
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +55,6 @@ protected void onCreate(Bundle savedInstanceState) {
         // Wi-Fi P2P Frameworkü ile uygulamamıza bağlanmayı sağlayacak obje
         channel = manager.initialize(this, getMainLooper(), null);
 
-        // Wifi durumlarını kontrol etmemizi sağlayacak obje
-        wifiReceiver = new WiFiDirectBroadcastReciever(manager, channel, this);
         getRequiredPermissions();
     }
 }
@@ -75,6 +68,7 @@ private void getRequiredPermissions() {
     }
 }
 ```
+{% endcode %}
 
 ## 💎 WiFi Durumları
 
@@ -84,6 +78,20 @@ private void getRequiredPermissions() {
 | [`WIFI_P2P_PEERS_CHANGED_ACTION`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#WIFI_P2P_PEERS_CHANGED_ACTION) | Bağlanacak cihazları [`discoverPeers()`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#discoverPeers%28android.net.wifi.p2p.WifiP2pManager.Channel,%20android.net.wifi.p2p.WifiP2pManager.ActionListener%29) metodu ile keşfetmek istediğimiz zaman tetiklenir. Genellikle  [`requestPeers()`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#requestPeers%28android.net.wifi.p2p.WifiP2pManager.Channel,%20android.net.wifi.p2p.WifiP2pManager.PeerListListener%29) metodu ile eşleşen cihazları alma amaçlı kullanılır. |
 | [`WIFI_P2P_STATE_CHANGED_ACTION`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#WIFI_P2P_STATE_CHANGED_ACTION) | WiFi P2P'in aktifliğinin değişmesi \(açık / kapalı\) |
 | [`WIFI_P2P_THIS_DEVICE_CHANGED_ACTION`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#WIFI_P2P_THIS_DEVICE_CHANGED_ACTION) | Cihaz detaylarının \(örn: ismi\) değişmesi |
+
+### 
+
+## 🐞 Hata Çözümleri
+
+### 🚫 Peers objesinin boş dönmesi
+
+* 👮‍♂️ İlk olarak `ACCESS_FINE_LOCATION` iznini cihaza vermelisin
+* 📍 Ardından cihazda **konum** hizmetini açmalısın
+* 🎉 Eşleşen cihazlar belirmeye başlayacaktır
+
+{% hint style="info" %}
+🧙‍♂️ İstersen bu cevabı yazdığım Stackoverflow sorusuna bakabilirsin
+{% endhint %}
 
 ## 🔗 Faydalı Bağlantılar
 
