@@ -24,6 +24,7 @@
 ## Faydalı Bilgiler
 
 * [✍ Kişisel Notlarım](faydali-bilgiler/kisisel-notlarim.md)
+* [✨ Verimli Programlama](faydali-bilgiler/verimli-programlama.md)
 * [⭐ Activity Örnekleri](faydali-bilgiler/activity-oernekleri.md)
 * [📲 Telefonu Bilgisayara Bağlama](faydali-bilgiler/telefonu-bilgisayara-baglama.md)
 * [👜 Google Play Store](faydali-bilgiler/google-play-store.md)
