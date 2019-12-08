@@ -133,3 +133,7 @@ if (database != null) {
 * `Cursor.getString()` İstenen indexteki string olarak döndürür.
 * `Cursor.moveToNext()` cursoru bir sütün aşağı indirme
 
+## 📜 JSON Verilerini İşleme
+
+{% embed url="https://stackoverflow.com/a/9606629/9770490" %}
+
