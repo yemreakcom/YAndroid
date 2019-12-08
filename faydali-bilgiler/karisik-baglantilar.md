@@ -20,6 +20,7 @@ description: "Derlenmemiş, karışık notları barındırır \U0001F625"
 * [ADB komut listesi](https://www.google.com.tr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjN0LXv28fcAhVPalAKHSN6AIIQFjAAegQIABAB&url=https%3A%2F%2Fgist.github.com%2FPulimet%2F5013acf2cd5b28e55036c82c91bd56d8&usg=AOvVaw0QtLJ20OqCl3S4BR0S4BVe)
 * [ADB ile telefona bağlanma](https://stackoverflow.com/questions/2604727/how-can-i-connect-to-android-with-adb-over-tcp)
 * [Android Git Bağlantısı](https://code.tutsplus.com/tutorials/working-with-git-in-android-studio--cms-30514)
+* [Mipmap vs Drawable](https://teamtreehouse.com/community/mipmap-vs-drawable)
 
 ### 🔗 Kotlin için Harici Bağlatılar
 
