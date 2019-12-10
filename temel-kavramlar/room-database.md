@@ -6,7 +6,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ## 💫 Synchronized ile DB'yi Koruma
 
@@ -16,11 +16,21 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * 🚫 Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
 * ✨ Gereksiz Thread engelinden sakınmak için, synchronized yapısı içerisinde tekrardan **if kontrolü** yapılmalıdır
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 {% hint style="info" %}
 👀 Detaylar için [Multi-threading](multithreading.md) alanına bakabilirsin.
 {% endhint %}
+
+## 🏗️ Repository Yapısı
+
+* 🌃 Alt katmanda olan tüm sınıfları tek bir sınıfmış gibi gösterir
+  * 😏 Bu sayede **ViewModel** üzerinden birden fazla sınıfla uğraşmak zorunda kalmayız
+* ✨ **LiveData** yapısı sayesinde verileri otomatik günceller
+  * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
+* 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](asynctask-ve-asynctaskloader.md) yapısı kullanılır
+
+![](../.gitbook/assets/image%20%2815%29.png)
 
 ## 🔗 Faydalı Bağlantılar
 
