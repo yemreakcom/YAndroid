@@ -9,7 +9,7 @@
 
 {% tabs %}
 {% tab title="⭐ Görsel" %}
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 {% endtab %}
 
 {% tab title="📜 XML Kodları" %}
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 {% tabs %}
 {% tab title="⭐ Görsel" %}
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 {% endtab %}
 
 {% tab title="📜 XML Kodları" %}

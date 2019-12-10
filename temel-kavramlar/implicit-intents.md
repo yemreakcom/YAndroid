@@ -8,11 +8,11 @@
 * Diğer uygulamalara istekte bulunmayı sağlar
 * [✅ App Chooser](implicit-intents.md#app-chooser) adı verilen yapı ile kullanıcıya seçim hakkı tanınır
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 ## ✅ App Chooser
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 ## 
 
@@ -131,7 +131,7 @@ ShareCompat.IntentBuilder
 Bu yapı **Android Launch Modes** ile değiştirilebilmektedir.
 {% endhint %}
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ![](../.gitbook/assets/image%20%281%29.png)
 

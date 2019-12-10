@@ -6,7 +6,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2838%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -14,7 +14,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * 🏷️ [Annotation](https://www.geeksforgeeks.org/annotations-in-java/) yapısı ile özellikleri belirlenir
 * 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 ```java
 @Entity(tableName = "person_database")
@@ -44,7 +44,7 @@ public class Person {
 * 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
 * ✨ LiveData yapısı ile güncel verileri döndürür
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 ```java
 @Dao
@@ -78,6 +78,47 @@ public interface WordDao {
 👀 Daha fazlası için [The DAO \(data access object\)](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#dao) dokümanına bakabilirsin.
 {% endhint %}
 
+## 🗂️ Room Database
+
+* 🧱 Abstract olmak zorundadır
+* 🏗️ `Room.databaseBuilder(...)` yapısı ile db tanımlanır
+* 🏷️ Database etiketi içerisinde
+  *  `entities`alanında tablo verilerini temsil eden Entity Class'ınızın objesi verilir
+  *  `version` alanında db'nin en son sürümünü belirtin
+  * 🐛 Versiyon geçişleri arasındaki sorunları engellemek için `fallbackToDestructiveMigration()` özelliği eklenir
+
+![](../.gitbook/assets/image%20%286%29.png)
+
+```java
+@Database(entities = {Word.class}, version = 1)
+public abstract class WordRoomDatabase extends RoomDatabase {
+
+   public abstract WordDao wordDao();
+
+   private static WordRoomDatabase INSTANCE;
+
+   static WordRoomDatabase getDatabase(final Context context) {
+       if (INSTANCE == null) {
+           synchronized (WordRoomDatabase.class) {
+               if (INSTANCE == null) {
+                   INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                           WordRoomDatabase.class, "word_database")
+                             // Wipes and rebuilds instead of migrating 
+                             // if no Migration object.
+                           .fallbackToDestructiveMigration()
+                           .build();                
+               }
+           }
+       }
+       return INSTANCE;
+   }
+}
+```
+
+{% hint style="info" %}
+👀 Daha fazlası için [Room database](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#room) dokümanına bakabilirsin.
+{% endhint %}
+
 ### 👮‍♂️ DB'yi Koruma
 
 * ‍🚫 Veri tabanına birden çok istek gelmesini engeller
@@ -100,7 +141,7 @@ public interface WordDao {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
 ```java
 public class WordRepository {
