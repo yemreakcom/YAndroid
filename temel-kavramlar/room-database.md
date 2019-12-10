@@ -4,6 +4,10 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 # 💽 Room Database
 
+## 🧱 Temel Yapı
+
+![](../.gitbook/assets/image%20%2831%29.png)
+
 ## 💫 Synchronized ile DB'yi Koruma
 
 * 👮‍♂️ Veri tabanına birden çok istek gelmesini engeller
@@ -12,7 +16,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * 🚫 Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
 * ✨ Gereksiz Thread engelinden sakınmak için, synchronized yapısı içerisinde tekrardan **if kontrolü** yapılmalıdır
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 {% hint style="info" %}
 👀 Detaylar için [Multi-threading](multithreading.md) alanına bakabilirsin.
