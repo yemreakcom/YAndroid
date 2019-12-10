@@ -6,7 +6,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%2836%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -38,6 +38,18 @@ public class Person {
 👀 Daha fazlası için [Entity](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#entity) dokümanına bakabilirsin.
 {% endhint %}
 
+## 🛳️ DAO Yapısı
+
+* 🧱 Abstract veya Interface olmak zorundadır
+* 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
+* ✨ LiveData yapısı ile güncel verileri döndürür
+
+![](../.gitbook/assets/image%20%2813%29.png)
+
+{% hint style="info" %}
+👀 Daha fazlası için [The DAO \(data access object\)](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#dao) dokümanına bakabilirsin.
+{% endhint %}
+
 ## 💫 Synchronized ile DB'yi Koruma
 
 * 👮‍♂️ Veri tabanına birden çok istek gelmesini engeller
@@ -60,7 +72,7 @@ public class Person {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 ```java
 public class WordRepository {
