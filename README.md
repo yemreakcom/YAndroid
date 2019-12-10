@@ -55,5 +55,5 @@ Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitH
 
 **The** [**MIT License**](https://choosealicense.com/licenses/mit/) **© Yunus Emre Ak**
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%284%29.png)
 

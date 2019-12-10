@@ -10,11 +10,11 @@
 * Son olarak; Manifestimize girip "package name"i güncelliyoruz.
 * Artık başarıyla "package name"i güncellemiş olduk. Emin olmak için projenizi Build etmeyi unutmayın :\)
 
-![](../.gitbook/assets/image%20%2823%29.png)
-
 ![](../.gitbook/assets/image%20%2825%29.png)
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image%20%2820%29.png)
+
+![](../.gitbook/assets/image%20%2824%29.png)
 

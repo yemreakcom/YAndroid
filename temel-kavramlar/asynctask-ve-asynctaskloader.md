@@ -29,7 +29,7 @@ Android'teki tüm görüntü işlemlerinin yapıldı alandır.
 * UI Thread sadece görsel işlemler için kullanılmalıdır
 * Tüm işlemler 16ms'den kısa bir sürede tamamlanmalıdır
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 {% hint style="danger" %}
 Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](http://developer.android.com/guide/practices/responsiveness.html)" \(ANR\) diyaloğunu oluşturur ve kullanıcı bunu görmesi durumunda uygulamayı kapatıp, siler 😥
@@ -50,9 +50,9 @@ Verilen işlemi arkaplanda, sistemi bloklamadan tamamlar.
 
 {% tabs %}
 {% tab title="🎈 Kullanım" %}
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 | 💠 Metot | 📜 Açıklama |
 | :--- | :--- |
@@ -75,7 +75,7 @@ public class MyAsyncTask extends AsyncTask <String, Void, Bitmap>{}
 * `Void` yapısı, `publishProgress` ve `onProgressUpdate` metotlarının kullanılmayacağını belirtir
 * `Bitmap` tipi de, `onPostExecute` ile aktarılan işlem sonucunun tipini belirtir
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 {% hint style="warning" %}
 Son iki parametre \(`Void` ve `Bitmap`\) dışarıdan verilmez, sınıf içi parametrelerdir

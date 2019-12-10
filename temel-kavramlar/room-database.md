@@ -6,13 +6,15 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2835%29.png)
 
 ## ⭐ Entity Yapısı
 
 * 🧱 DB'ye aktarılacak sütun isimlerini temsil ederler
 * 🏷️ [Annotation](https://www.geeksforgeeks.org/annotations-in-java/) yapısı ile özellikleri belirlenir
 * 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
+
+![](../.gitbook/assets/image%20%287%29.png)
 
 ```java
 @Entity(tableName = "person_database")
@@ -44,7 +46,7 @@ public class Person {
 * 🚫 Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
 * ✨ Gereksiz Thread engelinden sakınmak için, synchronized yapısı içerisinde tekrardan **if kontrolü** yapılmalıdır
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image.png)
 
 {% hint style="info" %}
 👀 Detaylar için [Multi-threading](multithreading.md) alanına bakabilirsin.
@@ -58,7 +60,7 @@ public class Person {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ```java
 public class WordRepository {
