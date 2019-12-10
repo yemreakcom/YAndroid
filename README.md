@@ -27,7 +27,7 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 ## ✨ Yeni İçerikler
 
-{% page-ref page="temel-kavramlar/arkaplanda-calisma/multithreading.md" %}
+{% page-ref page="temel-kavramlar/multithreading.md" %}
 
 {% page-ref page="temel-kavramlar/asynctask-ve-asynctaskloader.md" %}
 
