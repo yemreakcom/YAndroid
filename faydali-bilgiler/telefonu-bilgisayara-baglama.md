@@ -1,5 +1,5 @@
 ---
-description: "Bu yazı bilgisayar \U0001F4BB ve \U0001F4F1 telefon bağlantılarını ele alır."
+description: "Bu yazı bilgisayar �� ve \U0001F4F1 telefon bağlantılarını ele alır."
 ---
 
 # 📲 Telefonu Bilgisayara Bağlama

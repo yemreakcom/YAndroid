@@ -8,6 +8,34 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ![](../.gitbook/assets/image%20%2832%29.png)
 
+## ⭐ Entity Yapısı
+
+* 🧱 DB'ye aktarılacak sütun isimlerini temsil ederler
+* 🏷️ [Annotation](https://www.geeksforgeeks.org/annotations-in-java/) yapısı ile özellikleri belirlenir
+* 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
+
+```java
+@Entity(tableName = "person_database")
+public class Person {
+    @PrimaryKey (autoGenerate=true)
+    private int uid;
+
+    @ColumnInfo(name = "first_name")
+    private String firstName;
+
+    @ColumnInfo(name = "last_name")
+    private String lastName;
+
+    // Getters and setters are not shown for brevity,
+    // but they're required for Room to work if variables are private.
+}
+
+```
+
+{% hint style="info" %}
+👀 Daha fazlası için [Entity](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#entity) dokümanına bakabilirsin.
+{% endhint %}
+
 ## 💫 Synchronized ile DB'yi Koruma
 
 * 👮‍♂️ Veri tabanına birden çok istek gelmesini engeller
@@ -31,6 +59,43 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
 ![](../.gitbook/assets/image%20%2815%29.png)
+
+```java
+public class WordRepository {
+
+   private WordDao mWordDao;
+   private LiveData<List<Word>> mAllWords;
+
+   WordRepository(Application application) {
+       WordRoomDatabase db = WordRoomDatabase.getDatabase(application);
+       mWordDao = db.wordDao();
+       mAllWords = mWordDao.getAllWords();
+   }
+
+   LiveData<List<Word>> getAllWords() {
+       return mAllWords;
+   }
+
+   public void insert (Word word) {
+       new insertAsyncTask(mWordDao).execute(word);
+   }
+
+   private static class insertAsyncTask extends AsyncTask<Word, Void, Void> {
+
+       private WordDao mAsyncTaskDao;
+
+       insertAsyncTask(WordDao dao) {
+           mAsyncTaskDao = dao;
+       }
+
+       @Override
+       protected Void doInBackground(final Word... params) {
+           mAsyncTaskDao.insert(params[0]);
+           return null;
+       }
+   }
+}
+```
 
 ## 🔗 Faydalı Bağlantılar
 
