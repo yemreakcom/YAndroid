@@ -46,16 +46,44 @@ public class Person {
 
 ![](../.gitbook/assets/image%20%2813%29.png)
 
+```java
+@Dao
+public interface WordDao {
+
+   // The conflict strategy defines what happens, 
+   // if there is an existing entry.
+   // The default action is ABORT. 
+   @Insert(onConflict = OnConflictStrategy.REPLACE)
+   void insert(Word word);
+
+   // Update multiple entries with one call.
+   @Update
+   public void updateWords(Word... words);
+
+   // Simple query that does not take parameters and returns nothing.
+   @Query("DELETE FROM word_table")
+   void deleteAll();
+
+   // Simple query without parameters that returns values.
+   @Query("SELECT * from word_table ORDER BY word ASC")
+   List<Word> getAllWords();
+
+   // Query with parameter that returns a specific word or words.
+   @Query("SELECT * FROM word_table WHERE word LIKE :word ")
+   public List<Word> findWord(String word);
+}
+```
+
 {% hint style="info" %}
 👀 Daha fazlası için [The DAO \(data access object\)](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#dao) dokümanına bakabilirsin.
 {% endhint %}
 
-## 💫 Synchronized ile DB'yi Koruma
+### 👮‍♂️ DB'yi Koruma
 
-* 👮‍♂️ Veri tabanına birden çok istek gelmesini engeller
+* ‍🚫 Veri tabanına birden çok istek gelmesini engeller
 * 🐞 Birden çok isteğin eş zamanlı yapılmaya çalışması **conflict** oluşturacaktır
 * 💔 Conflict yapısı veri tabanındaki verilerin uyuşmazlığını belirtir
-* 🚫 Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
+*  Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
 * ✨ Gereksiz Thread engelinden sakınmak için, synchronized yapısı içerisinde tekrardan **if kontrolü** yapılmalıdır
 
 ![](../.gitbook/assets/image.png)
