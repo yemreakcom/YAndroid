@@ -2,7 +2,7 @@
 description: Android üzerinde arkaplanda çalışan arayüzü olmayan Activity'ler
 ---
 
-# 🔰 Android Servislerine Giriş
+# 🪐 Servisler
 
 ## 👀 Servislere Genel Bakış <a id="servislere-genel-bakis"></a>
 

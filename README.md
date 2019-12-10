@@ -1,8 +1,8 @@
 ---
-description: Android programlama için notlarım
+description: Android programlama notlarım
 ---
 
-# 📱 YAndroid
+# 📲 YAndroid
 
 ## 🙋‍♂️ Hoş Geldin
 
@@ -27,11 +27,11 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 ## ✨ Yeni İçerikler
 
-{% page-ref page="temel-kavramlar/multithreading.md" %}
+{% page-ref page="arkaplan/multithreading.md" %}
 
-{% page-ref page="temel-kavramlar/asynctask-ve-asynctaskloader.md" %}
+{% page-ref page="arkaplan/asynctask-ve-asynctaskloader.md" %}
 
-{% page-ref page="faydali-bilgiler/activity-oernekleri.md" %}
+{% page-ref page="giris/activity-oernekleri.md" %}
 
 
 

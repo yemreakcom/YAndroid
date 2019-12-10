@@ -1,0 +1,2 @@
+# 👨‍💼 Verilerin Yönetimi
+

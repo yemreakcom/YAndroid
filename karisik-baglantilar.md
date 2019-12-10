@@ -22,7 +22,7 @@ description: "Derlenmemiş, karışık notları barındırır \U0001F625"
 * [Android Git Bağlantısı](https://code.tutsplus.com/tutorials/working-with-git-in-android-studio--cms-30514)
 * [Mipmap vs Drawable](https://teamtreehouse.com/community/mipmap-vs-drawable)
 
-### 🔗 Kotlin için Harici Bağlatılar
+## 🔗 Kotlin için Harici Bağlatılar
 
 * Java kodunu Kotlin'e çevirmek için CTRL + SHIFT + ALT + K
 * [Kotlin Trick for Android](https://antonioleiva.com/kotlin-awesome-tricks-for-android/)

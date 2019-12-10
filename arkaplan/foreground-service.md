@@ -54,7 +54,7 @@ void startTelemetryService() {
     }
 ```
 
-{% page-ref page="../izinlerin-yoenetimi.md" %}
+{% page-ref page="../temel/izinlerin-yoenetimi.md" %}
 
 ## 🧱 Temel Yapıyı Oluşturma
 
@@ -137,7 +137,7 @@ public class TelemetryService extends Service {
 * Uygulama üzerindeki tüm bildirimleri susturmak yerine, belli başlı kategorileri susturma avantajı sağlar
 * Kategorilere göre bildirim şekillerini düzenlemeye yardımcı olur
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 ```java
 public class TelemetryService extends Service {

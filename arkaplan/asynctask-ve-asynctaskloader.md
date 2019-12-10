@@ -1,8 +1,14 @@
 ---
-description: "Arkaplan işlemleri için kullanılan yapıları (\U0001F6A7 yapım aşamasında)"
+description: "Android üzerinde farklı thread üzerinde çalışma (\U0001F6A7 yapım aşamasında)"
 ---
 
-# 💫 AsyncTask ve AsyncTaskLoader
+# 💫 Asenkron İşlemler
+
+## 🔰 Asenkron İşlemleri Tanıyalım
+
+* 💫 Ayrı bir Thread üzerinden gerçekleşen bu işlemleri sistemin ilerlemesi engellemez
+* 🙋‍♂️ İşleri tamamlandığı zaman UI Thread'e dahil olurlar
+* ⭐ **AsyncTask** veya **AsycnTaskLoader** yapıları kullanılır
 
 ## 🆚 İkisi Arasındaki Temel Farklar
 
