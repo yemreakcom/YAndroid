@@ -2,7 +2,7 @@
 description: Android programlama notlarım
 ---
 
-# 📲 YAndroid
+# 📲 Android Notlarım
 
 ## 🙋‍♂️ Hoş Geldin
 
@@ -23,7 +23,7 @@ Konuları öğrenmek için ideal yolları araştırdığımız [👨‍🏫 YLea
 
 Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmıştır.
 
-{% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/index.html" %}
+{% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/index.html" caption="" %}
 
 ## ✨ Yeni İçerikler
 
@@ -33,13 +33,11 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 {% page-ref page="giris/activity-oernekleri.md" %}
 
-
-
 ## 🧐 Değişikliklere Detaylı Bakın
 
 Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitHub üzerinden bakabilirsin.
 
-{% embed url="https://github.com/YEmreAk/YAndroid/commits/master" %}
+{% embed url="https://github.com/YEmreAk/YAndroid/commits/master" caption="" %}
 
 ## 🌍 Tüm YEmreAk İçerikleri
 

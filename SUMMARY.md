@@ -1,6 +1,6 @@
 # Table of contents
 
-* [📲 YAndroid](README.md)
+* [📲 Android Notlarım](README.md)
 * [🌟 Faydalı Kaynaklar](https://learn.yemreak.com/icerikler/android)
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [🔰 Android'e Giriş](giris/README.md)
