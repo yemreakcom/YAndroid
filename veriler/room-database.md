@@ -4,6 +4,15 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 # 💽 Room Database
 
+## 🔰 Room Database Nedir
+
+* 🤓 SQL komutları ile uğraşmadan direkt android kodları ile çalışmamızı sağlar
+* ✨ Optimize edilmiş bir veri tabanı sunar \(LiveData\)
+
+{% hint style="warning" %}
+📢 Sayfanın en altındaki linklerden resmi bağlantılara erişebilirsin.
+{% endhint %}
+
 ## 🧱 Temel Yapı
 
 ![](../.gitbook/assets/image%20%2838%29.png)
@@ -182,5 +191,6 @@ public class WordRepository {
 
 ## 🔗 Faydalı Bağlantılar
 
-{% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html" %}
+* 📃 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
+* 👨‍💻 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
 

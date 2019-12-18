@@ -12,6 +12,7 @@
 * [🧱 Temel Bilgiler](temel/README.md)
   * [👮‍♂️ İzinlerin Yönetimi](temel/izinlerin-yoenetimi.md)
   * [🧐 Component İsimleri](temel/component-isimleri.md)
+  * [💌 HTTP İstekleri](temel/http-istekleri.md)
   * [🎪 Android'de Animasyonlar](temel/androidde-animasyonlar.md)
 * [👨‍💼 Verilerin Yönetimi](veriler/README.md)
   * [💾 Veri Saklama Yöntemleri](veriler/veri-saklama-yoentemleri.md)
