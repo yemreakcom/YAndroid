@@ -27,11 +27,11 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 ## ✨ Yeni İçerikler
 
-{% page-ref page="arkaplan/multithreading.md" %}
+{% page-ref page="haberlesme/internete-baglanma.md" %}
 
-{% page-ref page="arkaplan/asynctask-ve-asynctaskloader.md" %}
+{% page-ref page="veriler/room-database.md" %}
 
-{% page-ref page="giris/activity-oernekleri.md" %}
+{% page-ref page="haberlesme/http-istekleri.md" %}
 
 ## 🧐 Değişikliklere Detaylı Bakın
 
