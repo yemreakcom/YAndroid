@@ -15,7 +15,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -53,7 +53,7 @@ public class Person {
 * 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
 * ✨ LiveData yapısı ile güncel verileri döndürür
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 ```java
 @Dao
@@ -150,7 +150,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%2838%29.png)
 
 ```java
 public class WordRepository {

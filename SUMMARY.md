@@ -24,6 +24,7 @@
   * [🪐 Servisler](arkaplan/android-servisleri.md)
   * [🌞 Foreground Service](arkaplan/foreground-service.md)
 * [📶 Haberleşme İşlemleri](haberlesme/README.md)
+  * [🌍 İnternete Bağlanma](haberlesme/internete-baglanma.md)
   * [📶 WiFi P2P](haberlesme/wifi.md)
 * [✨ Faydalı Bilgiler](faydali/README.md)
   * [🤖 Android Things](faydali/android-things.md)

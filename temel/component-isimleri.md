@@ -19,15 +19,15 @@ In the figure above:
 
 ## 🍢 Seek Bar
 
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 ## ⚫ Progress Bar
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 ## 🔀 Navigation Bar
 
-![](../.gitbook/assets/image%20%2834%29.png)
+![](../.gitbook/assets/image%20%2837%29.png)
 
 ## 🕎 Navigation View
 
@@ -35,5 +35,5 @@ In the figure above:
 
 ## 💬 Alert Dialog
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
