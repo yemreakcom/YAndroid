@@ -50,6 +50,7 @@ public class Word {
 
 ## 🛳️ DAO Yapısı
 
+* 🐣 Tablolara erişmek için kullanılan yapıdır
 * 🧱 Abstract veya Interface olmak zorundadır
 * 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
 * ✨ LiveData yapısı ile güncel verileri döndürür
@@ -147,6 +148,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 
 * 🌃 Alt katmanda olan tüm sınıfları tek bir sınıfmış gibi gösterir
   * 😏 Bu sayede **ViewModel** üzerinden birden fazla sınıfla uğraşmak zorunda kalmayız
+  * 🚧 DB üzerinde yapılacak olan tüm işlemlerinde burada metot olarak tanımlanması lazımdır
 * ✨ **LiveData** yapısı sayesinde verileri otomatik günceller
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
@@ -182,8 +184,11 @@ public class WordRepository {
        }
 
        @Override
-       protected Void doInBackground(final Word... params) {
-           mAsyncTaskDao.insert(params[0]);
+       protected Void doInBackground(final Word... words) {
+           for (Word word : words) {
+               mAsyncTaskDao.insert(word);
+           }
+       
            return null;
        }
    }
