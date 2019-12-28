@@ -42,7 +42,7 @@ dependencies {
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2841%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -180,7 +180,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 ```java
 public class WordRepository {
@@ -221,6 +221,70 @@ public class WordRepository {
    }
 }
 ```
+
+## 🛍️ ViewHolder
+
+* 🧱 Yapılandırma değişikliklerine karşı dayanıklıdır
+* 🐣 Repository ile DB'ye erişir
+* 🎳 Activity context objesi gönderilmez, çok maliyetlidir
+* 🥚  Context verisi miras alınmalıdır
+* 📝 UI ile alakalı bilgilerin kaydı ile uğraşır
+
+![](../.gitbook/assets/image%20%2837%29.png)
+
+```java
+public class WordViewModel extends AndroidViewModel {
+
+   private WordRepository mRepository;
+
+   private LiveData<List<Word>> mAllWords;
+
+   public WordViewModel (Application application) {
+       super(application);
+       mRepository = new WordRepository(application);
+       mAllWords = mRepository.getAllWords();
+   }
+
+   LiveData<List<Word>> getAllWords() { return mAllWords; }
+
+   public void insert(Word word) { mRepository.insert(word); }
+}
+```
+
+## ✨ LiveData
+
+* 🔄 Verileri güncel tutmak için kullanılır
+* 📈 Performansı artırır
+* 🧱 Yapılandırma değişikliklerine karşı dayanıklıdır
+  * 📳 Telefonu çevirme vs.
+* 🍱 Tüm katmanlardaki metotlar kapsüllenmelidir
+  * [🗃️ Repository](room-database.md#repository-yapisi)
+  * [🛳️ DAO](room-database.md#dao-yapisi)
+  * [🛍️ ViewHolder](room-database.md#viewholder)
+
+![](../.gitbook/assets/image%20%2840%29.png)
+
+```java
+wordsViewModel.getAllNews().observe(
+    this,
+    words -> fillView(new ArrayList<>(news))
+);
+
+private void fillView(ArrayList<Words> words) {
+    // XML layoutu üzerinden tanımlanması lazımdır
+    RecyclerView recyclerView = findViewById(R.id.rv_words);
+    
+    // Class olarak tanımlanması lazımdır
+    WordsAdapter wordsAdapter = new WordsAdapter(this, words);
+    
+    recyclerView.setAdapter(wordsAdapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+}
+```
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylar için [RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview) alanına bakabilirsiniz.
+{% endhint %}
 
 ## 🔗 Faydalı Bağlantılar
 

@@ -37,7 +37,7 @@ startActivity(intent)
 
 {% tabs %}
 {% tab title="⭐ Örnek" %}
-![](../.gitbook/assets/image%20%2844%29.png)
+![](../.gitbook/assets/image%20%2846%29.png)
 {% endtab %}
 
 {% tab title="Manifest" %}
