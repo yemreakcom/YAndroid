@@ -13,6 +13,33 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 📢 Sayfanın en altındaki linklerden resmi bağlantılara erişebilirsin.
 {% endhint %}
 
+## 🏗️ Projeye Dahil Etme
+
+```java
+dependencies {
+  def room_version = "2.2.3"
+
+  implementation "androidx.room:room-runtime:$room_version"
+  annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+
+  // optional - Kotlin Extensions and Coroutines support for Room
+  implementation "androidx.room:room-ktx:$room_version"
+
+  // optional - RxJava support for Room
+  implementation "androidx.room:room-rxjava2:$room_version"
+
+  // optional - Guava support for Room, including Optional and ListenableFuture
+  implementation "androidx.room:room-guava:$room_version"
+
+  // Test helpers
+  testImplementation "androidx.room:room-testing:$room_version"
+}
+```
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylar için [Declaring dependencies](https://developer.android.com/jetpack/androidx/releases/room#declaring_dependencies) alanına bakabilirsin.
+{% endhint %}
+
 ## 🧱 Temel Yapı
 
 ![](../.gitbook/assets/image%20%2841%29.png)
