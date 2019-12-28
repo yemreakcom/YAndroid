@@ -21,6 +21,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 * 🧱 DB'ye aktarılacak sütun isimlerini temsil ederler
 * 🏷️ [Annotation](https://www.geeksforgeeks.org/annotations-in-java/) yapısı ile özellikleri belirlenir
+* 🔸 Tablodaki sütün isimleri entity üzerindeki değişkenlerle temsil edilir
 * 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
 
 ![](../.gitbook/assets/image%20%288%29.png)
