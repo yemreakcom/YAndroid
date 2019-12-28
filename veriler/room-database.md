@@ -26,16 +26,16 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 ![](../.gitbook/assets/image%20%288%29.png)
 
 ```java
-@Entity(tableName = "person_database")
-public class Person {
+@Entity(tableName = "word_table")
+public class Word {
     @PrimaryKey (autoGenerate=true)
-    private int uid;
+    private int wid;
 
-    @ColumnInfo(name = "first_name")
-    private String firstName;
+    @ColumnInfo(name = "first_word")
+    private String firstWord;
 
-    @ColumnInfo(name = "last_name")
-    private String lastName;
+    @ColumnInfo(name = "last_word")
+    private String lastWord;
 
     // Getters and setters are not shown for brevity,
     // but they're required for Room to work if variables are private.
