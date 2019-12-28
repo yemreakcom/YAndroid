@@ -20,7 +20,9 @@ description: Android üzerinde verileri kaydetme
 
 ## 🆚 Shared Preference vs Database
 
-{% embed url="https://stackoverflow.com/a/9606629/9770490" %}
+{% embed url="https://stackoverflow.com/a/6276936/9770490" %}
 
 ## 📜 JSON Verilerini İşleme
+
+{% embed url="https://stackoverflow.com/a/9606629/9770490" %}
 
