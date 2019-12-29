@@ -1,3 +1,7 @@
+---
+description: 'Android üzerinde internet üzerinden dosya indirme, ayrıştırma ve kullanma'
+---
+
 # ⏬ Dosya İndirme
 
 ## 🏗️ URI Oluşturma
@@ -54,9 +58,12 @@ private String downloadUrl(String myurl) throws IOException {
         if (inputStream != null) {
             inputStream.close();
         }
-    }
-}
+    }‍🧙‍♂ Detaylı bilgi için TEMP alanına bakabilirsin
 ```
+
+{% hint style="info" %}
+📢 İstekte bulunmadan önce [👨‍💼 Bağlantı Durumunu Yönetme](internete-baglanma.md#baglanti-durumunu-yoenetme) alanından bağlantını kontrol etmelisin
+{% endhint %}
 
 ## 🔄 Veri Akışını Objeye Çevirme
 
