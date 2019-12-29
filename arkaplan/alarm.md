@@ -9,7 +9,7 @@
 
 > 🙄 Telefondaki alarmdan bahsetmiyorum.
 
-![](../.gitbook/assets/image%20%2856%29.png)
+![](../.gitbook/assets/image%20%2857%29.png)
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Introduction ~ 8.2 Alarm](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-8-alarms-and-schedulers/8-2-c-alarms/8-2-c-alarms.html#chapterstart) alanına bakabilirsin.
@@ -72,7 +72,7 @@ alarmManager.cancel(alarmIntent);
 
 ## 🙇‍♂️ WakeUp \(Uyandırma\)
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 ## 👁️ Görülebilir Alarmlar
 

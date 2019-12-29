@@ -4,6 +4,10 @@ description: Android üzerinde haber (Broadcast) oluşturma
 
 # 🏗️ Oluşturma \| Broadcast
 
+## 👀 Metotlara Göz Atma
+
+![](../../.gitbook/assets/image%20%2819%29.png)
+
 ## 🎈 Normal Broadcast
 
 * 🌃 Sırasız olarak tüm uygulamalara duyurulan haber yapısıdır
