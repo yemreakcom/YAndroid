@@ -1,5 +1,9 @@
 # 🏗️ Broadcast Oluşturma
 
+## ✍ Yazılı Notlarım
+
+![](../../.gitbook/assets/image%20%288%29.png)
+
 ## 🎈 Normal Broadcast
 
 * 🌃 Sırasız olarak tüm uygulamalara duyurulan haber yapısıdır
