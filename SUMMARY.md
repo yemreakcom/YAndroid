@@ -19,6 +19,7 @@
   * [🗨 AlertDialog](gui/alertdialog.md)
 * [👨‍💼 Verilerin Yönetimi](veriler/README.md)
   * [🔸 Veri Saklama Yöntemleri](veriler/veri-saklama-yoentemleri.md)
+  * [📜 JSON Yönetimi](veriler/json-yoenetimi.md)
   * [📂 Dosya İşlemleri](veriler/dosya-islemleri.md)
   * [👐 Shared Preferences](veriler/shared-preferences.md)
   * [🗃️ SQLite](veriler/sqlite.md)

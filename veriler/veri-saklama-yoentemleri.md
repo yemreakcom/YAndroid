@@ -30,10 +30,6 @@ description: Android üzerinde verileri kaydetme
 ‍🧙‍♂ Detaylı bilgi için [Pros and Cons of SQL and Shared Preferences](https://stackoverflow.com/a/6276936/9770490) alanına bakabilirsin.
 {% endhint %}
 
-## 📜 JSON Verilerini İşleme
-
-{% embed url="https://stackoverflow.com/a/9606629/9770490" %}
-
 ## 🔗 Faydalı Bağlantılar
 
 {% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-9-preferences-and-settings/9-0-c-data-storage/9-0-c-data-storage.html" %}
