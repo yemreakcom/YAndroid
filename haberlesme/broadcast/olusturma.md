@@ -45,3 +45,16 @@ LocalBroadcastManager.getInstance(this).sendBroadcast(customBroadcastIntent);
 ‍🧙‍♂ Detaylı bilgi için  [Broadcasts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-3-c-broadcasts/7-3-c-broadcasts.html#broadcasts) alanına bakabilirsin.
 {% endhint %}
 
+## 👮‍♂️ İzin Gerektirenler
+
+* 📝 Manifest dosyası üzerinde `uses-permission` ile izin alınması gerekir
+* 🚫 İzni olmayanlar uygulamaların erişmesi engellenir
+
+```java
+sendBroadcast(new Intent("com.example.NOTIFY"),Manifest.permission.SEND_SMS);
+```
+
+```markup
+<uses-permission android:name="android.permission.SEND_SMS"/>
+```
+

@@ -43,7 +43,7 @@ alarmMgr.set(AlarmManager.ELAPSED_REALTIME,
 ```
 
 {% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için  [Scheduling an alarm](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-8-alarms-and-schedulers/8-2-c-alarms/8-2-c-alarms.html#scheduling) alanına bakabilirsin.
+‍🧙‍♂ Detaylı bilgi için  [Scheduling an alarm](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-8-alarms-and-schedulers/8-2-c-alarms/8-2-c-alarms.html#scheduling) alanına veya [GitHub Koduna](https://github.com/google-developer-training/android-fundamentals-apps-v2/blob/master/StandUp/app/src/main/java/com/android/fundamentals/standup/MainActivity.java#L91) bakabilirsin.
 {% endhint %}
 
 ### ⏲ Tekrarlı Alarmlar
