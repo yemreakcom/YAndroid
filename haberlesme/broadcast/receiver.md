@@ -1,4 +1,8 @@
-# 📡 Broadcast Alma
+---
+description: Android üzerinde haber (broadcast) alma veya alıcılarının kullanımı
+---
+
+# 📡 Receiver \| Broadcast
 
 ## ❣️ Broadcast Receiver Hakkında
 

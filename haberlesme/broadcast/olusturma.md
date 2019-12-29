@@ -1,4 +1,8 @@
-# 🏗️ Broadcast Oluşturma
+---
+description: Android üzerinde haber (Broadcast) oluşturma
+---
+
+# 🏗️ Oluşturma \| Broadcast
 
 ## 🎈 Normal Broadcast
 
