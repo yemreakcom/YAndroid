@@ -42,7 +42,7 @@ dependencies {
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2846%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -51,7 +51,7 @@ dependencies {
 * 🔸 Tablodaki sütün isimleri entity üzerindeki değişkenlerle temsil edilir
 * 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 ```java
 @Entity(tableName = "word_table")
@@ -82,7 +82,7 @@ public class Word {
 * 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
 * ✨ LiveData yapısı ile güncel verileri döndürür
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 ```java
 @Dao
@@ -125,7 +125,7 @@ public interface WordDao {
   *  `version` alanında db'nin en son sürümünü belirtin
   * 🐛 Versiyon geçişleri arasındaki sorunları engellemek için `fallbackToDestructiveMigration()` özelliği eklenir
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 ```java
 @Database(entities = {Word.class}, version = 1)
@@ -180,7 +180,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2839%29.png)
+![](../.gitbook/assets/image%20%2842%29.png)
 
 ```java
 public class WordRepository {
@@ -230,7 +230,7 @@ public class WordRepository {
 * 🥚  Context verisi miras alınmalıdır
 * 📝 UI ile alakalı bilgilerin kaydı ile uğraşır
 
-![](../.gitbook/assets/image%20%2837%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
 ```java
 public class WordViewModel extends AndroidViewModel {
@@ -262,7 +262,7 @@ public class WordViewModel extends AndroidViewModel {
   * [🛳️ DAO](room-database.md#dao-yapisi)
   * [🛍️ ViewHolder](room-database.md#viewholder)
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 ```java
 wordsViewModel.getAllNews().observe(
