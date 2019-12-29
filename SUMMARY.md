@@ -17,6 +17,7 @@
   * [🎪 Android'de Animasyonlar](gui/androidde-animasyonlar.md)
   * [🗂️ RcycleView](gui/rcycleview.md)
   * [🗨 AlertDialog](gui/alertdialog.md)
+  * [🍱 Menu](gui/menu.md)
 * [👨‍💼 Verilerin Yönetimi](veriler/README.md)
   * [🔸 Veri Saklama Yöntemleri](veriler/veri-saklama-yoentemleri.md)
   * [📜 JSON Yönetimi](veriler/json-yoenetimi.md)

@@ -135,3 +135,7 @@ Bu yapı [Activity Launch Modes](activity-launch-modes.md) ile değiştirilebilm
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
+## 🔗 Faydalı Kaynaklar
+
+{% embed url="https://developer.android.com/training/sharing/send" %}
+
