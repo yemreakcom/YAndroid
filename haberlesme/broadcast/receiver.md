@@ -1,6 +1,6 @@
-# 📡 Broadcast Receiver
+# 📡 Broadcast Alma
 
-## ❣️ Receiver Hakkında
+## ❣️ Broadcast Receiver Hakkında
 
 * 🚫 UI thread üzerinden gerçekleştiğinden uzun işlemler yapılmamalı
 * ⛔  `onReceive()` metodu içerisinde asenkron işlemler yapmayın
@@ -96,6 +96,22 @@ LocalBroadcastManager.getInstance(this)
 ```text
  LocalBroadcastManager.getInstance(this)
     .unregisterReceiver(mReceiver);
+```
+
+## 🔏 İzin Gerektirenlerin Alımı
+
+```markup
+<receiver android:name=".MyBroadcastReceiver"
+    android:permission="android.permission.SEND_SMS">
+    <intent-filter>
+        <action android:name="android.intent.action.AIRPLANE_MODE"/>
+    </intent-filter>
+</receiver>
+```
+
+```java
+IntentFilter filter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 ```
 
 ## 👮‍♂ Broadcast Kısıtlamaları
