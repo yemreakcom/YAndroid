@@ -35,7 +35,7 @@ Android'teki tüm görüntü işlemlerinin yapıldı alandır.
 * UI Thread sadece görsel işlemler için kullanılmalıdır
 * Tüm işlemler 16ms'den kısa bir sürede tamamlanmalıdır
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
 {% hint style="danger" %}
 Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](http://developer.android.com/guide/practices/responsiveness.html)" \(ANR\) diyaloğunu oluşturur ve kullanıcı bunu görmesi durumunda uygulamayı kapatıp, siler 😥
@@ -56,7 +56,7 @@ Verilen işlemi arkaplanda, sistemi bloklamadan tamamlar.
 
 {% tabs %}
 {% tab title="🎈 Kullanım" %}
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ![](../.gitbook/assets/image%20%2825%29.png)
 
