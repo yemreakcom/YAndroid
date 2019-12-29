@@ -61,7 +61,7 @@ private String downloadUrl(String myurl) throws IOException {
     }‍🧙‍♂ Detaylı bilgi için TEMP alanına bakabilirsin
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 📢 İstekte bulunmadan önce [👨‍💼 Bağlantı Durumunu Yönetme](internete-baglanma.md#baglanti-durumunu-yoenetme) alanından bağlantını kontrol etmelisin
 {% endhint %}
 
