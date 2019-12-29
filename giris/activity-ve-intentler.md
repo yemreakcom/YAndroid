@@ -173,7 +173,7 @@ public void onActivityResult(int requestCode, int resultCode,  Intent data) {
 
 ### Back navigation, tasks, and the back stack
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 ### Implement Up navigation with a parent Activity
 

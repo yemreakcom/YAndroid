@@ -34,7 +34,7 @@ private class myReceiver extends BroadcastReceiver {
 
 ## 🔸 Receiver Türleri
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 ### 🎳 Static Receiver
 
@@ -100,7 +100,7 @@ LocalBroadcastManager.getInstance(this)
 
 ## 👮‍♂ Broadcast Kısıtlamaları
 
-![](../../.gitbook/assets/image%20%2851%29.png)
+![](../../.gitbook/assets/image%20%2852%29.png)
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için  [Restricting broadcasts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-3-c-broadcasts/7-3-c-broadcasts.html#restricting_broadcasts) alanına bakabilirsin.
@@ -108,7 +108,7 @@ LocalBroadcastManager.getInstance(this)
 
 ## 🌟 Broadcast Tavsiyeleri
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
 ## 🔗 Faydalı Bağlantılar
 
