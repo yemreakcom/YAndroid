@@ -34,7 +34,7 @@
   * [🌍 İnternete Bağlanma](haberlesme/internete-baglanma.md)
   * [⏬ Dosya İndirme](haberlesme/dosya-indirme.md)
   * [📢 Broadcast](haberlesme/broadcast/README.md)
-    * [🔰 Giriş \| Broadcast](haberlesme/broadcast/giris.md)
+    * [👣 Giriş \| Broadcast](haberlesme/broadcast/giris.md)
     * [🏗️ Broadcast Oluşturma](haberlesme/broadcast/olusturma.md)
     * [📡 Broadcast Alma](haberlesme/broadcast/receiver.md)
   * [💌 HTTP İstekleri](haberlesme/http-istekleri.md)
