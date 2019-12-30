@@ -14,3 +14,13 @@ description: Android dünyasına giriş
 * Add [`Log`](https://developer.android.com/reference/android/util/Log.html) statements to your app, which display messages in the Logcat pane as a basic tool for debugging.
 * To run your app on a physical Android device using Android Studio, turn on USB Debugging on the device. Open **Settings &gt; About phone** and tap **Build number** seven times. Return to the previous screen \(**Settings**\), and tap **Developer options**. Choose **USB Debugging**.
 
+
+
+* [How to copy and rename a project](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#copy_project)
+* [How to delete a project](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#delete_project)
+* [How to extract resources](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#extractresources)
+* [How to add Android support libraries](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#add_support_libraries)
+* [How to create images in Asset Studio](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#asset_studio)
+* [How to compare custom objects](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#compare_objects)
+* [How to save the state of custom objects](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/appendix/appendix-utilities/appendix-utilities.html#save_objects)
+
