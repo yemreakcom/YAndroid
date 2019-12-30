@@ -6,7 +6,7 @@ description: Android üzerinde haber (Broadcast) oluşturma
 
 ## 👀 Metotlara Göz Atma
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ## 🎈 Normal Broadcast
 

@@ -37,3 +37,16 @@ description: Android üzerinde arkaplanda çalışan arayüzü olmayan Activity'
   * ❌ İşi bittiğinde kapanan bir sistemdir
 * 👪 Servisin birden fazla istekle baş etmesi gerekirse [IntentService](https://developer.android.com/guide/components/services#ExtendingIntentService) yerine [Service](https://developer.android.com/guide/components/services#ExtendingService) kullanılır
 
+## 📢 Servis Tanımlama
+
+```markup
+<manifest ... >
+  ...
+  <application ... >
+      <service android:name="ExampleService"
+               android:exported="false" />
+      ...
+  </application>
+</manifest>
+```
+

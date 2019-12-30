@@ -1,7 +1,6 @@
 # Table of contents
 
 * [📲 Android Notlarım](README.md)
-* [🌟 Faydalı Kaynaklar](https://learn.yemreak.com/icerikler/android)
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [🔰 Android'e Giriş](giris/README.md)
   * [📃 Activity ve Intent'ler](giris/activity-ve-intentler.md)
@@ -29,16 +28,16 @@
   * [🌠 MultiThreading](arkaplan/multithreading.md)
   * [💫 Asenkron İşlemler](arkaplan/asynctask-ve-asynctaskloader.md)
   * [🪐 Servisler](arkaplan/android-servisleri.md)
-  * [⏰ Alarm](arkaplan/alarm.md)
   * [🌞 Foreground Service](arkaplan/foreground-service.md)
+  * [⏰ Alarm](arkaplan/alarm.md)
 * [📶 Haberleşme İşlemleri](haberlesme/README.md)
   * [🌍 İnternete Bağlanma](haberlesme/internete-baglanma.md)
+  * [💌 HTTP İstekleri](haberlesme/http-istekleri.md)
   * [⏬ Dosya İndirme](haberlesme/dosya-indirme.md)
   * [📢 Broadcast](haberlesme/broadcast/README.md)
     * [👣 Giriş \| Broadcast](haberlesme/broadcast/giris.md)
     * [🏗️ Oluşturma \| Broadcast](haberlesme/broadcast/olusturma.md)
     * [📡 Receiver \| Broadcast](haberlesme/broadcast/receiver.md)
-  * [💌 HTTP İstekleri](haberlesme/http-istekleri.md)
   * [📶 WiFi P2P](haberlesme/wifi.md)
 * [✨ Faydalı Bilgiler](faydali/README.md)
   * [🤖 Android Things](faydali/android-things.md)
@@ -58,13 +57,14 @@
 
 ## Faydalı Kaynaklar
 
+* [👨‍🏫 Öğrenme Yolları](https://learn.yemreak.com/icerikler/android)
 * [📋 Tüm Yabancı Notlar](faydali-kaynaklar/tuem-yabanci-notlar.md)
 * [📦 UI / UX Kütüphaneleri](faydali-kaynaklar/ui-ux-kuetuephaneleri.md)
 
 ## Derlenmiş Çalışmalarım
 
 * [🙋‍♂️ YEmreAk](https://welcome.yemreak.com)
-* [📖 Kişisel Kütüphanem](https://wiki.yemreak.com)
+* [📖 Kişisel Kütüphanem](https://lib.yemreak.com)
 * [👨‍🏫 Öğrenme Yolları](https://learn.yemreak.com)
 * [🐍 Python Notlarım](https://python.yemreak.com)
 * [🧠 Yapay Zeka Notlarım](https://ai.yemreak.com)

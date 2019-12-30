@@ -8,11 +8,11 @@
 * Diğer uygulamalara istekte bulunmayı sağlar
 * [✅ App Chooser](implicit-intents.md#app-chooser) adı verilen yapı ile kullanıcıya seçim hakkı tanınır
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 ## ✅ App Chooser
 
-![](../.gitbook/assets/image%20%2831%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ## 
 
