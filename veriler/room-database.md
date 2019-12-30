@@ -42,7 +42,7 @@ dependencies {
 
 ## 🧱 Temel Yapı
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 ## ⭐ Entity Yapısı
 
@@ -180,7 +180,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
 
-![](../.gitbook/assets/image%20%2848%29.png)
+![](../.gitbook/assets/image%20%2849%29.png)
 
 ```java
 public class WordRepository {
@@ -230,7 +230,7 @@ public class WordRepository {
 * 🥚  Context verisi miras alınmalıdır
 * 📝 UI ile alakalı bilgilerin kaydı ile uğraşır
 
-![](../.gitbook/assets/image%20%2846%29.png)
+![](../.gitbook/assets/image%20%2847%29.png)
 
 ```java
 public class WordViewModel extends AndroidViewModel {
@@ -262,7 +262,7 @@ public class WordViewModel extends AndroidViewModel {
   * [🛳️ DAO](room-database.md#dao-yapisi)
   * [🛍️ ViewHolder](room-database.md#viewholder)
 
-![](../.gitbook/assets/image%20%2849%29.png)
+![](../.gitbook/assets/image%20%2850%29.png)
 
 ```java
 wordsViewModel.getAllNews().observe(

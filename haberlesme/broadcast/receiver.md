@@ -38,7 +38,7 @@ private class myReceiver extends BroadcastReceiver {
 
 ## 🔸 Receiver Türleri
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image%20%2832%29.png)
 
 ### 🎳 Static Receiver
 
@@ -120,7 +120,7 @@ registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 
 ## 👮‍♂ Broadcast Kısıtlamaları
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2856%29.png)
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için  [Restricting broadcasts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-3-c-broadcasts/7-3-c-broadcasts.html#restricting_broadcasts) alanına bakabilirsin.
@@ -128,7 +128,7 @@ registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 
 ## 🌟 Broadcast Tavsiyeleri
 
-![](../../.gitbook/assets/image%20%2838%29.png)
+![](../../.gitbook/assets/image%20%2839%29.png)
 
 ## 🔗 Faydalı Bağlantılar
 

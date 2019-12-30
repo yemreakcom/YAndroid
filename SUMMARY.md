@@ -56,6 +56,11 @@
   * [📜 XML Örneği](duzensiz/xml-oernegi.md)
 * [🔗 Karışık Bağlantılar](karisik-baglantilar.md)
 
+## Faydalı Kaynaklar
+
+* [📋 Tüm Yabancı Notlar](faydali-kaynaklar/tuem-yabanci-notlar.md)
+* [📦 UI / UX Kütüphaneleri](faydali-kaynaklar/ui-ux-kuetuephaneleri.md)
+
 ## Derlenmiş Çalışmalarım
 
 * [🙋‍♂️ YEmreAk](https://welcome.yemreak.com)
