@@ -8,7 +8,7 @@ description: Android üzerinde haber (broadcast) alma veya alıcılarının kull
 
 * 🚫 UI thread üzerinden gerçekleştiğinden uzun işlemler yapılmamalı
 * ⛔  `onReceive()` metodu içerisinde asenkron işlemler yapmayın
-  * 🤷‍♂️ Yapsanız bile `return`metodundan sonra broadcast işlemleri sonlandırılır
+  * 🤷‍♂️ Yapsanız bile `return` metodundan sonra broadcast işlemleri sonlandırılır
   * ☠️ Haliyle işlem asenkron olsa bile broadcast yapısına bağlı olduğundan ölecektir
 * 🗨 `AlertDialog` gibi işlemler yerine `Notification` yapısı tercih edilmelidir
 
