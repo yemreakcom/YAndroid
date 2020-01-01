@@ -97,8 +97,10 @@ public class Word {
 * ✨ LiveData yapısı ile güncel verileri döndürür
 
 {% hint style="warning" %}
-📢 SQLite ile SQL Server syntax yapısı farklı olabilmekte
+📢 SQLite ile SQL Server syntax yapısı [buradaki](https://stackoverflow.com/questions/51553855/delete-data-in-room-using-inner-join) kaynağa göre farklı olabilmekte
 {% endhint %}
+
+
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
