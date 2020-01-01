@@ -304,6 +304,7 @@ private void fillView(ArrayList<Words> words) {
 
 * 📃 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
 * 👨‍💻 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
+* 👨‍🏫 [Room ~ Android Training](https://developer.android.com/training/data-storage/room)
 * [🐣 Accessing data using Room DAOs](https://developer.android.com/training/data-storage/room/accessing-data)
 * [👁️ Android, RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
 
