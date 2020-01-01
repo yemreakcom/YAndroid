@@ -93,8 +93,12 @@ public class Word {
 
 * 🐣 Tablolara erişmek için kullanılan yapıdır
 * 🧱 Abstract veya Interface olmak zorundadır
-* 🏷️ SQL query metinleri metotlara Annotation yapısı ile tanımlanır
+* 🏷️ SQLite query metinleri metotlara Annotation yapısı ile tanımlanır
 * ✨ LiveData yapısı ile güncel verileri döndürür
+
+{% hint style="warning" %}
+📢 SQLite ile SQL Server syntax yapısı farklı olabilmekte
+{% endhint %}
 
 ![](../.gitbook/assets/image%20%2823%29.png)
 
