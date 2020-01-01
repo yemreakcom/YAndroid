@@ -75,6 +75,20 @@ public class Word {
 👀 Daha fazlası için [Entity](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#entity) ve [Defining data using Room entities](https://developer.android.com/training/data-storage/room/defining-data.html) dokümanlarına bakabilirsin.
 {% endhint %}
 
+### 👀 Entity Hakkında Bir Kaç Detay
+
+*  💡 SQL yapısında veriler 64 bit olduğundan:
+* 🧮 32bit long değeri 64bit int değerine eş değerdir
+* 🔄 `id` değerlerini **long** olarak tutsanız da android onu **int** olarak tanımlanacaktır
+* 🏹 Veri tabanına eklenen verilerin `id` bilgileri **long** olarak döndürülür
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgiler için bağlantılar:
+
+* [Primary Key in Room should be int or long?](https://stackoverflow.com/questions/55994734/primary-keys-in-room-should-be-int-or-long)
+* [Android Room - Get the id of new inserted row with auto-generate](https://stackoverflow.com/a/44364516/9770490)
+{% endhint %}
+
 ## 🛳️ DAO Yapısı
 
 * 🐣 Tablolara erişmek için kullanılan yapıdır
