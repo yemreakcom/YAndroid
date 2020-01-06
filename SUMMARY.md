@@ -48,6 +48,7 @@
   * [🐛 Hata Notları](faydali/hata-notlari.md)
   * [🚧 Proje İşlemleri](faydali/proje-islemleri.md)
 * [🥴 Düzensiz Notlar](duzensiz/README.md)
+  * [🐞 Hata Notları](duzensiz/hata-notlari.md)
   * [🔰 Giriş](duzensiz/giris.md)
   * [👶 İlk Etkileşimli UI](duzensiz/ilk-etkilesimli-ui.md)
   * [🔤 TextView](duzensiz/textview.md)
@@ -64,7 +65,6 @@
 
 ## Derlenmiş Çalışmalarım
 
-* [🙋‍♂️ YEmreAk](https://welcome.yemreak.com)
 * [📖 Kişisel Kütüphanem](https://lib.yemreak.com)
 * [👨‍🏫 Öğrenme Yolları](https://learn.yemreak.com)
 * [🐍 Python Notlarım](https://python.yemreak.com)
