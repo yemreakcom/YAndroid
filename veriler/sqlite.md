@@ -4,7 +4,11 @@ description: Android üzerinde SQLite ile veri tabanı oluşturma
 
 # 🗃️ SQLite
 
-### SQLite Giriş Temelleri
+## ✍ Yazılı Notlarım
+
+![](../.gitbook/assets/sqlite_hand.png)
+
+## 🧱 Temel İşlemler
 
 İlk olarak try - catch yapısı kurulur ve olası sorunda programın kapanması engellenir.
 
@@ -19,7 +23,7 @@ catch (e : Exception){
 
 > Bütün kodları `...` olan yere yazacağız. Artık başlayabiliriz.
 
-### SQLite ile Basit DB Oluşturma
+## 🏗️ Basit DB Oluşturma
 
 `database = openOrCreateDatabase("Datas", Context.MODE_PRIVATE, null)`
 
@@ -29,7 +33,7 @@ catch (e : Exception){
   * \(Context.MODE yazıp ALT+ SPACE yaparsanız detaylar çıkacaktır karşınıza\)
 * null : CursorFactory
 
-### SQLite DB Oluşturma Kodları
+## 👨‍💻 DB Oluşturma Kodları
 
 ```text
 try {
@@ -47,7 +51,7 @@ try {
 * `VARCHAR` char
 * `INT` Int
 
-### SQLite DB İşlemleri Değiştirme
+## 👨‍🔧 DB İşlemleri Değiştirme
 
 Temel yapısı `database.execSQL("...")` şeklindedir.
 
@@ -72,7 +76,7 @@ database.execSQL("SELECT FROM datas WHERE name LIKE '%u%") // içinde 'u' harfi 
 * `'Yunus'` VARCHAR \(string\) tipindeki veri
 * `21` INT\(2\) \(Int\) tipindeki veri
 
-### SQLite DB Okuma
+## 👀 DB Okuma
 
 ```text
 if (database != null) {

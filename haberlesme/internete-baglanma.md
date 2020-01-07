@@ -2,6 +2,8 @@
 
 ## ✍ El Notlarım
 
+![](../.gitbook/assets/connect_internet_hand.png)
+
 ## 👮‍♂️ Gerekli İzinlerin Alınması
 
 * 📃 `AndroidManifest.xml` dosyası üzerinden internet izni alınmalıdır

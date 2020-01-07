@@ -42,12 +42,16 @@ dependencies {
 
 ## 🧱 Temel Yapı
 
+![](../.gitbook/assets/roomdb_schema.png)
+
 ## ⭐ Entity Yapısı
 
 * 🧱 DB'ye aktarılacak sütun isimlerini temsil ederler
 * 🏷️ [Annotation](https://www.geeksforgeeks.org/annotations-in-java/) yapısı ile özellikleri belirlenir
 * 🔸 Tablodaki sütün isimleri entity üzerindeki değişkenlerle temsil edilir
 * 👮‍♂️ **Primary key** ve **Entity** etiketini eklemek zorunludur
+
+![](../.gitbook/assets/entity_hand.png)
 
 ```java
 @Entity(tableName = "word_table")
@@ -98,6 +102,8 @@ public class Word {
 
 
 
+![](../.gitbook/assets/dao_hand.png)
+
 ```java
 @Dao
 public interface WordDao {
@@ -139,6 +145,8 @@ public interface WordDao {
   *  `version` alanında db'nin en son sürümünü belirtin
   * 🐛 Versiyon geçişleri arasındaki sorunları engellemek için `fallbackToDestructiveMigration()` özelliği eklenir
 
+![](../.gitbook/assets/roomdb_hand.png)
+
 ```java
 @Database(entities = {Word.class}, version = 1)
 public abstract class WordRoomDatabase extends RoomDatabase {
@@ -177,6 +185,8 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 *  Birden fazla Thread gelmesi durumunda engellemek için **synchronized** anahtar kelimesi kullanılır
 * ✨ Gereksiz Thread engelinden sakınmak için, synchronized yapısı içerisinde tekrardan **if kontrolü** yapılmalıdır
 
+![](../.gitbook/assets/syncronized.png)
+
 {% hint style="info" %}
 👀 Detaylar için [Multi-threading](../arkaplan/multithreading.md) alanına bakabilirsin.
 {% endhint %}
@@ -189,6 +199,8 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 * ✨ **LiveData** yapısı sayesinde verileri otomatik günceller
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
 * 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
+
+![](../.gitbook/assets/room_repo_hand.png)
 
 ```java
 public class WordRepository {
@@ -238,6 +250,8 @@ public class WordRepository {
 * 🥚  Context verisi miras alınmalıdır
 * 📝 UI ile alakalı bilgilerin kaydı ile uğraşır
 
+![](../.gitbook/assets/room_vh_hand.png)
+
 ```java
 public class WordViewModel extends AndroidViewModel {
 
@@ -267,6 +281,8 @@ public class WordViewModel extends AndroidViewModel {
   * [🗃️ Repository](room-database.md#repository-yapisi)
   * [🛳️ DAO](room-database.md#dao-yapisi)
   * [🛍️ ViewHolder](room-database.md#viewholder)
+
+![](../.gitbook/assets/room_livedata_hand.png)
 
 ```java
 wordsViewModel.getAllNews().observe(

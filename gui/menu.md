@@ -7,6 +7,8 @@
 * 🍢 Contextual Action Bar
 * 🎈 Popup
 
+![](../.gitbook/assets/menus_types.png)
+
 ## ⚙️ App bar ve Option Menu
 
 1. 🏹 Navigation
@@ -14,10 +16,14 @@
 3. 🏃‍♂️ Actions
 4. 🗃️ Overflow
 
+![](../.gitbook/assets/appbar_menus.png)
+
 1. 🍢 App bar
 2. 🏃‍♂️ Action icons
 3. 🎛️ Overflow Button
 4. 🗃️ Overflow menu
+
+![](../.gitbook/assets/app_bar_menus2.png)
 
 ## 📦 Bağımlılıkları Dahil Etme
 

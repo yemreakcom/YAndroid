@@ -27,6 +27,7 @@
 * [🌄 Arkaplan'da Çalışma](arkaplan/README.md)
   * [🌠 MultiThreading](arkaplan/multithreading.md)
   * [💫 Asenkron İşlemler](arkaplan/asynctask-ve-asynctaskloader.md)
+  * [🔁 AsyncTask](arkaplan/asynctask.md)
   * [🪐 Servisler](arkaplan/android-servisleri.md)
   * [🌞 Foreground Service](arkaplan/foreground-service.md)
   * [⏰ Alarm](arkaplan/alarm.md)
