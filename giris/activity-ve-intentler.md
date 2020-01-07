@@ -171,11 +171,11 @@ public void onActivityResult(int requestCode, int resultCode,  Intent data) {
 
 ## 🏹 Activity Navigation
 
-### ↩ Back navigation, tasks, and the back stack
+### Back navigation, tasks, and the back stack
 
 
 
-### ⏫ Implement Up navigation with a parent Activity
+### Implement Up navigation with a parent Activity
 
 ```markup
 <application
