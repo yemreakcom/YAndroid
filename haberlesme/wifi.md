@@ -185,7 +185,6 @@ private void unregisterWifiFilter() {
 
 ## 🔗 Faydalı Bağlantılar
 
-{% embed url="https://developer.android.com/guide/topics/connectivity/wifip2p.html" %}
-
-
+* [📖 WiFi Direct P2P Overview](https://developer.android.com/guide/topics/connectivity/wifip2p.html)
+* [👨‍💻 WiFi Direct Demo](https://android.googlesource.com/platform/development/+/master/samples/WiFiDirectDemo/src/com/example/android/wifidirect?autodive=0%2F)
 
