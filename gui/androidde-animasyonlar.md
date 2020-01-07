@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 {% tabs %}
 {% tab title="⭐ Görsel" %}
-![](../.gitbook/assets/image%20%2828%29.png)
+
 {% endtab %}
 
 {% tab title="📜 XML Kodları" %}

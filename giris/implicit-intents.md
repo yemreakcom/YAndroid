@@ -12,8 +12,6 @@
 
 ## ✅ App Chooser
 
-![](../.gitbook/assets/image%20%2832%29.png)
-
 ## 
 
 ## ✨ Implicit Intent Oluşturma

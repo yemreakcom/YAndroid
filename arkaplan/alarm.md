@@ -9,8 +9,6 @@
 
 > 🙄 Telefondaki alarmdan bahsetmiyorum.
 
-![](../.gitbook/assets/image%20%2859%29.png)
-
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Introduction ~ 8.2 Alarm](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-8-alarms-and-schedulers/8-2-c-alarms/8-2-c-alarms.html#chapterstart) alanına bakabilirsin.
 {% endhint %}
@@ -71,8 +69,6 @@ alarmManager.cancel(alarmIntent);
 ```
 
 ## 🙇‍♂️ WakeUp \(Uyandırma\)
-
-![](../.gitbook/assets/image%20%2860%29.png)
 
 ## 👁️ Görülebilir Alarmlar
 

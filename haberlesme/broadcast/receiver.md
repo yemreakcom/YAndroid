@@ -38,15 +38,13 @@ private class myReceiver extends BroadcastReceiver {
 
 ## 🔸 Receiver Türleri
 
-![](../../.gitbook/assets/image%20%2833%29.png)
-
 ### 🎳 Static Receiver
 
 * 📝 Manifest üzerinden kayıt edilmeleri gerekir
 * 😥 Uygulamamızı hedef almayan yayınlarını Android 8.0'dan itibaren alamaz
 * 🎈 [implicit broadcast exceptions](https://developer.android.com/guide/components/broadcast-exceptions) yayınlarını hala alabilmektedir
 
-```java
+```markup
 <receiver
  android:name=".AlarmReceiver"
  android:exported="false">
@@ -68,7 +66,7 @@ private class myReceiver extends BroadcastReceiver {
  filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
 ```
 
-### 🎫 Broadcast Kayıtları
+## 🎫 Broadcast Kayıtları
 
 * 🎌 İlk olarak `receiver` yapısını uygulamamıza `registerReceiver` ile kaydederiz
 * 🙋‍♂️ Genelde `onResume` içerisinde `registerReceiver` işlemi yapılır
@@ -120,15 +118,13 @@ registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 
 ## 👮‍♂ Broadcast Kısıtlamaları
 
-![](../../.gitbook/assets/image%20%2857%29.png)
-
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için  [Restricting broadcasts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-3-c-broadcasts/7-3-c-broadcasts.html#restricting_broadcasts) alanına bakabilirsin.
 {% endhint %}
 
 ## 🌟 Broadcast Tavsiyeleri
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2832%29.png)
 
 ## 🔗 Faydalı Bağlantılar
 

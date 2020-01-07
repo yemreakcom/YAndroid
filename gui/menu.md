@@ -23,8 +23,6 @@
 3. 🎛️ Overflow Button
 4. 🗃️ Overflow menu
 
-![](../.gitbook/assets/image%20%2862%29.png)
-
 ## 📦 Bağımlılıkları Dahil Etme
 
 ```groovy
