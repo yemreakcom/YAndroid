@@ -43,7 +43,7 @@ Log.d(DEBUG_TAG, "Mobile connected: " + isMobileConn);
 
 * 🕐 Bağlantı işlemleri uzun sürebilir
 * 🚫 UI Thread üzerinden yapılmamalıdır, aksi halde uygulamayı engelleyebilir
-* 💫 Bağlantı işlemleri [Asenkron İşlemler](../arkaplan/asynctask-ve-asynctaskloader.md) yazısına göre yapılmalıdır
+* 💫 Bağlantı işlemleri [Asenkron İşlemler](../arkaplan/asynctask-ve-asynctaskloader/) yazısına göre yapılmalıdır
 
 ## 👮‍♂️ Güvenlik Notları
 

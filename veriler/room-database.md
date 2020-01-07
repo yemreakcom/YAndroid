@@ -198,7 +198,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
   * 🚧 DB üzerinde yapılacak olan tüm işlemlerinde burada metot olarak tanımlanması lazımdır
 * ✨ **LiveData** yapısı sayesinde verileri otomatik günceller
   * 🦄 Verilerin aktarımı bir defaya mahsus **Constructor** üzerinde yapılır
-* 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader.md) yapısı kullanılır
+* 🌠 Verilerin aktarılması **asenkron** olması gerektiğinden [AsyncTask](../arkaplan/asynctask-ve-asynctaskloader/) yapısı kullanılır
 
 ![](../.gitbook/assets/room_repo_hand.png)
 

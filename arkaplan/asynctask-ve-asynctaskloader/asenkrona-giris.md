@@ -1,10 +1,6 @@
----
-description: "Android üzerinde farklı thread üzerinde çalışma (\U0001F6A7 yapım aşamasında)"
----
+# 🔰 Asenkrona Giriş
 
-# 💫 Asenkron İşlemler
-
-## 🔰 Asenkron İşlemleri Tanıyalım
+## 👀 Asenkron İşlemleri Tanıyalım
 
 * 💫 Ayrı bir Thread üzerinden gerçekleşen bu işlemleri sistemin ilerlemesi engellemez
 * 🙋‍♂️ İşleri tamamlandığı zaman UI Thread'e dahil olurlar
@@ -35,7 +31,7 @@ Android'teki tüm görüntü işlemlerinin yapıldı alandır.
 * UI Thread sadece görsel işlemler için kullanılmalıdır
 * Tüm işlemler 16ms'den kısa bir sürede tamamlanmalıdır
 
-![](../.gitbook/assets/async_task_ui_thread.png)
+![](../../.gitbook/assets/async_task_ui_thread.png)
 
 {% hint style="danger" %}
 Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](http://developer.android.com/guide/practices/responsiveness.html)" \(ANR\) diyaloğunu oluşturur ve kullanıcı bunu görmesi durumunda uygulamayı kapatıp, siler 😥

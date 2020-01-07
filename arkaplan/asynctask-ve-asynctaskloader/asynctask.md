@@ -14,7 +14,7 @@
 
 ## 🐣 Kullanım Metotları
 
-![](../.gitbook/assets/async_task_worker_thread.png)
+![](../../.gitbook/assets/async_task_worker_thread.png)
 
 | 💠 Metot | 📜 Açıklama |
 | :--- | :--- |
@@ -29,7 +29,7 @@
 
 ## 🧱 Prototip
 
-![](../.gitbook/assets/async_task.png)
+![](../../.gitbook/assets/async_task.png)
 
 ```java
 public class MyAsyncTask extends AsyncTask <String, Void, Bitmap>{}
@@ -39,7 +39,7 @@ public class MyAsyncTask extends AsyncTask <String, Void, Bitmap>{}
 * 🌌`Void` yapısı, `publishProgress` ve `onProgressUpdate` metotlarının kullanılmayacağını belirtir
 * 🔸`Bitmap` tipi de, `onPostExecute` ile aktarılan işlem sonucunun tipini belirtir
 
-![](../.gitbook/assets/async_task_prototype.png)
+![](../../.gitbook/assets/async_task_prototype.png)
 
 {% hint style="warning" %}
 Son iki parametre \(`Void` ve `Bitmap`\) dışarıdan verilmez, sınıf içi parametrelerdir
