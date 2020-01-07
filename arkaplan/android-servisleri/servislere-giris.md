@@ -1,10 +1,8 @@
----
-description: Android üzerinde arkaplanda çalışan arayüzü olmayan Activity'ler
----
-
-# 🪐 Servisler
+# 🔰 Servislere Giriş
 
 ## ✍ Yazılı Notlarım <a id="servislere-genel-bakis"></a>
+
+![](../../.gitbook/assets/services_hand.png)
 
 ## 👀 Servislere Genel Bakış <a id="servislere-genel-bakis"></a>
 
@@ -22,11 +20,11 @@ description: Android üzerinde arkaplanda çalışan arayüzü olmayan Activity'
 * 🌙 Cihaz uyku moduna girdiğinde arka plan işlemleri aksamaya başlar.
   * 🙇‍♂️ [WakeLock](https://developer.android.com/training/scheduling/wakelock#java) özelliğinin aktif olması gerekir
 
-{% page-ref page="foreground-service.md" %}
-
 {% hint style="info" %}
 🧙‍♂️ Detaylı bilgi için [Challenges in background processing](https://developer.android.com/guide/background#challenges_in_background_processing) alanına bakabilirsin.
 {% endhint %}
+
+{% page-ref page="foreground-service.md" %}
 
 ## ✅ İstek Türüne Göre Servis Seçimi
 

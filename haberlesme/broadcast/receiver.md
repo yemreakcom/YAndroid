@@ -12,6 +12,8 @@ description: Android üzerinde haber (broadcast) alma veya alıcılarının kull
   * ☠️ Haliyle işlem asenkron olsa bile broadcast yapısına bağlı olduğundan ölecektir
 * 🗨 `AlertDialog` gibi işlemler yerine `Notification` yapısı tercih edilmelidir
 
+![](../../.gitbook/assets/broadcast_reciever.png)
+
 ```java
 //Subclass of the BroadcastReceiver class.
 private class myReceiver extends BroadcastReceiver {
@@ -116,11 +118,15 @@ registerReceiver(receiver, filter, Manifest.permission.SEND_SMS, null );
 
 ## 👮‍♂ Broadcast Kısıtlamaları
 
+![](../../.gitbook/assets/broadcast_bestcase.png)
+
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için  [Restricting broadcasts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-3-c-broadcasts/7-3-c-broadcasts.html#restricting_broadcasts) alanına bakabilirsin.
 {% endhint %}
 
 ## 🌟 Broadcast Tavsiyeleri
+
+![](../../.gitbook/assets/broadcast_bestcase2.png)
 
 ## 🔗 Faydalı Bağlantılar
 

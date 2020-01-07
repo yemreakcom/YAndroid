@@ -6,6 +6,8 @@ description: Android üzerinde haber (Broadcast) oluşturma
 
 ## 👀 Metotlara Göz Atma
 
+![](../../.gitbook/assets/broadcast_sender.png)
+
 ## 🎈 Normal Broadcast
 
 * 🌃 Sırasız olarak tüm uygulamalara duyurulan haber yapısıdır

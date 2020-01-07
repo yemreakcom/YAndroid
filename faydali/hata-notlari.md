@@ -8,7 +8,7 @@ description: Karşılaştığım hatalar hakkında bulduğum çözümler
 
 Alttaki alan olmadığı sürece otomatik olarak belirlenmez.
 
-```text
+```markup
 <application>
     <intent-filter>
         <action android:name="android.intent.action.MAIN" />

@@ -6,8 +6,9 @@ description: Android'de ön planda çalışan servisler
 
 ## 🔰 Temel Hususlar
 
-Kullanıcının bildirim veya arayüz ile haberi olan arkaplan görevleridir
+![](../../.gitbook/assets/foreground_services_hand.png)
 
+* Kullanıcının bildirim veya arayüz ile haberi olan arkaplan görevleridir
 * Önceli servislerdir ve öncelik seviyesi bildirilmelidir
 * Kullanıcıya [kaldırılamayan bir bildirim](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#foreground-service) gösterilmesi zorunludur
 * Kullanıcının arkaplan işlemlerinden haberdar olması amaçlanır
@@ -54,7 +55,7 @@ void startTelemetryService() {
     }
 ```
 
-{% page-ref page="../temel/izinlerin-yoenetimi.md" %}
+{% page-ref page="../../temel/izinlerin-yoenetimi.md" %}
 
 ## 🧱 Temel Yapıyı Oluşturma
 

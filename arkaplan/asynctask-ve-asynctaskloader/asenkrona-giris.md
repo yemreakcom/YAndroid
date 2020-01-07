@@ -1,4 +1,4 @@
-# 🔰 Asenkrona Giriş
+# 🌃 Asenkrona Giriş
 
 ## 👀 Asenkron İşlemleri Tanıyalım
 

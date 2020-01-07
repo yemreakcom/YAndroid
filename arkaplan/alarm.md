@@ -9,6 +9,8 @@
 
 > 🙄 Telefondaki alarmdan bahsetmiyorum.
 
+![](../.gitbook/assets/alarm_hand.png)
+
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Introduction ~ 8.2 Alarm](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-8-alarms-and-schedulers/8-2-c-alarms/8-2-c-alarms.html#chapterstart) alanına bakabilirsin.
 {% endhint %}
@@ -23,6 +25,8 @@
   * 📶 Wi-Fi bağlandığında haberleri veya hava durumunu güncelleme gibi
 
 ## 🔸 Alarm Türleri
+
+![](../.gitbook/assets/alarm_types_hand.png)
 
 ## 🧱 Temel İşlemler
 
@@ -66,7 +70,9 @@ boolean alarmExists =
 alarmManager.cancel(alarmIntent);
 ```
 
-## 🙇‍♂️ WakeUp \(Uyandırma\)
+## 🙇‍♂️ Wake Up \(Uyandırma\)
+
+![](../.gitbook/assets/alarm_wakeup.png)
 
 ## 👁️ Görülebilir Alarmlar
 

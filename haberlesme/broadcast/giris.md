@@ -8,3 +8,5 @@
 
 ## ✍ Yazılı Notlarım
 
+![](../../.gitbook/assets/broadcast_main.png)
+
