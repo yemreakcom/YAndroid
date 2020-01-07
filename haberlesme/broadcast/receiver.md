@@ -46,7 +46,7 @@ private class myReceiver extends BroadcastReceiver {
 * 😥 Uygulamamızı hedef almayan yayınlarını Android 8.0'dan itibaren alamaz
 * 🎈 [implicit broadcast exceptions](https://developer.android.com/guide/components/broadcast-exceptions) yayınlarını hala alabilmektedir
 
-```java
+```markup
 <receiver
  android:name=".AlarmReceiver"
  android:exported="false">
@@ -68,7 +68,7 @@ private class myReceiver extends BroadcastReceiver {
  filter.addAction(Intent.ACTION_POWER_DISCONNECTED);
 ```
 
-### 🎫 Broadcast Kayıtları
+## 🎫 Broadcast Kayıtları
 
 * 🎌 İlk olarak `receiver` yapısını uygulamamıza `registerReceiver` ile kaydederiz
 * 🙋‍♂️ Genelde `onResume` içerisinde `registerReceiver` işlemi yapılır
