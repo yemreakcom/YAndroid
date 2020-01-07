@@ -28,7 +28,7 @@ Activity `AndroidManifest.xml` dosyasına aşağıdaki gibi tanıtılmalıdır
 </activity>
 ```
 
-## ⏫ Explicit Intent ile Activity Başlatma
+## 🔝 Explicit Intent ile Activity Başlatma
 
 Yeni `Activity` oluşturulduğunda eskisi **paused** olur
 
@@ -171,11 +171,11 @@ public void onActivityResult(int requestCode, int resultCode,  Intent data) {
 
 ## 🏹 Activity Navigation
 
-### Back navigation, tasks, and the back stack
+### ↩ Back navigation, tasks, and the back stack
 
+![](../.gitbook/assets/back_nav_task.png)
 
-
-### Implement Up navigation with a parent Activity
+### ⤴ Implement Up navigation with a parent Activity
 
 ```markup
 <application

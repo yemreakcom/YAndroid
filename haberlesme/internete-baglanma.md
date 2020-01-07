@@ -2,8 +2,6 @@
 
 ## ✍ El Notlarım
 
-![](../.gitbook/assets/image%20%2822%29.png)
-
 ## 👮‍♂️ Gerekli İzinlerin Alınması
 
 * 📃 `AndroidManifest.xml` dosyası üzerinden internet izni alınmalıdır

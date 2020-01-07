@@ -7,16 +7,12 @@
 * 🍢 Contextual Action Bar
 * 🎈 Popup
 
-![](../.gitbook/assets/image%20%2824%29.png)
-
 ## ⚙️ App bar ve Option Menu
 
 1. 🏹 Navigation
 2. 🔤 Title
 3. 🏃‍♂️ Actions
 4. 🗃️ Overflow
-
-![](../.gitbook/assets/image%20%2813%29.png)
 
 1. 🍢 App bar
 2. 🏃‍♂️ Action icons

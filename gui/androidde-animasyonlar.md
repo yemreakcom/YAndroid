@@ -9,7 +9,7 @@
 
 {% tabs %}
 {% tab title="⭐ Görsel" %}
-![](../.gitbook/assets/image%20%2827%29.png)
+
 {% endtab %}
 
 {% tab title="📜 XML Kodları" %}

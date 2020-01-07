@@ -19,21 +19,11 @@ In the figure above:
 
 ## 🍢 Seek Bar
 
-![](../.gitbook/assets/image%20%2825%29.png)
-
 ## ⚫ Progress Bar
-
-![](../.gitbook/assets/image%20%2830%29.png)
 
 ## 🔀 Navigation Bar
 
-![](../.gitbook/assets/image%20%2841%29.png)
-
 ## 🕎 Navigation View
 
-![](../.gitbook/assets/image%20%2816%29.png)
-
 ## 💬 Alert Dialog
-
-![](../.gitbook/assets/image%20%2844%29.png)
 

@@ -137,8 +137,6 @@ public class TelemetryService extends Service {
 * Uygulama üzerindeki tüm bildirimleri susturmak yerine, belli başlı kategorileri susturma avantajı sağlar
 * Kategorilere göre bildirim şekillerini düzenlemeye yardımcı olur
 
-![](../.gitbook/assets/image%20%2828%29.png)
-
 ```java
 public class TelemetryService extends Service {
     private static final String TAG = "TelemetryService";

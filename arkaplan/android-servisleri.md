@@ -6,8 +6,6 @@ description: Android üzerinde arkaplanda çalışan arayüzü olmayan Activity'
 
 ## ✍ Yazılı Notlarım <a id="servislere-genel-bakis"></a>
 
-![](../.gitbook/assets/image%20%285%29.png)
-
 ## 👀 Servislere Genel Bakış <a id="servislere-genel-bakis"></a>
 
 * 🤔 Arkaplanda çalışan arayüzü olmayan Activity'ler olarak adlandırılabilir

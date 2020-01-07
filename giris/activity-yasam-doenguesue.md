@@ -2,7 +2,7 @@
 
 ## 🔄 Activity Yaşam Döngüsü
 
-![](../.gitbook/assets/image%20%2847%29.png)
+![](../.gitbook/assets/act_life_cycle.png)
 
 ## 🧱 Metot Prototipi
 
