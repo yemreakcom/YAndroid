@@ -62,7 +62,7 @@ Broadcast Receiver ile WiFi durumlarını kontrol edebiliriz
 ```
 {% endcode %}
 
-{% page-ref page="broadcast/" %}
+{% page-ref page="broadcast/olusturma.md" %}
 
 ## 👮‍♂️ Gerekli İzinlerin Alınması
 
@@ -169,7 +169,7 @@ private void unregisterWifiFilter() {
 
 ```
 
-{% page-ref page="broadcast/" %}
+{% page-ref page="broadcast/receiver.md" %}
 
 ## 🐞 Hata Çözümleri
 
