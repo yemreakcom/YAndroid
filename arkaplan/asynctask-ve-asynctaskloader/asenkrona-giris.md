@@ -6,6 +6,14 @@
 * 🙋‍♂️ İşleri tamamlandığı zaman UI Thread'e dahil olurlar
 * ⭐ **AsyncTask** veya **AsycnTaskLoader** yapıları kullanılır
 
+## 🏷️ Etiketleme ile Asenkron
+
+* 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışan metotlar tanımlanır
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
+{% endhint %}
+
 ## 🆚 İkisi Arasındaki Temel Farklar
 
 Her ikisi de sistemi bloklamadan çalışan bir yapıya sahiptir
