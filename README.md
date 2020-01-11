@@ -25,14 +25,6 @@ Buradaki içerikler Android'in resmi olarak yayınladığı kurslardan alınmı�
 
 {% embed url="https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/index.html" caption="" %}
 
-## ✨ Yeni İçerikler
-
-{% page-ref page="haberlesme/internete-baglanma.md" %}
-
-{% page-ref page="veriler/room-database.md" %}
-
-{% page-ref page="haberlesme/http-istekleri.md" %}
-
 ## 🧐 Değişikliklere Detaylı Bakın
 
 Tam olarak hangi alanların değiştiğini merak ediyorsan, alttaki linkten GitHub üzerinden bakabilirsin.
