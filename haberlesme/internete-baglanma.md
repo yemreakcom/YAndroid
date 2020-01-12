@@ -39,6 +39,10 @@ Log.d(DEBUG_TAG, "Mobile connected: " + isMobileConn);
 ‍🧙‍♂ Detaylı bilgi için  [Managing the network state](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-3-working-in-the-background/lesson-7-background-tasks/7-2-c-internet-connection/7-2-c-internet-connection.html#manage_state) dokümanına bakabilirsin.
 {% endhint %}
 
+{% hint style="warning" %}
+📢 API 29 ve sonrası için eskimiştir, güncel haline [activeNetworkInfo.type is deprecated in API level 28](https://stackoverflow.com/questions/53532406/activenetworkinfo-type-is-deprecated-in-api-level-28) alanından bakabilirsin
+{% endhint %}
+
 ## ❣️ Dikkat Etmen Gerekenler
 
 * 🕐 Bağlantı işlemleri uzun sürebilir
