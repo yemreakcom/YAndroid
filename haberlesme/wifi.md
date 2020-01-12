@@ -4,7 +4,7 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 
 # 📶 WiFi P2P
 
-## 📻 WiFi için Broadcast Receiver Tanımlama
+## 🧱 Temel WiFi İşlemleri
 
 ### 💎 WiFi Durumları
 
@@ -237,7 +237,9 @@ public void onRequestPermissionsResult(
 
 {% page-ref page="../temel/izinlerin-yoenetimi.md" %}
 
-## 📡 Broadcast Alıcısı Tanımlama
+## 📻 WiFi için Broadcast Receiver Tanımlama
+
+### 📡 Broadcast Alıcısı Tanımlama
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -333,7 +335,7 @@ public class WiFiDirectBroadcastReciever extends BroadcastReceiver {
 {% endtab %}
 {% endtabs %}
 
-## 🎫 Broadcast Alıcısını Kaydetme
+### 🎫 Broadcast Alıcısını Kaydetme
 
 * ▶️ Uygulama çalıştığında alıcının kayıt edilmesi
 * 🧹 Durdurulduğunda kaydın silinmesi gerekir
