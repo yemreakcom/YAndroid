@@ -4,6 +4,10 @@ description: "Derlenmemiş, karışık notları barındırır \U0001F625"
 
 # 🔗 Karışık Bağlantılar
 
+## 🆚 Kotlin vs Java
+
+{% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
+
 ## 🌍 Faydalı Bağlantılar
 
 * [Uygulamaya diğer uygulamadan veri gönderme \(Share\)](https://developer.android.com/training/basics/intents/filters)
