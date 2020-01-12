@@ -12,6 +12,10 @@ description: "Derlenmemiş, karışık notları barındırır \U0001F625"
 * 🚀 Java ile uyumlu çalışır
 * 🕰️ Java 8 eskidir, java 13 çıkmıştır
 
+{% hint style="success" %}
+🚀 Kotlin projesinde java sınıfları oluşturabilirsin
+{% endhint %}
+
 {% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
 
 ## 🌍 Faydalı Bağlantılar
