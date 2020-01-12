@@ -4,7 +4,7 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 
 # 📶 WiFi P2P
 
-## 📻 WiFi için Broadcast Receiver Tanımlama
+## 🧱 Temel WiFi İşlemleri
 
 ### 💎 WiFi Durumları
 
@@ -19,10 +19,76 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 
 Broadcast Receiver ile WiFi durumlarını kontrol edebiliriz
 
-{% code title="WifiActivity.java" %}
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+class WifiDirectActivity : AppCompatActivity() {
+
+    companion object {
+        val TAG = WifiDirectActivity::javaClass.name
+    }
+
+    /**
+     * Konum izni isteme kodu
+     */
+    private val PRC_ACCESS_FINE_LOCATION = 1
+
+    /**
+     * Wifi alıcısı için filtreleme
+     */
+    private val wifiFilter = IntentFilter().apply {
+        addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION)
+        addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION)
+        addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION)
+        addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION)
+    }
+
+    /**
+     * WiFi değişikliklerinde reciever'ı çalıştırma
+     */
+    private val manager: WifiP2pManager? by lazy(LazyThreadSafetyMode.NONE) {
+        getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager?
+    }
+
+    /**
+     * Wi-Fi P2P Frameworkü ile uygulamamıza bağlanmayı sağlayacak obje
+     */
+    private var channel: WifiP2pManager.Channel? = null
+
+    /**
+     * Wifi alıcısı
+     */
+    private var wifiReceiver: BroadcastReceiver? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_wi_fi_direct)
+
+        initDependencies()
+    }
+
+    private fun initDependencies(): Unit {
+        channel = manager?.initialize(this, mainLooper, null)
+        channel?.also { channel ->
+            wifiReceiver = WifiDirectBroadcastReceiver(manager, channel, this)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+    }
+    // ...
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
 ```java
+public class WiFiDirectActivity extends AppCompatActivity {
+
+    public static final String TAG = WiFiDirectActivity.class.getSimpleName();
+    private static final int PRC_ACCES_FINE_LOCATION = 1;
     private final IntentFilter wifiFilter = new IntentFilter();
-    
     WifiP2pManager manager;
     Channel channel;
     BroadcastReceiver wifiReceiver;
@@ -59,8 +125,12 @@ Broadcast Receiver ile WiFi durumlarını kontrol edebiliriz
             getRequiredPermissions();
         }
     }
+    
+    // ...
+}
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 {% page-ref page="broadcast/olusturma.md" %}
 
@@ -95,6 +165,42 @@ Aşağıdaki metotlar **Location Mode** iznine de ihtiyaç duyar
 
 ### 👨‍💻 Kod Tarafında İzin İsteme
 
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+@RequiresApi(Build.VERSION_CODES.M)
+fun getPermissions(vararg permissions: String): Unit {
+    permissions.forEach {
+        if (!hasPermission(it)) {
+            requestPermissions(arrayOf(it), PRC_ACCESS_FINE_LOCATION)
+        }
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.M)
+fun hasPermission(permission: String): Boolean {
+    return checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
+}
+
+override fun onRequestPermissionsResult(
+    requestCode: Int,
+    permissions: Array<out String>,
+    grantResults: IntArray
+) {
+    when (requestCode) {
+        PRC_ACCESS_FINE_LOCATION -> {
+            if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                Log.w(TAG, "onRequestPermissionsResult: Konum izni gereklidir")
+                Toast.makeText(this, "İzinler gereklidir 😥", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
 ```java
 /**
  * Wi-Fi P2P için gerekli izinleri alma
@@ -122,21 +228,155 @@ public void onRequestPermissionsResult(
 ) {
     if (requestCode == PRC_ACCES_FINE_LOCATION) {
         if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-            Log.w(TAG, "onRequestPermissionsResult: Fine location izni gereklidir");
-            Toast.makeText(this, "İzinler gereklidir 😥", Toast.LENGTH_SHORT).show();
+            Log.w(TAG, "onRequestPermissionsResult:Fine location izni gereklidir");
+            Toast.makeText(this, "İzinler gereklidir 😥", Toast.LENGTH_SHORT)
+                .show();
         }
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 {% page-ref page="../temel/izinlerin-yoenetimi.md" %}
 
-## 🎫 Broadcast Alıcısını Kaydetme
+## 📻 WiFi için Broadcast Receiver Tanımlama
+
+### 📡 Broadcast Alıcısı Tanımlama
+
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+open class WifiDirectBroadcastReceiver(
+    var manager: WifiP2pManager,
+    var channel: WifiP2pManager.Channel,
+    var wifiDirectActivity: WifiDirectActivity
+) : BroadcastReceiver() {
+
+    companion object {
+        val TAG = WifiDirectActivity::javaClass.name
+    }
+
+    override fun onReceive(context: Context, intent: Intent) {
+        when (intent.action) {
+            WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged()
+            WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION -> onPeerChanged()
+            WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION -> 
+                onConnectionChanged()
+            WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION -> 
+                onThisDeviceChanged()
+        }
+    }
+
+    private fun onStateChanged(): Unit {
+        Log.i(TAG, "onStateChanged: ")
+    }
+
+    private fun onPeerChanged(): Unit {
+        Log.i(TAG, "onPeerChanged: ")
+    }
+
+    private fun onConnectionChanged(): Unit {
+        Log.i(TAG, "onConnectionChanged: ")
+    }
+
+    private fun onThisDeviceChanged(): Unit {
+        Log.i(TAG, "onThisDeviceChanged: ")
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
+```java
+/**
+ * Önemli WiFi olaylarını yayınlayan sınıf
+ * https://developer.android.com/guide/topics/connectivity/wifip2p.html#create-br
+ */
+public class WiFiDirectBroadcastReciever extends BroadcastReceiver {
+
+    public static final String TAG = WiFiDirectBroadcastReciever
+        .class.getSimpleName();
+    public static final int reconnect = 1;
+    private static final String DEVICE_PATTERN = "HUAWEI P20 lite";
+
+    WifiP2pManager manager;
+    Channel channel;
+    WiFiDirectActivity wifiDirectActivity;
+
+    /**
+     * Eşleşilen cihazların bilgileri
+     */
+    private List<WifiP2pDevice> peers = new ArrayList<>();
+
+    public WiFiDirectBroadcastReciever(
+        WifiP2pManager manager,
+        Channel channel,
+        WiFiDirectActivity wifiDirectActivity
+    ) {
+        super();
+
+        this.manager = manager;
+        this.channel = channel;
+        this.wifiDirectActivity = wifiDirectActivity;
+    }
+
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+
+        // TODO
+        if (action != null) {
+            switch (action) {
+            // ...
+            }
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### 🎫 Broadcast Alıcısını Kaydetme
 
 * ▶️ Uygulama çalıştığında alıcının kayıt edilmesi
 * 🧹 Durdurulduğunda kaydın silinmesi gerekir
 * 🎳 Kayıt silinmezse gereksiz yere sistemi yorar ve alıcı kayıtları defalarca kaydedilebilir
 
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+class WifiDirectActivity : AppCompatActivity() {
+     
+     // ...
+     
+    private fun registerWifiReceiver(): Unit {
+        wifiReceiver.also {
+            registerReceiver(it, wifiFilter)
+        }
+    }
+    
+    private fun unregisterWifiReceiver(): Unit {
+        wifiReceiver.also {
+            unregisterReceiver(it)
+        }
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        registerWifiReceiver()
+    }
+    
+    override fun onPause() {
+        super.onPause()
+        unregisterWifiReceiver()
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Java" %}
 ```java
 @Override
 protected void onResume() {
@@ -168,6 +408,8 @@ private void unregisterWifiFilter() {
 }
 
 ```
+{% endtab %}
+{% endtabs %}
 
 {% page-ref page="broadcast/receiver.md" %}
 
@@ -186,6 +428,7 @@ private void unregisterWifiFilter() {
 ## 🔗 Faydalı Bağlantılar
 
 * [📖 WiFi Direct P2P Overview](https://developer.android.com/guide/topics/connectivity/wifip2p.html)
+* [📖 Create P2P connections with Wi-Fi Direct](https://developer.android.com/training/connect-devices-wirelessly/wifi-direct#kotlin) \(Eski\)
 * [👨‍💻 WiFi Direct Demo](https://android.googlesource.com/platform/development/+/master/samples/WiFiDirectDemo/src/com/example/android/wifidirect?autodive=0%2F)
 * [📺 WiFi Direct Tutorial](https://www.youtube.com/watch?v=nw627o-8Fok&list=PLFh8wpMiEi88SIJ-PnJjDxktry4lgBtN3)
 
