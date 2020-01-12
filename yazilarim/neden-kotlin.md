@@ -14,8 +14,6 @@
 
 ## 🔗 Faydalı Kaynaklar
 
-{% embed url="https://kotlinlang.org/community/" %}
-
 {% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
 
 ## 
