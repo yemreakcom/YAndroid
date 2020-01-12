@@ -9,10 +9,12 @@
 * 🕰️ Java 8 eskidir, java 13 çıkmıştır
 
 {% hint style="success" %}
-🚀 Kotlin projesinde java sınıfları oluşturabilirsin
+🚀 Kotlin projesinde de java sınıfları oluşturup, kullanabilirsin
 {% endhint %}
 
 ## 🔗 Faydalı Kaynaklar
+
+{% embed url="https://kotlinlang.org/community/" %}
 
 {% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
 
