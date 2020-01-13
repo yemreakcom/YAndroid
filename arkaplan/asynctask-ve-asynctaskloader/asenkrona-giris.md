@@ -10,10 +10,7 @@
 
 * 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışması gereken metotlar tanımlanır
 * 🦸‍♂️ Kod hakimiyetini artırmak için tercih edilir
-
-{% hint style="danger" %}
-📢 Thread işlemini otomatik olarak yapmaz, detaylar için [buraya](https://stackoverflow.com/a/33651589/9770490) bakabilirsin
-{% endhint %}
+* 📢 Thread işlemini otomatik olarak yapmaz, detaylar için [buraya](https://stackoverflow.com/a/33651589/9770490) bakabilirsin
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
@@ -49,6 +46,10 @@ Android üzerindeki tüm görüntü işlemlerinin yapıldı alandır.
 {% hint style="danger" %}
 Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](http://developer.android.com/guide/practices/responsiveness.html)" \(ANR\) diyaloğunu oluşturur ve kullanıcı bunu görmesi durumunda uygulamayı kapatıp, siler 😥
 {% endhint %}
+
+## ⭐ Diğer Asenkron İşlemler
+
+![](../../.gitbook/assets/async_table.png)
 
 ## 🔗 Harici Bağlantılar
 
