@@ -17,7 +17,7 @@
 
 ## 🆚 İkisi Arasındaki Temel Farklar
 
-Her ikisi de sistemi bloklamadan çalışan bir yapıya sahiptir
+Her ikisi de sistemi engellemeden çalışan bir yapıya sahiptir
 
 | `AsyncTask` | `AsyncTaskLoader` |
 | :--- | :--- |
@@ -34,7 +34,7 @@ Genel olarak `AsyncTaskLoader` en sık kullanılan yapıdır.
 
 ## 🧱 UI Thread
 
-Android'teki tüm görüntü işlemlerinin yapıldı alandır.
+Android üzerindeki tüm görüntü işlemlerinin yapıldı alandır.
 
 * UI Thread engellenmemeli
 * UI Thread sadece görsel işlemler için kullanılmalıdır
