@@ -8,7 +8,8 @@
 
 ## 🏷️ Etiketleme ile Asenkron
 
-* 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışan metotlar tanımlanır
+* 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışması gereken metotlar tanımlanır
+* 🦸‍♂️ Kod hakimiyetini artırmak için tercih edilir
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
