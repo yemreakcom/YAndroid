@@ -11,6 +11,10 @@
 * 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışması gereken metotlar tanımlanır
 * 🦸‍♂️ Kod hakimiyetini artırmak için tercih edilir
 
+{% hint style="danger" %}
+📢 Thread işlemini otomatik olarak yapmaz, detaylar için [buraya](https://stackoverflow.com/a/33651589/9770490) bakabilirsin
+{% endhint %}
+
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
 {% endhint %}
