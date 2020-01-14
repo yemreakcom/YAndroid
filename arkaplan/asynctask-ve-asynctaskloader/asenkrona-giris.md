@@ -66,10 +66,10 @@ Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](ht
 | LiveData işlemleri | Ağ işlemleri | DiffUtils |
 
 {% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için
+‍🧙‍♂ Detaylı bilgi için:
 
-*  [Improve app performance with Kotlin coroutines](https://developer.android.com/kotlin/coroutines) 
-* [Coroutines on Android \(part I\): Getting the background](https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb)
+* [📈 Improve app performance with Kotlin coroutines](https://developer.android.com/kotlin/coroutines) 
+* [📖 Coroutines on Android \(part I\): Getting the background](https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb)
 
 alanlarına bakabilirsin.
 {% endhint %}
