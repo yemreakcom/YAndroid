@@ -6,6 +6,16 @@
 * 🙋‍♂️ İşleri tamamlandığı zaman UI Thread'e dahil olurlar
 * ⭐ **AsyncTask** veya **AsycnTaskLoader** yapıları kullanılır
 
+## 🏷️ Etiketleme ile Asenkron
+
+* 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışması gereken metotlar tanımlanır
+* 🦸‍♂️ Kod hakimiyetini artırmak için tercih edilir
+* 📢 Thread işlemini otomatik olarak yapmaz, detaylar için [buraya](https://stackoverflow.com/a/33651589/9770490) bakabilirsin
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
+{% endhint %}
+
 ## 🆚 İkisi Arasındaki Temel Farklar
 
 Her ikisi de sistemi engellemeden çalışan bir yapıya sahiptir
@@ -40,39 +50,6 @@ Yaklaşık olarak 5s'den uzun süren işlemler  "[application not responding](ht
 ## ⭐ Diğer Asenkron İşlemler
 
 ![](../../.gitbook/assets/async_table.png)
-
-## 🏷️ Etiketleme ile Asenkron
-
-* 👷‍♂️ `@WorkerThread` gibi etiketlerle asenkron çalışması gereken metotlar tanımlanır
-* 🦸‍♂️ Kod hakimiyetini artırmak için tercih edilir
-* 📢 Thread işlemini otomatik olarak yapmaz, detaylar için [buraya](https://stackoverflow.com/a/33651589/9770490) bakabilirsin
-
-{% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için [Thread annotations](https://developer.android.com/studio/write/annotations#thread-annotations) alanına bakabilirsin.
-{% endhint %}
-
-## 🎃 Kotlin Coroutine
-
-* 🕊️ Thread işlemlerini kolaylaştıran bir yapıdır
-* 👮‍♂️ Main \(UI\), IO, Default thread yapıları ile arkaplan işlemlerini yönetirsiniz
-* 💁‍♂️ AsyncTask kullanmaya gerek kalmaz
-* `implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'` ile `build.gradle` dosyasına dahil etmen gerekmektedir
-
-| 🧱 Dispatchers.Main | 🔣 Dispatchers.IO | 🎳 Dispatchers.Default |
-| :--- | :--- | :--- |
-| UI Thread işlemleri | Disk ve network işlemleri | CPU gerektiren işlemler |
-| Fonksiyon çağırma | Database | Liste sıralama |
-| View işlemleri | Dosya okuma & yazma | JSON parsing |
-| LiveData işlemleri | Ağ işlemleri | DiffUtils |
-
-{% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için:
-
-* [📈 Improve app performance with Kotlin coroutines](https://developer.android.com/kotlin/coroutines) 
-* [📖 Coroutines on Android \(part I\): Getting the background](https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb)
-
-alanlarına bakabilirsin.
-{% endhint %}
 
 ## 🔗 Harici Bağlantılar
 
