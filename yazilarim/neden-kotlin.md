@@ -1,4 +1,4 @@
-# 🆚 Neden Kotlin
+# 💁‍♂️ Neden Kotlin
 
 ## ✨ Kotlin Avantajları
 
