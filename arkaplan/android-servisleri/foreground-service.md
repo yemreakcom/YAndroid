@@ -251,3 +251,8 @@ public class TelemetryService extends Service {
 🧙‍♂️ Detaylı bilgiler için [Create Notification](https://developer.android.com/training/notify-user/build-notification?hl=en), [PendingIntent](https://developer.android.com/reference/android/app/PendingIntent) alanlarına bakmanda fayda var
 {% endhint %}
 
+## 🔗 Faydalı Bağlantılar
+
+* [📖 Running a service in the foreground - Android Guides](https://developer.android.com/guide/components/services#Foreground)
+* [📖 Notifications Overview - Android Guides](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#appearances)
+
