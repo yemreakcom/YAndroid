@@ -4,6 +4,16 @@ description: "Android için belirlediğim çalışma yolları ve adımları (\U0
 
 # 🚩 Çalışma Yolu
 
+## 🙋‍♂️ Selam
+
+* 👨‍🔬 Bu alan henüz deneysel aşamadadır
+* 👷‍♂️ Kendim çalışırken izlediğim ve aldığım notları barındırır
+* 💁‍♂️ Geri dönüşlerle bu yolun iyileştirilmesine katkıda bulunabilirsin
+
+{% hint style="info" %}
+‍🚀 Android'in belirlediği yola [Android Developer Fundamentals \(Version 2\) — Concepts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/) üzerinden bakabilirsin
+{% endhint %}
+
 ## 👨‍🏫 Ders 1
 
 🧱 Android hakkında temel bilgiler ve android hiyerarşisini tanıma
@@ -12,10 +22,6 @@ description: "Android için belirlediğim çalışma yolları ve adımları (\U0
 * [💫 Activity Yaşam Döngüsü](giris/activity-yasam-doenguesue.md)
 * [🏹 Implicit intents](giris/implicit-intents.md)
 * [🏁 Activity launch modes](giris/activity-launch-modes.md)
-
-{% hint style="info" %}
-‍🚀 Android'in belirlediği yola [Android Developer Fundamentals \(Version 2\) — Concepts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/) üzerinden bakabilirsin
-{% endhint %}
 
 ## 👨‍🏫 Ders 2
 
