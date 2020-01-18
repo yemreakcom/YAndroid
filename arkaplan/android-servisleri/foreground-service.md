@@ -8,13 +8,13 @@ description: Android'de ön planda çalışan servisler
 
 ![](../../.gitbook/assets/foreground_services_hand.png)
 
-* Kullanıcının bildirim veya arayüz ile haberi olan arkaplan görevleridir
-* Önceli servislerdir ve öncelik seviyesi bildirilmelidir
-* Kullanıcıya [kaldırılamayan bir bildirim](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#foreground-service) gösterilmesi zorunludur
-* Kullanıcının arkaplan işlemlerinden haberdar olması amaçlanır
-* Servisin çalıştırılması için [`FOREGROUND_SERVICE`](https://developer.android.com/reference/android/Manifest.permission.html#FOREGROUND_SERVICE) iznine ihtiyaç duyulur
-  * Android'in [izin isteme hiyerarşisine](https://developer.android.com/guide/topics/permissions/overview) uygun ilerler
-  * İzin alınmadığı taktirde [`SecurityException`](https://developer.android.com/reference/java/lang/SecurityException.html) hatası verir
+* 🔸 Kullanıcının bildirim veya arayüz ile haberi olan arka plan görevleridir
+* 💎 Önceli servislerdir ve öncelik seviyesi bildirilmelidir
+* 🔔 Kullanıcıya [kaldırılamayan bir bildirim](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#foreground-service) gösterilmesi zorunludur
+* 🌃 Kullanıcının arka plan işlemlerinden haberdar olması amaçlanır
+* 👮‍♂️ Servisin çalıştırılması için [`FOREGROUND_SERVICE`](https://developer.android.com/reference/android/Manifest.permission.html#FOREGROUND_SERVICE) iznine ihtiyaç duyulur
+  * 👣 Android'in [izin isteme hiyerarşisine](https://developer.android.com/guide/topics/permissions/overview) uygun ilerler
+  * 🐞 İzin alınmadığı taktirde [`SecurityException`](https://developer.android.com/reference/java/lang/SecurityException.html) hatası verir
 
 {% hint style="info" %}
 🧙‍♂️ Android dokümanında [Running a service in the foreground](https://developer.android.com/guide/components/services#Foreground) alanında işlenmektedir
@@ -25,6 +25,8 @@ description: Android'de ön planda çalışan servisler
 * Android 8.0 ve sonrası için [`FOREGROUND_SERVICE`](https://developer.android.com/reference/android/Manifest.permission.html#FOREGROUND_SERVICE) iznine ihtiyaç duyulur
 * Örnek izin sistemi için alttaki kodu kullanabilirsiniz
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 static final int PERMISSION_FOREGORUND = 1;
 
@@ -54,11 +56,15 @@ void startTelemetryService() {
         }
     }
 ```
+{% endtab %}
+{% endtabs %}
 
 {% page-ref page="../../temel/izinlerin-yoenetimi.md" %}
 
 ## 🧱 Temel Yapıyı Oluşturma
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 public class TelemetryService extends Service {
     private static final String TAG = "TelemetryService";
@@ -126,6 +132,8 @@ public class TelemetryService extends Service {
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 🧙‍♂️ Ayrıntılı bilgi için [Create a Service](https://developer.android.com/guide/components/services#CreatingAService) alanına bakabilirsin.
