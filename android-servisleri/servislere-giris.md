@@ -2,7 +2,7 @@
 
 ## ✍ Yazılı Notlarım <a id="servislere-genel-bakis"></a>
 
-![](../../.gitbook/assets/services_hand.png)
+![](../.gitbook/assets/services_hand.png)
 
 ## 👀 Servislere Genel Bakış <a id="servislere-genel-bakis"></a>
 

@@ -6,7 +6,7 @@ description: Android'de ön planda çalışan servisler
 
 ## 🔰 Temel Hususlar
 
-![](../../.gitbook/assets/foreground_services_hand.png)
+![](../.gitbook/assets/foreground_services_hand.png)
 
 * 🔸 Kullanıcının bildirim veya arayüz ile haberi olan arka plan görevleridir
 * 💎 Önceli servislerdir ve öncelik seviyesi bildirilmelidir
@@ -59,7 +59,7 @@ void startTelemetryService() {
 {% endtab %}
 {% endtabs %}
 
-{% page-ref page="../../temel/izinlerin-yoenetimi.md" %}
+{% page-ref page="../temel/izinlerin-yoenetimi.md" %}
 
 ## 🧱 Temel Yapıyı Oluşturma
 
@@ -146,7 +146,7 @@ public class TelemetryService extends Service {
 * Uygulama üzerindeki tüm bildirimleri susturmak yerine, belli başlı kategorileri susturma avantajı sağlar
 * Kategorilere göre bildirim şekillerini düzenlemeye yardımcı olur
 
-![](../../.gitbook/assets/notification_example.jpeg)
+![](../.gitbook/assets/notification_example.jpeg)
 
 ```java
 public class TelemetryService extends Service {
