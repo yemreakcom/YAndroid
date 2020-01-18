@@ -13,6 +13,10 @@ description: "Android için belirlediğim çalışma yolları ve adımları (\U0
 * [🏹 Implicit intents](giris/implicit-intents.md)
 * [🏁 Activity launch modes](giris/activity-launch-modes.md)
 
+{% hint style="info" %}
+‍🚀 Android'in belirlediği yola [Android Developer Fundamentals \(Version 2\) — Concepts](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/) üzerinden bakabilirsin
+{% endhint %}
+
 ## 👨‍🏫 Ders 2
 
 ✨ Android üzerinde temel işlemlerden izin alma ve UI oluşturma
