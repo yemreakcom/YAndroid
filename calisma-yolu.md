@@ -18,6 +18,10 @@ description: "Android için belirlediğim çalışma yolları ve adımları (\U0
 * [🍱 Menu](https://github.com/YEmreAk/YAndroid/blob/master/gui/menu.md)
 * [🍱 Fragment](https://github.com/YEmreAk/YAndroid/blob/master/gui/fragment/README.md)
 
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için[ Unit 2: User experience](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-2-user-experience/lesson-4-user-interaction/4-1-c-buttons-and-clickable-images/4-1-c-buttons-and-clickable-images.html) alanına bakabilirsin.
+{% endhint %}
+
 ## 👨‍🏫 Ders 3
 
 * [💫 Asenkron İşlemler](https://github.com/YEmreAk/YAndroid/blob/master/arkaplan/asynctask-ve-asynctaskloader/README.md)
