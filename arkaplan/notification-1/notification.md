@@ -2,7 +2,7 @@
 description: Android üzerinde bildirim verme işlemleri ve yönetimi
 ---
 
-# 🔔 Notification
+# ✍ Yazılı Notlar \| Notification
 
 ## 🎈 Notification Nedir
 
