@@ -47,7 +47,7 @@
     * [🏗️ Oluşturma \| Broadcast](haberlesme/broadcast/olusturma.md)
     * [📡 Receiver \| Broadcast](haberlesme/broadcast/receiver.md)
   * [📶 WiFi P2P](haberlesme/wifi.md)
-* [🪐 Servisler](arkaplan/android-servisleri/README.md)
+* [🪐 Servisler](android-servisleri/README.md)
   * [🔰 Servislere Giriş](arkaplan/android-servisleri/servislere-giris.md)
   * [🌞 Foreground Service](arkaplan/android-servisleri/foreground-service.md)
   * [🐥 Intent Service](arkaplan/android-servisleri/intent-service.md)
