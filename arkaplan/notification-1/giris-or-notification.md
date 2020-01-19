@@ -20,7 +20,8 @@ implementation "com.android.support:support-compat:28.0.0"
 
 ## 📢 Notification Channel
 
-* 👨‍💼 Bildirimlerin yönetildiği yapıdır
+* 👨‍💼 Bildirimlerin kategorilerle  yönetildiği yapıdır
+* 👪 Kategorilere göre bildirim şekillerini düzenlemeye yardımcı olur
 * 🚀 Her bildirimin farklı biz özelliği vardır ve ayrıca yönetilir
 * 😏 Kullanıcı sadece kendisini rahatsız eden bildirimleri kapatır ve sizin diğer bildirimleriniz devam eder
 

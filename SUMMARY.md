@@ -36,7 +36,7 @@
     * [🔁 AsyncTask](arkaplan/asynctask-ve-asynctaskloader/asynctask.md)
     * [🔂 AsyncTask Loader](arkaplan/asynctask-ve-asynctaskloader/asynctask-loader.md)
   * [🔔 Notification](arkaplan/notification-1/README.md)
-    * [✍ Yazılı Notlar \| Notification](arkaplan/notification-1/notification.md)
+    * [✍ Yazılı Notlar \| Notification](arkaplan/notification/README.md)
     * [🏗️ Oluşturma \| Notification](arkaplan/notification-1/giris-or-notification.md)
   * [⏰ Alarm](arkaplan/alarm.md)
   * [🌠 MultiThreading](arkaplan/multithreading.md)
