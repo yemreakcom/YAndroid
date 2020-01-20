@@ -427,6 +427,8 @@ private void unregisterWifiFilter() {
 
 ## 🔗 Faydalı Bağlantılar
 
+* [⭐ EasyWifiP2P ~ Wifi P2P kütüphanesi](https://github.com/cubesky/EasyWifiP2P)
+* [⭐ SocketChannel ~ Socket yönetimi](https://github.com/cubesky/SocketChannel)
 * [📖 WiFi Direct P2P Overview](https://developer.android.com/guide/topics/connectivity/wifip2p.html)
 * [📖 Create P2P connections with Wi-Fi Direct](https://developer.android.com/training/connect-devices-wirelessly/wifi-direct#kotlin) \(Eski\)
 * [👨‍💻 WiFi Direct Demo](https://android.googlesource.com/platform/development/+/master/samples/WiFiDirectDemo/src/com/example/android/wifidirect?autodive=0%2F)
