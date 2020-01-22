@@ -231,16 +231,17 @@ open class WifiP2PBroadcastReceiver(
         val TAG = this::class.java.simpleName
     }
 
+    @SuppressLint("MissingPermission")
     override fun onReceive(context: Context, intent: Intent) {
-        when (intent.action) {
-            WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged(intent)
-            WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION -> onPeerChanged()
-            WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION -> 
-                onConnectionChanged()
-            WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION -> 
-                onThisDeviceChanged()
-        }
-    }
+    		when (intent.action) {
+    			WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged(intent)
+    			WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION -> onPeerChanged()
+    			WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION ->
+    				onConnectionChanged()
+    			WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION ->
+    				onThisDeviceChanged()
+    		}
+	  }
 
     private fun onStateChanged(intent: Intent): Unit {
         Log.d(TAG, "onStateChanged: Wifi P2P durumu değişti")
