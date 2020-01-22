@@ -14,11 +14,6 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 class WifiDirectActivity : AppCompatActivity() {
 
     /**
-     * Konum izni isteme kodu
-     */
-    private val PRC_ACCESS_FINE_LOCATION = 1
-
-    /**
      * Wifi alıcısı için filtreleme
      */
     private val wifiFilter = IntentFilter().apply {
