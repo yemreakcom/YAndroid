@@ -410,9 +410,7 @@ private void unregisterWifiFilter() {
 {% endtab %}
 {% endtabs %}
 
-## 👷‍♂️ Durumlara Tepki Gösterme
-
-### 🧐 P2P Durum Değişikliklerini Algılama
+## 👷‍♂️ P2P Durum Değişikliklerini Algılama
 
 * 👮‍♂️ Keşfetme işlemlerine başlamadan önce WiFi durumu kontrol edilmelidir
 * ✖️ Eğer WiFi P2P aktif değilse keşif yapılamaz
@@ -474,7 +472,7 @@ private fun onStateChanged(intent: Intent): Unit {
 ```
 {% endcode %}
 
-### 👨‍💼 Eş Değişiklikleri Kontrol Etme
+## 👨‍💼 Eş Değişiklikleri Kontrol Etme
 
 * 🔍 Keşfetme \(discover\) işlemi başarıyla yapıldıktan sonra çalışır
 * 🙆‍♂️ Eşleşilebilir cihazların listesi `requestPeers` ile talep edilir
