@@ -124,7 +124,7 @@ Manifest dosyasının içeriğine aşağıdaki kodu ekleyin
     package="com.example.android.nsdchat"
     ...
     
-    <!-- Wi-Fi Direct (P2P) bağlatısı için eklendi -->
+    <!-- Wi-Fi Direct (P2P) bağlantısı için eklendi -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
