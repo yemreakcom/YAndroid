@@ -13,10 +13,6 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 ```kotlin
 class WifiDirectActivity : AppCompatActivity() {
 
-    companion object {
-        val TAG = WifiDirectActivity::javaClass.name
-    }
-
     /**
      * Konum izni isteme kodu
      */
