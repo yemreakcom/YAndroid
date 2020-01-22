@@ -600,8 +600,7 @@ fun connectPeer(peer: WifiP2pDevice) {
 
 {% code title="WifiP2PBroadcastReceiver.java" %}
 ```kotlin
-// WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION ->
-				onConnectionChanged()
+// WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION -> onConnectionChanged()
 
 private fun onConnectionChanged(): Unit {
     Log.d(TAG, "onConnectionChanged: WiFi P2P bağlantısı değişti")
