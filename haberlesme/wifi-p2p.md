@@ -224,8 +224,6 @@ public void onRequestPermissionsResult(
 {% endtab %}
 {% endtabs %}
 
-{% page-ref page="../temel/izinlerin-yoenetimi.md" %}
-
 ## 📻 WiFi için Broadcast Receiver Tanımlama
 
 ### 📡 Broadcast Alıcısı Tanımlama
@@ -324,8 +322,6 @@ public class WiFiDirectBroadcastReciever extends BroadcastReceiver {
 {% endtab %}
 {% endtabs %}
 
-{% page-ref page="broadcast/olusturma.md" %}
-
 ### 🎫 Broadcast Alıcısını Kaydetme
 
 * ▶️ Uygulama çalıştığında alıcının kayıt edilmesi
@@ -413,8 +409,6 @@ private void unregisterWifiFilter() {
 ```
 {% endtab %}
 {% endtabs %}
-
-{% page-ref page="broadcast/receiver.md" %}
 
 ## 🐞 Hata Çözümleri
 
