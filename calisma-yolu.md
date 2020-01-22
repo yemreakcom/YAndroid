@@ -50,7 +50,7 @@ description: "Android için belirlediğim çalışma yolları ve adımları (\U0
 🔸 Uygulamalar arasında haberleşme ve kullanıcı bildirimleri
 
 * [📢 Broadcast](haberlesme/broadcast/)
-* [🔔 Notification](arkaplan/notification/)
+* [🔔 Notification](arkaplan/notification-1/notification.md)
 * [⏰ Alarm](arkaplan/alarm.md)
 
 ## 👨‍🏫 Ders 5

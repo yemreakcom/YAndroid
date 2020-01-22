@@ -2,7 +2,7 @@
 description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 ---
 
-# 📶 WiFi P2P
+# 📶 WiFi P2P \(Direct\)
 
 ## 🧱 Temel WiFi İşlemleri
 
@@ -46,32 +46,23 @@ class WifiDirectActivity : AppCompatActivity() {
     /**
      * WiFi değişikliklerinde reciever'ı çalıştırma
      */
-    private val manager: WifiP2pManager? by lazy(LazyThreadSafetyMode.NONE) {
-        getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager?
-    }
+    private lateinit var manager: WifiP2pManager
 
     /**
      * Wi-Fi P2P Frameworkü ile uygulamamıza bağlanmayı sağlayacak obje
      */
-    private var channel: WifiP2pManager.Channel? = null
-
-    /**
-     * Wifi alıcısı
-     */
-    private var wifiReceiver: BroadcastReceiver? = null
+    private lateinit var channel: WifiP2pManager.Channel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wi_fi_direct)
 
-        initDependencies()
+        initWifiP2p()
     }
 
-    private fun initDependencies(): Unit {
-        channel = manager?.initialize(this, mainLooper, null)
-        channel?.also { channel ->
-            wifiReceiver = WifiDirectBroadcastReceiver(manager, channel, this)
-        }
+    private fun initWifiP2p(): Unit {
+        manager = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
+        channel = manager.initialize(this, mainLooper, null)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
@@ -351,16 +342,31 @@ class WifiDirectActivity : AppCompatActivity() {
      
      // ...
      
-    private fun registerWifiReceiver(): Unit {
-        wifiReceiver.also {
-            registerReceiver(it, wifiFilter)
+    /**
+     * Wifi alıcısı
+     */
+     private lateinit var wifiReceiver: WifiDirectBroadcastReceiver
+     
+     // ...
+     
+     private fun initWifiP2p(): Unit {
+        manager = getSystemService(Context.WIFI_P2P_SERVICE) as WifiP2pManager
+        channel = manager.initialize(this, mainLooper, null)
+        
+        // Yeni kısım 👇
+        wifiReceiver = WifiDirectBroadcastReceiver(manager, channel, this)
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getPermissions(Manifest.permission.ACCESS_FINE_LOCATION)
         }
+    }
+     
+    private fun registerWifiReceiver(): Unit {
+        registerReceiver(wifiReceiver, wifiFilter)
     }
     
     private fun unregisterWifiReceiver(): Unit {
-        wifiReceiver.also {
-            unregisterReceiver(it)
-        }
+        unregisterReceiver(wifiReceiver)
     }
     
     override fun onResume() {
