@@ -639,6 +639,179 @@ private fun isClient(info: WifiP2pInfo): Boolean {
 * 🏗️ Aktarılmadan önce Client veya Server Socket oluşturulmalıdır
 * 📶 Server Socket'in IP adresi Client'e aktarılmalıdır
 
+{% hint style="warning" %}
+📢 Socket işlemleri Thread içerisinde yapılmalıdır, UI Thread'in engellenmemesi gerekir
+{% endhint %}
+
+```kotlin
+inner class ServerClass : Thread() {
+
+    private lateinit var serverSocket: ServerSocket
+    private lateinit var socket: Socket
+
+    override fun run() {
+        serverSocket = ServerSocket(8888)
+        socket = serverSocket.accept()
+
+        socketCreated = true
+
+        sendReceive = SendReceive(socket)
+        sendReceive.start()
+        Log.i(TAG, "run: ServerClass başarılı")
+    }
+}
+```
+
+```kotlin
+inner class ClientClass(inetAddress: InetAddress) : Thread() {
+
+    private val socket = Socket()
+    private val hostAddress: String = inetAddress.hostAddress
+
+    override fun run() {
+        try {
+            socket.apply {
+                bind(null)
+                connect(InetSocketAddress(hostAddress, 8888), 500)
+            }
+
+            sendReceive = SendReceive(socket)
+            sendReceive.start()
+
+            Log.i(TAG, "run: ClientClass başarılı")
+        } catch (e: Exception) {
+            Log.e(TAG, "run", e)
+        }
+    }
+}
+```
+
+```kotlin
+val MESSAGE_READ = 1
+val handler = Handler {
+    when (it.what) {
+        MESSAGE_READ -> {
+            (it.obj as ByteArray).run {
+                // tvMsg layout dosyasına sonradan tanımlanacak
+                tvMsg.text = String(this, 0, it.arg1) 
+            }
+        }
+    }
+    return@Handler true
+}
+```
+
+```kotlin
+inner class SendReceive(private val socket: Socket) : Thread() {
+
+    private val inputStream = socket.getInputStream()
+    private val outputStream = socket.getOutputStream()
+
+    override fun run() {
+        val buffer = ByteArray(1024)
+        var bytes = 0
+
+        while (socket != null) {
+            inputStream!!.read(buffer).let {
+                if (it > 0) {
+                    handler.obtainMessage(
+                        MESSAGE_READ, it, -1, buffer
+                    ).sendToTarget()
+                }
+            }
+            Log.d(TAG, "SendReceive: Socket kontrol edildi")
+        }
+    }
+
+    fun write(byteArray: ByteArray) {
+        GlobalScope.launch {
+            withContext(Dispatchers.IO) {
+                outputStream.write(byteArray)
+                Log.i(TAG, "write: Yazma başarılı")
+            }
+        }
+    }
+
+    fun write(fileUri: Uri) {
+        
+        Log.i(TAG, "SendReceive: Dosya gönderme işlemine başlandı")
+    
+        val cr = contentResolver
+        val inputStream = cr.openInputStream(fileUri)
+    
+        var result: Boolean? = null
+        if (inputStream != null) {
+            result = SocketAPI.copyFile(inputStream, outputStream!!)
+        }
+    
+        when (result) {
+            null -> Log.d(
+                    TAG,
+                    "write: Sockete yazacak dosya yok ${fileUri.path}"
+            )
+            true -> Log.d(
+                    TAG,
+                    "write: Sockete yazma başarılı ${fileUri.path}"
+            )
+            else -> Log.e(
+                    TAG,
+                    "write: Sockete yazma başarısız ${fileUri.path}"
+            )
+        }
+    }
+    
+}
+```
+
+```kotlin
+fun onSendButtonClick(view: View) {
+  Log.d(TAG, "onSendButtonClick: Send butonuna tıklandı}")
+
+  sendReceive.write("hello ${Random.nextInt(10)}".toByteArray())
+}
+```
+
+```markup
+<androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ... -->
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:onClick="onSendButtonClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:text="Message"
+        app:layout_constraintBottom_toTopOf="@+id/btnSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+```kotlin
+fun createServerSocket() {
+    ServerClass().also { it.start() }
+    tvMsg.text = "Server"
+}
+
+fun createClientSocket() {
+    ClientClass().also { it.start() }
+    tvMsg.text = "Client"
+}
+```
+
 ## 🐞 Hata Çözümleri
 
 ### 🚫 Peers objesinin boş dönmesi
