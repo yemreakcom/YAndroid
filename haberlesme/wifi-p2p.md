@@ -228,7 +228,7 @@ open class WifiP2PBroadcastReceiver(
 ) : BroadcastReceiver() {
 
     companion object {
-        val TAG = WifiDirectActivity::javaClass.name
+        val TAG = this::class.java.simpleName
     }
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -418,7 +418,8 @@ private void unregisterWifiFilter() {
 {% code title="activity\_wifip2p.xml" %}
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -472,7 +473,63 @@ private fun onStateChanged(intent: Intent): Unit {
 ```
 {% endcode %}
 
-## 👨‍💼 Eş Değişiklikleri Kontrol Etme
+## 🔍 Eşleşebilecek Cihazları Arama
+
+* 🔍 Keşif işlemi `manager.discover` metodu ile yapılır
+* ✔️ Keşif başarılı olursa, `WIFI_P2P_PEERS_CHANGED_ACTION` haberi salınır
+* 🕵️‍♂️ `BroadcastReceiver` üzerinden haber durumunda ne yapılacağına karar verilir
+* 💁‍♂️ `onPeerChanged` metodu tetiklenecektir
+
+{% code title="acitivity\_wifip2p.xml" %}
+```markup
+<androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ... -->
+    
+    <Button
+    android:id="@+id/btnDiscover"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Discover"
+    android:onClick="onDiscoverButtonClicked"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tvP2pStatus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+{% endcode %}
+
+{% code title="WifiP2pActivity.java" %}
+```kotlin
+@RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+fun onDiscoverButtonClicked(view: View) {
+    Log.d(TAG, "onDiscoverButtonClicked: Butona tıklandı")
+
+    manager.discoverPeers(channel, P2pActionListener("Keşif"))
+}
+
+class P2pActionListener(private val purpose: String) : WifiP2pManager.ActionListener {
+	override fun onSuccess() {
+		Log.d(TAG, "onSuccess: $purpose başarılı")
+	}
+
+	override fun onFailure(reason: Int) {
+		val reasonMsg = when (reason) {
+			WifiP2pManager.P2P_UNSUPPORTED -> "P2P desteklenmiyor"
+			WifiP2pManager.ERROR -> "hata oluştur"
+			WifiP2pManager.BUSY -> "cihaz başka bir bağlantı ile meşgul"
+			else -> ""
+		}
+
+		Log.e(TAG, "onDiscoverButtonClick: $purpose başarısız, $reasonMsg")
+	}
+}
+```
+{% endcode %}
+
+## 🧾 Eşleşilebilir Cihazları Listeleme
 
 * 🔍 Keşfetme \(discover\) işlemi başarıyla yapıldıktan sonra çalışır
 * 🙆‍♂️ Eşleşilebilir cihazların listesi `requestPeers` ile talep edilir
@@ -490,17 +547,17 @@ val peerList = ArrayList<WifiP2pDevice>()
 /**
  * requestPeers ile tetiklenmektedir
  */
-fun onPeerAvailable(peerList: WifiP2pDeviceList) {
-    peerList.apply {
-        Log.v(TAG, "onPeersAvailable: $deviceList")
+fun storePeers(peers: WifiP2pDeviceList) {
+	peers.apply {
+		Log.v(TAG, "onPeersAvailable: $deviceList")
 
-        this.peerList.apply {
-            if (this != deviceList) {
-                clear()
-                addAll(deviceList)
-            }
-        }
-    }
+		peerList.apply {
+			if (this != deviceList) {
+				clear()
+				addAll(deviceList)
+			}
+		}
+	}
 }
 ```
 {% endcode %}
@@ -509,54 +566,31 @@ fun onPeerAvailable(peerList: WifiP2pDeviceList) {
 ```kotlin
 // ...
 
+@RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
 private fun onPeerChanged(): Unit {
-    Log.d(TAG, "onPeerChanged: WiFi eşleri değişti")
-    
-    manager.requestPeers(wifiP2pChannel, wifiP2pActivity::onPeerAvailable)
+    Log.d(TAG, "onPeerChanged: ")
+
+    manager.requestPeers(channel, wifiP2pActivity::storePeers)
 }
 
 // ...
 ```
 {% endcode %}
 
-## 🔍 Eşleşebilecek Cihazları Arama
-
-* ✔️ Keşif başarılı olursa, `WIFI_P2P_PEERS_CHANGED_ACTION` haberi salınır
-* 🕵️‍♂️ `BroadcastReceiver` üzerinden haber durumunda ne yapılacağına karar verilir
-* 💁‍♂️ `onPeerChanged` metodu tetiklenecektir
+## 📶 Cihaza Bağlanma
 
 {% code title="WifiP2pActivity.java" %}
 ```kotlin
-fun onDiscoverButtonClick(view: View): Unit {
-    Log.i(TAG, "onDiscoverButtonClick: Discover butonuna tıklandı")
+@RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+fun connectPeer(peer: WifiP2pDevice) {
+    val config = WifiP2pConfig().apply {
+        deviceAddress = peer.deviceAddress
+    }
 
-    wifiP2pManager.discoverPeers(
-	    wifiP2pChannel, 
-	    object : WifiP2pManager.ActionListener {
-	
-				override fun onSuccess() {
-					// Değişiklik olursa WIFI_P2P_PEERS_CHANGED_ACTION eylemini tetikler
-					Log.d(TAG, "onDiscoverButtonClick: Keşif başarılı")
-					return
-				}
-
-				override fun onFailure(reason: Int) {
-					val reasonMsg = when (reason) {
-						WifiP2pManager.P2P_UNSUPPORTED -> "P2P desteklenmiyor"
-						WifiP2pManager.ERROR -> "hata oluştur"
-						WifiP2pManager.BUSY -> "cihaz başka bir bağlantı ile meşgul"
-						else -> ""
-					}
-
-					Log.e(TAG, "onDiscoverButtonClick: Keşif başarısız, $reasonMsg")
-				}
-			}
-		)
+    manager.connect(channel, config, P2pActionListener("Bağlantı"))
 }
 ```
 {% endcode %}
-
-
 
 ## 🐞 Hata Çözümleri
 
