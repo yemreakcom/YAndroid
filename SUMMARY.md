@@ -69,7 +69,7 @@
   * [⏬ Scrolling views](duzensiz/scrolling-views.md)
   * [📜 XML Örneği](duzensiz/xml-oernegi.md)
 * [🔗 Karışık Bağlantılar](karisik-baglantilar.md)
-* [📃 Dokümanlar](pdf.md)
+* [�� Dokümanlar](pdf.md)
 
 ## Faydalı Kaynaklar
 

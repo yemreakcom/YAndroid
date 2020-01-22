@@ -233,7 +233,7 @@ open class WifiP2PBroadcastReceiver(
 
     override fun onReceive(context: Context, intent: Intent) {
         when (intent.action) {
-            WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged()
+            WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged(intent)
             WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION -> onPeerChanged()
             WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION -> 
                 onConnectionChanged()
@@ -242,7 +242,7 @@ open class WifiP2PBroadcastReceiver(
         }
     }
 
-    private fun onStateChanged(): Unit {
+    private fun onStateChanged(intent: Intent): Unit {
         Log.d(TAG, "onStateChanged: Wifi P2P durumu değişti")
     }
 
@@ -414,10 +414,50 @@ private void unregisterWifiFilter() {
 
 ### 🧐 P2P Durum Değişikliklerini Algılama
 
-```kotlin
-// WifiP2pActivity içerisinde tanımlı
-var p2pEnable: Boolean = false
+* 👮‍♂️ Keşfetme işlemlerine başlamadan önce WiFi durumu kontrol edilmelidir
+* ✖️ Eğer WiFi P2P aktif değilse keşif yapılamaz
 
+{% code title="activity\_wifip2p.xml" %}
+```markup
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WifiP2pActivity">
+
+    <TextView
+        android:id="@+id/tvP2pStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+{% endcode %}
+
+{% code title="WifiP2pActivity.java" %}
+```kotlin
+/**
+ * WiFi P2P aktiflik durumu
+ */
+var p2pEnable: Boolean = false
+		set(value) {
+			field = value
+			tvP2pStatus.text = value.toString()
+		}
+```
+{% endcode %}
+
+{% code title="WifiP2PBroadcastReceiver.java" %}
+```kotlin
 /**
  * Wifi P2P durum değişikliklerinde tetiklenir
  */
@@ -425,13 +465,100 @@ private fun onStateChanged(intent: Intent): Unit {
 	Log.d(TAG, "onStateChanged: Wifi P2P durumu değişti")
 
 	wifiP2pActivity.p2pEnable = when (
-			intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1)
-	) {
-			WifiP2pManager.WIFI_P2P_STATE_ENABLED -> true
-			else -> false
+		intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1)
+		) {
+		WifiP2pManager.WIFI_P2P_STATE_ENABLED -> true
+		else -> false
 	}
 }
 ```
+{% endcode %}
+
+### 👨‍💼 Eş Değişiklikleri Kontrol Etme
+
+* 🔍 Keşfetme \(discover\) işlemi başarıyla yapıldıktan sonra çalışır
+* 🙆‍♂️ Eşleşilebilir cihazların listesi `requestPeers` ile talep edilir
+* 💾 Talep edilen liste `onPeerAvailable` metodu içerisinde `peerList` objesine kaydedilir
+
+{% code title="WifiP2pActivity.java" %}
+```kotlin
+/**
+ * Eşleşilebilir cihazların listesi
+ */
+val peerList = ArrayList<WifiP2pDevice>()
+
+// ...
+
+/**
+ * requestPeers ile tetiklenmektedir
+ */
+fun onPeerAvailable(peerList: WifiP2pDeviceList) {
+    peerList.apply {
+        Log.v(TAG, "onPeersAvailable: $deviceList")
+
+        this.peerList.apply {
+            if (this != deviceList) {
+                clear()
+                addAll(deviceList)
+            }
+        }
+    }
+}
+```
+{% endcode %}
+
+{% code title="WifiP2PBroadcastReceiver.java" %}
+```kotlin
+// ...
+
+private fun onPeerChanged(): Unit {
+    Log.d(TAG, "onPeerChanged: WiFi eşleri değişti")
+    
+    manager.requestPeers(wifiP2pChannel, wifiP2pActivity::onPeerAvailable)
+}
+
+// ...
+```
+{% endcode %}
+
+## 🔍 Eşleşebilecek Cihazları Arama
+
+* ✔️ Keşif başarılı olursa, `WIFI_P2P_PEERS_CHANGED_ACTION` haberi salınır
+* 🕵️‍♂️ `BroadcastReceiver` üzerinden haber durumunda ne yapılacağına karar verilir
+* 💁‍♂️ `onPeerChanged` metodu tetiklenecektir
+
+{% code title="WifiP2pActivity.java" %}
+```kotlin
+fun onDiscoverButtonClick(view: View): Unit {
+    Log.i(TAG, "onDiscoverButtonClick: Discover butonuna tıklandı")
+
+    wifiP2pManager.discoverPeers(
+	    wifiP2pChannel, 
+	    object : WifiP2pManager.ActionListener {
+	
+				override fun onSuccess() {
+					// Değişiklik olursa WIFI_P2P_PEERS_CHANGED_ACTION eylemini tetikler
+					Log.d(TAG, "onDiscoverButtonClick: Keşif başarılı")
+					return
+				}
+
+				override fun onFailure(reason: Int) {
+					val reasonMsg = when (reason) {
+						WifiP2pManager.P2P_UNSUPPORTED -> "P2P desteklenmiyor"
+						WifiP2pManager.ERROR -> "hata oluştur"
+						WifiP2pManager.BUSY -> "cihaz başka bir bağlantı ile meşgul"
+						else -> ""
+					}
+
+					Log.e(TAG, "onDiscoverButtonClick: Keşif başarısız, $reasonMsg")
+				}
+			}
+		)
+}
+```
+{% endcode %}
+
+
 
 ## 🐞 Hata Çözümleri
 
