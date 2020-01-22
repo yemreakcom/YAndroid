@@ -231,7 +231,7 @@ open class WifiP2PBroadcastReceiver(
         val TAG = this::class.java.simpleName
     }
 
-    @SuppressLint("MissingPermission")
+    @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     override fun onReceive(context: Context, intent: Intent) {
     		when (intent.action) {
     			WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> onStateChanged(intent)
@@ -546,7 +546,7 @@ val peerList = ArrayList<WifiP2pDevice>()
 // ...
 
 /**
- * requestPeers ile tetiklenmektedir
+ * Cihazları peerList objesine kaydetme
  */
 fun storePeers(peers: WifiP2pDeviceList) {
 	peers.apply {
@@ -569,7 +569,7 @@ fun storePeers(peers: WifiP2pDeviceList) {
 
 @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
 private fun onPeerChanged(): Unit {
-    Log.d(TAG, "onPeerChanged: ")
+    Log.d(TAG, "onPeerChanged: WiFi eşleri değişti")
 
     manager.requestPeers(channel, wifiP2pActivity::storePeers)
 }
@@ -578,7 +578,12 @@ private fun onPeerChanged(): Unit {
 ```
 {% endcode %}
 
-## 📶 Cihaza Bağlanma
+## 📶 Eşlerden Birine Bağlanma
+
+* 🔗 Bağlanma işlemi için `manager.connect` metodu kullanılır
+* 👨‍💼 Bağlantı değiştiğinde [`WIFI_P2P_CONNECTION_CHANGED_ACTION`](https://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html#WIFI_P2P_CONNECTION_CHANGED_ACTION) haberi salınır
+* 💡 Bağlantı bilgisi almak için `manager.requestConnectionInfo` metodu ile istekte bulunur
+* 🕊️ Bilgi doğrultusunda sunucu ve istemci türüne karar verilir
 
 {% code title="WifiP2pActivity.java" %}
 ```kotlin
@@ -592,6 +597,48 @@ fun connectPeer(peer: WifiP2pDevice) {
 }
 ```
 {% endcode %}
+
+{% code title="WifiP2PBroadcastReceiver.java" %}
+```kotlin
+// WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION ->
+				onConnectionChanged()
+
+private fun onConnectionChanged(): Unit {
+    Log.d(TAG, "onConnectionChanged: WiFi P2P bağlantısı değişti")
+
+    manager.requestConnectionInfo(channel, wifiP2pActivity::createSocket)
+}
+```
+{% endcode %}
+
+{% code title="WifiP2pActivity.java" %}
+```kotlin
+fun createSocket(info: WifiP2pInfo) {
+	  when {
+			isServer(info) -> { /* createServerSocket() */ }
+			isClient(info) -> { /* createClientSocket() */ }
+		}
+}
+
+private fun isServer(info: WifiP2pInfo): Boolean {
+		return info.run {
+				groupFormed && isGroupOwner
+		}
+}
+
+private fun isClient(info: WifiP2pInfo): Boolean {
+		return info.run {
+				groupFormed && !isGroupOwner
+		}
+}
+```
+{% endcode %}
+
+## 🕳️ Socket Oluşturma
+
+* 🏹 Veri aktarımı Socket üzerinden yapılmaktadır
+* 🏗️ Aktarılmadan önce Client veya Server Socket oluşturulmalıdır
+* 📶 Server Socket'in IP adresi Client'e aktarılmalıdır
 
 ## 🐞 Hata Çözümleri
 
