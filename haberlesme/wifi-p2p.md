@@ -253,19 +253,19 @@ open class WifiDirectBroadcastReceiver(
     }
 
     private fun onStateChanged(): Unit {
-        Log.i(TAG, "onStateChanged: ")
+        Log.d(TAG, "onStateChanged: ")
     }
 
     private fun onPeerChanged(): Unit {
-        Log.i(TAG, "onPeerChanged: ")
+        Log.d(TAG, "onPeerChanged: ")
     }
 
     private fun onConnectionChanged(): Unit {
-        Log.i(TAG, "onConnectionChanged: ")
+        Log.d(TAG, "onConnectionChanged: ")
     }
 
     private fun onThisDeviceChanged(): Unit {
-        Log.i(TAG, "onThisDeviceChanged: ")
+        Log.d(TAG, "onThisDeviceChanged: ")
     }
 }
 ```
