@@ -179,8 +179,9 @@ val PRC_ACCESS_FINE_LOCATION = 1
 			PRC_ACCESS_FINE_LOCATION -> 
 				if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
 					Toast.makeText(this, "Konum izni gereklidir", Toast.LENGTH_SHORT).show()
+					finish()
 				}
-		}
+			}
 	}
 ```
 {% endtab %}
