@@ -11,7 +11,7 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-class WifiDirectActivity : AppCompatActivity() {
+class WifiP2pActivity : AppCompatActivity() {
 
     /**
      * WiFi değişikliklerinde receiver'ı çalıştırma
@@ -221,10 +221,10 @@ public void onRequestPermissionsResult(
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-open class WifiDirectBroadcastReceiver(
+open class WifiP2PBroadcastReceiver(
     var manager: WifiP2pManager,
     var channel: WifiP2pManager.Channel,
-    var wifiDirectActivity: WifiDirectActivity
+    var wifiP2pActivity: WifiP2pActivity
 ) : BroadcastReceiver() {
 
     companion object {
@@ -243,19 +243,19 @@ open class WifiDirectBroadcastReceiver(
     }
 
     private fun onStateChanged(): Unit {
-        Log.d(TAG, "onStateChanged: ")
+        Log.d(TAG, "onStateChanged: Wifi P2P durumu değişti")
     }
 
     private fun onPeerChanged(): Unit {
-        Log.d(TAG, "onPeerChanged: ")
+        Log.d(TAG, "onPeerChanged: WiFi eşleri değişti")
     }
 
     private fun onConnectionChanged(): Unit {
-        Log.d(TAG, "onConnectionChanged: ")
+        Log.d(TAG, "onConnectionChanged: WiFi P2P bağlantısı değişti")
     }
 
     private fun onThisDeviceChanged(): Unit {
-        Log.d(TAG, "onThisDeviceChanged: ")
+        Log.d(TAG, "onThisDeviceChanged: Cihazın WiFi P2P durumu değişti")
     }
 }
 ```
@@ -321,7 +321,7 @@ public class WiFiDirectBroadcastReciever extends BroadcastReceiver {
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
-class WifiDirectActivity : AppCompatActivity() {
+class WifiP2pActivity : AppCompatActivity() {
      
      // ...
      
@@ -409,6 +409,29 @@ private void unregisterWifiFilter() {
 ```
 {% endtab %}
 {% endtabs %}
+
+## 👷‍♂️ Durumlara Tepki Gösterme
+
+### 🧐 P2P Durum Değişikliklerini Algılama
+
+```kotlin
+// WifiP2pActivity içerisinde tanımlı
+var p2pEnable: Boolean = false
+
+/**
+ * Wifi P2P durum değişikliklerinde tetiklenir
+ */
+private fun onStateChanged(intent: Intent): Unit {
+	Log.d(TAG, "onStateChanged: Wifi P2P durumu değişti")
+
+	wifiP2pActivity.p2pEnable = when (
+			intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1)
+	) {
+			WifiP2pManager.WIFI_P2P_STATE_ENABLED -> true
+			else -> false
+	}
+}
+```
 
 ## 🐞 Hata Çözümleri
 
