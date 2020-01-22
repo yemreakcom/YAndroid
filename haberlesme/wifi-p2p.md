@@ -14,7 +14,7 @@ description: Destekleyen cihazlar için android WiFi P2P bağlantısı
 class WifiDirectActivity : AppCompatActivity() {
 
     /**
-     * Wifi alıcısı için filtreleme
+     * WiFi alıcısı için filtreleme
      */
     private val wifiFilter = IntentFilter().apply {
         addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION)
@@ -24,12 +24,12 @@ class WifiDirectActivity : AppCompatActivity() {
     }
 
     /**
-     * WiFi değişikliklerinde reciever'ı çalıştırma
+     * WiFi değişikliklerinde receiver'ı çalıştırma
      */
     private lateinit var manager: WifiP2pManager
 
     /**
-     * Wi-Fi P2P Frameworkü ile uygulamamıza bağlanmayı sağlayacak obje
+     * WiFi P2P Framework'ü ile uygulamamıza bağlanmayı sağlayacak obje
      */
     private lateinit var channel: WifiP2pManager.Channel
 
