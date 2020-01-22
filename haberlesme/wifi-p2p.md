@@ -45,7 +45,7 @@ class WifiDirectActivity : AppCompatActivity() {
         channel = manager.initialize(this, mainLooper, null)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // getWifiP2pPermissions()
+            // getWifiP2PPermissions()
         }
     }
     // ...
@@ -149,34 +149,39 @@ Aşağıdaki metotlar **Location Mode \(Konum Hizmeti\)** özelliğinin aktif ol
 val PRC_ACCESS_FINE_LOCATION = 1
 
 @RequiresApi(Build.VERSION_CODES.M)
-fun getWifiP2pPermissions(): Unit {
-    Manifest.permission.ACCESS_FINE_LOCATION.let {
-        if (!hasPermission(it)) {
-            requestPermissions(arrayOf(it), PRC_ACCESS_FINE_LOCATION)
-        }
-    }
-}
+	private fun getWifiP2PPermissions() {
+		if (!hasWifiP2PPermission()) {
+			requestWifiP2PPermissions()
+		}
+	}
 
-@RequiresApi(Build.VERSION_CODES.M)
-fun hasPermission(permission: String): Boolean {
-    return checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
-}
+	@RequiresApi(Build.VERSION_CODES.M)
+	private fun hasWifiP2PPermission(): Boolean {
+		return checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) 
+		== PackageManager.PERMISSION_GRANTED
+	}
 
-override fun onRequestPermissionsResult(
-    requestCode: Int,
-    permissions: Array<out String>,
-    grantResults: IntArray
-) {
-    when (requestCode) {
-        PRC_ACCESS_FINE_LOCATION -> {
-            if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                Log.w(TAG, "onRequestPermissionsResult: Konum izni gereklidir")
-                Toast.makeText(this, "İzinler gereklidir 😥", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        }
-    }
-}
+	@RequiresApi(Build.VERSION_CODES.M)
+	private fun requestWifiP2PPermissions() {
+		requestPermissions(
+			arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 
+			PRC_ACCESS_FINE_LOCATION
+		)
+	}
+
+	override fun onRequestPermissionsResult(
+		requestCode: Int, 
+		permissions: Array<out String>, 
+		grantResults: IntArray
+	) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+		when(requestCode) {
+			PRC_ACCESS_FINE_LOCATION -> 
+				if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+					Toast.makeText(this, "Konum izni gereklidir", Toast.LENGTH_SHORT).show()
+				}
+		}
+	}
 ```
 {% endtab %}
 
