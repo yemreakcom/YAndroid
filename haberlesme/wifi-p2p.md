@@ -826,6 +826,7 @@ fun createClientSocket() {
 
 ## 🔗 Faydalı Bağlantılar
 
+* [⭐ WiFi P2P \(Direct\) işlemleri için demo](https://github.com/yedhrab/WiFiP2PDemo)
 * [⭐ EasyWifiP2P ~ Wifi P2P kütüphanesi](https://github.com/cubesky/EasyWifiP2P)
 * [⭐ SocketChannel ~ Socket yönetimi](https://github.com/cubesky/SocketChannel)
 * [📖 WiFi Direct P2P Overview](https://developer.android.com/guide/topics/connectivity/wifip2p.html)
