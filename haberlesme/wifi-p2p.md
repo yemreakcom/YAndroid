@@ -633,7 +633,7 @@ private fun isClient(info: WifiP2pInfo): Boolean {
 ```
 {% endcode %}
 
-## 🕳️ Socket Oluşturma
+## 🕳️ TCP Socket Oluşturma
 
 * 🏹 Veri aktarımı Socket üzerinden yapılmaktadır
 * 🏗️ Aktarılmadan önce Client veya Server Socket oluşturulmalıdır
@@ -811,6 +811,15 @@ fun createClientSocket() {
     tvMsg.text = "Client"
 }
 ```
+
+## 🕳️ UDP Socket Oluşturma
+
+* [📦 SocketChannel](https://github.com/cubesky/SocketChannel)
+* 👨‍💻 [\[Android\|Kotlin\]UDP Socket](https://medium.com/@hongminlai/android-kotlin-udp-socket-fba4474ea0b1)
+* [📖 A Guide To UDP In Java](https://www.baeldung.com/udp-in-java)
+* 👨‍💻 [SendRecieve UDP Socket](https://stackoverflow.com/questions/19540715/send-and-receive-data-on-udp-socket-java-android)
+* [👨‍💻 Kotlin UDP](https://qiita.com/unpi/items/82385d19d0d973abe459)
+* [👨‍💻 UDPServer.java](https://github.com/cubesky/SocketChannel/blob/master/src/main/java/party/liyin/socketchannel/UDPServer.java)
 
 ## 🐞 Hata Çözümleri
 
