@@ -14,6 +14,12 @@
 
 ## 🔗 Faydalı Kaynaklar
 
+{% embed url="https://lib.yemreak.com/yazilar/kotlin-vs-java" %}
+
+{% embed url="https://kotlin.yemreak.com/faydali-kullanimlar" %}
+
+{% embed url="https://kotlin.yemreak.com" %}
+
 {% embed url="https://kotlinlang.org/community/" %}
 
 {% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
