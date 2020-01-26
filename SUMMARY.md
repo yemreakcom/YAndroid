@@ -54,6 +54,7 @@
   * [🌞 Foreground Service](android-servisleri/foreground-service.md)
   * [🐥 Intent Service](android-servisleri/intent-service.md)
 * [✨ Faydalı Bilgiler](faydali/README.md)
+  * [📅 Tarih işlemleri](faydali/tarih-islemleri.md)
   * [🚧 Proje İsmi Değiştirme](faydali/proje-islemleri.md)
   * [🤖 Android Things](faydali/android-things.md)
   * [📲 Telefonu Bilgisayara Bağlama](faydali/telefonu-bilgisayara-baglama.md)
