@@ -10,8 +10,6 @@
 {% tabs %}
 {% tab title="⭐ Görsel" %}
 
-{% endtab %}
-
 {% tab title="📜 XML Kodları" %}
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
@@ -42,8 +40,6 @@ class MainActivity : AppCompatActivity() {
 
 {% tabs %}
 {% tab title="⭐ Görsel" %}
-
-{% endtab %}
 
 {% tab title="📜 XML Kodları" %}
 ```markup

@@ -38,8 +38,6 @@ startActivity(intent)
 {% tabs %}
 {% tab title="⭐ Örnek" %}
 
-{% endtab %}
-
 {% tab title="Manifest" %}
 ```markup
 <?xml version="1.0" encoding="utf-8"?>

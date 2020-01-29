@@ -1,2 +1,2 @@
-# 🌄 Arkaplan'da Çalışma
+# 🌄 Arka planda Çalışma
 
