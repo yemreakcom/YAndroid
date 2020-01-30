@@ -1,4 +1,4 @@
-# �� Dokümanlar
+# 📝 Dokümanlar
 
 * [1 rcycleview.pdf](https://github.com/YEmreAk/YAndroid/tree/79e82ebbee34a255e9465a0dba80ee95d4db2964/pdf/1%20rcycleview.pdf)
 * [1-1 alertdialog.pdf](https://github.com/YEmreAk/YAndroid/tree/79e82ebbee34a255e9465a0dba80ee95d4db2964/pdf/1-1%20alertdialog.pdf)
