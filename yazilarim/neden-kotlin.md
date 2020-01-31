@@ -5,11 +5,12 @@
 * 👁️ Açık kaynaklıdır \(Java kapalı\)
 * 🧼 Daha az kod ile daha fazla iş yapmamızı sağlar
 * ⭐ Android için özel olarak geliştirilmiştir \(resmi dil\)
-* 🚀 Java ile uyumlu çalışır
+* 🚀 Proje Kotlin dahi olsa Java sınıfları oluşturabilirsin
 * 🕰️ Java 8 eskidir, java 13 çıkmıştır
+* ➕ Kotlin fonksiyon eklentileri ile kodlamada hızımız artar
 
 {% hint style="success" %}
-🚀 Kotlin projesinde de java sınıfları oluşturup, kullanabilirsin
+‍🚀 Android Kotlin Extension'ları [Android KTX](https://developer.android.com/kotlin/ktx/extensions-list) paketi altındadır
 {% endhint %}
 
 ## 🔗 Faydalı Kaynaklar

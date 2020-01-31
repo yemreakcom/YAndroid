@@ -36,6 +36,7 @@
     * [🌃 Asenkrona Giriş](arkaplan/asynctask-ve-asynctaskloader/asenkrona-giris.md)
     * [🔁 AsyncTask](arkaplan/asynctask-ve-asynctaskloader/asynctask.md)
     * [🔂 AsyncTask Loader](arkaplan/asynctask-ve-asynctaskloader/asynctask-loader.md)
+  * [👷‍♂️ WorkManager](arkaplan/workmanager.md)
   * [🔔 Notification](arkaplan/notification-1/README.md)
     * [✍ Yazılı Notlar \| Notification](arkaplan/notification-1/notification.md)
     * [🏗️ Oluşturma \| Notification](arkaplan/notification-1/giris-or-notification.md)
