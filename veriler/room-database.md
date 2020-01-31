@@ -18,26 +18,35 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * 🔄 Güncel RoomDB sürümüne [Versions](https://developer.android.com/jetpack/androidx/releases/room#version_223_3) alanından erişebilirsin
 * ➕ RoomDB için Kotlin eklentilerine [Room KTX](https://developer.android.com/kotlin/ktx#room) alanından erişebilirsin
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 dependencies {
   def room_version = "2.2.3"
 
   implementation "androidx.room:room-runtime:$room_version"
-  annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
-
-  // optional - Kotlin Extensions and Coroutines support for Room
-  implementation "androidx.room:room-ktx:$room_version"
-
-  // optional - RxJava support for Room
-  implementation "androidx.room:room-rxjava2:$room_version"
-
-  // optional - Guava support for Room, including Optional and ListenableFuture
-  implementation "androidx.room:room-guava:$room_version"
-
-  // Test helpers
-  testImplementation "androidx.room:room-testing:$room_version"
+  annotationProcessor "androidx.room:room-compiler:$room_version"
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```groovy
+dependencies {
+	def room_version = "2.2.3"
+	def viewmodel_version = "2.2.0"
+	def livedata_version = "2.2.0"
+
+	// Temel room paketi
+	implementation "androidx.room:room-ktx:$room_version"
+	// View model Kotlin eklentileri
+	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version'
+	// Flow - LiveData dönüşümü için Kotlin eklentileri
+	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version'
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylar için [Declaring dependencies](https://developer.android.com/jetpack/androidx/releases/room#declaring_dependencies) alanına bakabilirsin.
