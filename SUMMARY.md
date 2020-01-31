@@ -30,6 +30,7 @@
   * [👐 Shared Preferences](veriler/shared-preferences.md)
   * [🗃️ SQLite](veriler/sqlite.md)
   * [💽 Room Database](veriler/room-database.md)
+  * [🎃 Kotlin RoomDB](veriler/kotlin-roomdb.md)
 * [🌄 Arka planda Çalışma](arkaplan/README.md)
   * [👮‍♂️ Çalışma Prensibi](arkaplan/calisma-prensibi.md)
   * [👷‍♂️ Kotlin Coroutine](arkaplan/kotlin-coroutine.md)

@@ -445,6 +445,215 @@ private void fillView(ArrayList<Words> words) {
 ‍🧙‍♂ Detaylar için [RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview) alanına bakabilirsiniz.
 {% endhint %}
 
+## 👨‍💻 Kotlin Flow RoomDB
+
+{% tabs %}
+{% tab title="📦 Gradle" %}
+```groovy
+dependencies {
+    implementation "androidx.room:room-ktx:2.2.3"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+}
+```
+{% endtab %}
+
+{% tab title="⭐ Entity" %}
+```kotlin
+package com.yemreak.depremya.db.entity
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import com.yemreak.depremya.db.entity.Quake.Companion.TABLE_NAME
+
+/**
+ * Deprem bilgileri
+ * @see <a href="http://www.koeri.boun.edu.tr/scripts/lst0.asp">Son depremler `~ Kandilli Rasathanesi</a>
+ */
+@Entity(tableName = TABLE_NAME)
+data class Quake(
+	@ColumnInfo(name = COLUMN_DATE) val date: String,
+	@ColumnInfo(name = COLUMN_HOUR) val hour: String,
+	@ColumnInfo(name = COLUMN_LAT) val lat: String,
+	@ColumnInfo(name = COLUMN_LNG) val lng: String,
+	@ColumnInfo(name = COLUMN_DEPTH) val depth: String,
+	@ColumnInfo(name = COLUMN_MD) val md: String,
+	@ColumnInfo(name = COLUMN_ML) val ml: String,
+	@ColumnInfo(name = COLUMN_MW) val mw: String,
+	@ColumnInfo(name = COLUMN_CITY) val city: String,
+	@ColumnInfo(name = COLUMN_REGION) val region: String,
+	@ColumnInfo(name = COLUMN_RESOLUTION) val resolution: String
+) {
+	
+	companion object {
+		
+		const val TABLE_NAME = "Quake"
+		const val COLUMN_DATE = "date"
+		const val COLUMN_HOUR = "hour"
+		const val COLUMN_LAT = "lat"
+		const val COLUMN_LNG = "lng"
+		const val COLUMN_DEPTH = "depth"
+		const val COLUMN_MD = "md"
+		const val COLUMN_ML = "ml"
+		const val COLUMN_MW = "mw"
+		const val COLUMN_CITY = "city"
+		const val COLUMN_REGION = "region"
+		const val COLUMN_RESOLUTION = "resolution"
+		
+	}
+	
+	override fun toString(): String {
+		return "EarthQuake(date='$date', hour='$hour', lat='$lat', long='$lng', depth='$depth', md='$md', ml='$ml', mw='$mw', city='$city', region='$region', resolution='$resolution')"
+	}
+}
+
+```
+{% endtab %}
+
+{% tab title="🐣 Dao" %}
+```kotlin
+package com.yemreak.depremya.db.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.flow.Flow
+
+
+@Dao
+abstract class QuakeDao {
+	
+	@Insert
+	abstract fun insertAll(quakes: Array<out Quake>)
+	
+	@Query("SELECT * FROM ${Quake.TABLE_NAME}")
+	abstract fun getAll(): Flow<List<Quake>>
+	
+	@Query("SELECT * FROM ${Quake.TABLE_NAME} WHERE ${Quake.COLUMN_MD} > :md")
+	abstract fun getAllHigherMd(md: Float): Flow<List<Quake>>
+	
+	@Query("DELETE FROM ${Quake.TABLE_NAME}")
+	abstract fun deleteAll()
+	
+}
+
+```
+{% endtab %}
+
+{% tab title="🗃️ Room" %}
+```kotlin
+package com.yemreak.depremya.db
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.yemreak.depremya.db.dao.QuakeDao
+import com.yemreak.depremya.db.entity.Quake
+
+@Database(entities = [Quake::class], version = 1, exportSchema = false)
+abstract class QuakeRoom(context: Context) : RoomDatabase() {
+	
+	companion object {
+		
+		const val DB_NAME = "quake_db"
+		
+		/**
+		 * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
+		 */
+		@Volatile
+		private var INSTANCE: QuakeRoom? = null
+		
+		fun getDatabase(context: Context): QuakeRoom {
+			return when (val tempInstance = INSTANCE) {
+				null -> synchronized(this) {
+					val instance = Room.databaseBuilder(
+						context,
+						QuakeRoom::class.java,
+						DB_NAME
+					).fallbackToDestructiveMigration().build()
+					INSTANCE = instance
+					
+					return instance
+				}
+				else -> tempInstance
+			}
+		}
+	}
+	
+	abstract fun quakeDao(): QuakeDao
+}
+
+```
+{% endtab %}
+
+{% tab title="🗃️ Repo" %}
+```kotlin
+package com.yemreak.depremya
+
+import com.yemreak.depremya.db.dao.QuakeDao
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.flow.Flow
+
+class QuakeRepository(private val quakeDao: QuakeDao) {
+	
+	val allQuakes: Flow<List<Quake>> = quakeDao.getAll()
+	
+	fun insert(quakes: Array<out Quake>) {
+		quakeDao.insertAll(quakes)
+	}
+	
+	fun deleteAll() {
+		quakeDao.deleteAll()
+	}
+	
+}
+
+```
+{% endtab %}
+
+{% tab title="🔗 ViewModel" %}
+```kotlin
+package com.yemreak.depremya.viewmodel
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import com.yemreak.depremya.QuakeRepository
+import com.yemreak.depremya.db.QuakeRoom
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.launch
+
+class QuakeViewModel(application: Application) : AndroidViewModel(application) {
+	
+	private val repository: QuakeRepository
+	
+	private val allQuakes: LiveData<List<Quake>>
+	
+	init {
+		val quakeDao = QuakeRoom.getDatabase(application.applicationContext).quakeDao()
+		repository = QuakeRepository(quakeDao)
+		allQuakes = repository.allQuakes.asLiveData()
+	}
+	
+	fun refreshQuakes(quakes: Array<out Quake>) = viewModelScope.launch {
+		repository.deleteAll()
+		repository.insert(quakes)
+	}
+	
+	fun getLastQuake(): Quake? {
+		return allQuakes.value?.first()
+	}
+	
+}
+
+```
+{% endtab %}
+{% endtabs %}
+
 ## 🔗 Faydalı Bağlantılar
 
 * 📃 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
