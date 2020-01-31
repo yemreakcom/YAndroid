@@ -447,6 +447,9 @@ private void fillView(ArrayList<Words> words) {
 
 ## 👨‍💻 Kotlin Flow RoomDB
 
+* 💨 Kotlin Flow yapısı ile RoomDB oluşturabilir
+* 📢 Henüz deneysel aşamadadır
+
 {% tabs %}
 {% tab title="📦 Gradle" %}
 ```groovy
@@ -653,6 +656,10 @@ class QuakeViewModel(application: Application) : AndroidViewModel(application) {
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [👨‍💻 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines) alanına bakabilirsin.
+{% endhint %}
 
 ## 🔗 Faydalı Bağlantılar
 
