@@ -55,6 +55,7 @@
   * [🌞 Foreground Service](android-servisleri/foreground-service.md)
   * [🐥 Intent Service](android-servisleri/intent-service.md)
 * [✨ Faydalı Bilgiler](faydali/README.md)
+  * [📍 Google Maps Kullanımı](faydali/google-maps-kullanimi.md)
   * [📅 Tarih işlemleri](faydali/tarih-islemleri.md)
   * [🚧 Proje İsmi Değiştirme](faydali/proje-islemleri.md)
   * [🤖 Android Things](faydali/android-things.md)
