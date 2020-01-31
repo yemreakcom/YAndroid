@@ -15,6 +15,9 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 
 ## 🏗️ Projeye Dahil Etme
 
+* 🔄 Güncel RoomDB sürümüne [Versions](https://developer.android.com/jetpack/androidx/releases/room#version_223_3) alanından erişebilirsin
+* ➕ RoomDB için Kotlin eklentilerine [Room KTX](https://developer.android.com/kotlin/ktx#room) alanından erişebilirsin
+
 ```java
 dependencies {
   def room_version = "2.2.3"
