@@ -9,7 +9,7 @@
 
 ## 🧐 Kaynaklar
 
-{% embed url="https://developer.android.com/topic/libraries/architecture/workmanager" %}
-
-{% embed url="https://codelabs.developers.google.com/codelabs/android-workmanager-kt/\#0" %}
+* [📖 Schedule tasks with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)
+* [🏂 Getting started with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/basics)
+* [👨‍💻 Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
 

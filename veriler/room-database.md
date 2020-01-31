@@ -7,7 +7,7 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 ## 🔰 Room Database Nedir
 
 * 🤓 SQL komutları ile uğraşmadan direkt android kodları ile çalışmamızı sağlar
-* ✨ Optimize edilmiş bir veri tabanı sunar \(LiveData\)
+* ✨ Optimize edilmiş bir veri tabanı sunar \(`LiveData`\)
 
 {% hint style="warning" %}
 📢 Sayfanın en altındaki linklerden resmi bağlantılara erişebilirsin.
@@ -221,8 +221,8 @@ public abstract class WordRoomDatabase : RoomDatabase() {
 
    companion object {
         /**
-		 * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
-		 */
+		     * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
+    		 */
         @Volatile
         private var INSTANCE: WordRoomDatabase? = null
 
@@ -317,6 +317,23 @@ public class WordRepository {
 }
 ```
 {% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+// Declares the DAO as a private property in the constructor. Pass in the DAO
+// instead of the whole database, because you only need access to the DAO
+class WordRepository(private val wordDao: WordDao) {
+
+    // Room executes all queries on a separate thread.
+    // Observed LiveData will notify the observer when the data has changed.
+    val allWords: LiveData<List<Word>> = wordDao.getAlphabetizedWords()
+ 
+    suspend fun insert(word: Word) {
+        wordDao.insert(word)
+    }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## 🛍️ ViewHolder
@@ -329,6 +346,8 @@ public class WordRepository {
 
 ![](../.gitbook/assets/room_vh_hand.png)
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 public class WordViewModel extends AndroidViewModel {
 
@@ -347,6 +366,40 @@ public class WordViewModel extends AndroidViewModel {
    public void insert(Word word) { mRepository.insert(word); }
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+// Class extends AndroidViewModel and requires application as a parameter.
+class WordViewModel(application: Application) : AndroidViewModel(application) {
+
+    // The ViewModel maintains a reference to the repository to get data.
+    private val repository: WordRepository
+    // LiveData gives us updated words when they change.
+    val allWords: LiveData<List<Word>>
+
+    init {
+        // Gets reference to WordDao from WordRoomDatabase to construct
+        // the correct WordRepository. 
+        val wordsDao = WordRoomDatabase.getDatabase(application).wordDao()
+        repository = WordRepository(wordsDao)
+        allWords = repository.allWords
+    }
+
+    /**
+     * The implementation of insert() in the database is completely hidden from the UI.
+     * Room ensures that you're not doing any long running operations on 
+     * the main thread, blocking the UI, so we don't need to handle changing Dispatchers.
+     * ViewModels have a coroutine scope based on their lifecycle called 
+     * viewModelScope which we can use here.
+     */
+    fun insert(word: Word) = viewModelScope.launch {
+        repository.insert(word)
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ## ✨ LiveData
 
@@ -395,4 +448,5 @@ private void fillView(ArrayList<Words> words) {
 
 * [📖 Room KTX](https://developer.android.com/kotlin/ktx#room)
 * [👨‍💻 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
+* [👨‍💻 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines)
 
