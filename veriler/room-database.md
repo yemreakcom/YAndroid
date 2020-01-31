@@ -56,6 +56,8 @@ dependencies {
 
 ![](../.gitbook/assets/entity_hand.png)
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 @Entity(tableName = "word_table")
 public class Word {
@@ -73,6 +75,15 @@ public class Word {
 }
 
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+@Entity(tableName = "word_table")
+class Word(@PrimaryKey @ColumnInfo(name = "word") val word: String)
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 👀 Daha fazlası için [Entity](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#entity) ve [Defining data using Room entities](https://developer.android.com/training/data-storage/room/defining-data.html) dokümanlarına bakabilirsin.
@@ -107,6 +118,8 @@ public class Word {
 
 ![](../.gitbook/assets/dao_hand.png)
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 @Dao
 public interface WordDao {
@@ -134,6 +147,25 @@ public interface WordDao {
    public List<Word> findWord(String word);
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+@Dao
+interface WordDao {
+
+    @Query("SELECT * from word_table ORDER BY word ASC")
+    fun getAlphabetizedWords(): List<Word>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(word: Word)
+
+    @Query("DELETE FROM word_table")
+    suspend fun deleteAll()
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 👀 Daha fazlası için [The DAO \(data access object\)](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#dao) dokümanına bakabilirsin.
@@ -150,6 +182,8 @@ public interface WordDao {
 
 ![](../.gitbook/assets/roomdb_hand.png)
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 @Database(entities = {Word.class}, version = 1)
 public abstract class WordRoomDatabase extends RoomDatabase {
@@ -175,6 +209,42 @@ public abstract class WordRoomDatabase extends RoomDatabase {
    }
 }
 ```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+// Annotates class to be a Room Database with a table (entity) of the Word class
+@Database(entities = arrayOf(Word::class), version = 1, exportSchema = false)
+public abstract class WordRoomDatabase : RoomDatabase() {
+
+   abstract fun wordDao(): WordDao
+
+   companion object {
+        /**
+		 * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
+		 */
+        @Volatile
+        private var INSTANCE: WordRoomDatabase? = null
+
+        fun getDatabase(context: Context): WordRoomDatabase {
+            return when (val tempInstance = INSTANCE) {
+                null -> synchronized(this) {
+                    val instance = Room.databaseBuilder(
+                            context.applicationContext,
+                            WordRoomDatabase::class.java, 
+                            "word_database"
+                        ).build()
+                    INSTANCE = instance
+                    return instance
+                }
+                else -> tempInstance 
+            }           
+        }
+   }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 👀 Daha fazlası için [Room database](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html#room) dokümanına bakabilirsin.
@@ -205,6 +275,8 @@ public abstract class WordRoomDatabase extends RoomDatabase {
 
 ![](../.gitbook/assets/room_repo_hand.png)
 
+{% tabs %}
+{% tab title="Java" %}
 ```java
 public class WordRepository {
 
@@ -244,6 +316,8 @@ public class WordRepository {
    }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ## 🛍️ ViewHolder
 
@@ -313,7 +387,12 @@ private void fillView(ArrayList<Words> words) {
 
 * 📃 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
 * 👨‍💻 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
-* 👨‍🏫 [Room ~ Android Training](https://developer.android.com/training/data-storage/room)
+* [👨‍🏫 Save data in a local database using Room ~Training](https://developer.android.com/training/data-storage/room)
 * [🐣 Accessing data using Room DAOs](https://developer.android.com/training/data-storage/room/accessing-data)
 * [👁️ Android, RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+
+### 🎃 Kotlin
+
+* [📖 Room KTX](https://developer.android.com/kotlin/ktx#room)
+* [👨‍💻 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
 
