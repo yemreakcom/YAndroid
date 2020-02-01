@@ -7,6 +7,22 @@
 * 🕐 Ertelenebilir işlemler
 * 💁‍♂️ Cihaz yeniden başlatılsa, uygulama kapansa bile devam eder
 
+## 🕐 Periyodik Olarak Çalıştırma
+
+```text
+workManager.enqueue(
+			PeriodicWorkRequest.Builder(
+				SyncCoWorker::class.java,
+				15,
+				TimeUnit.MINUTES,
+				15,
+				TimeUnit.MINUTES
+			).build()
+		)
+```
+
+![](../.gitbook/assets/workmanager_period.png)
+
 ## 🧐 Kaynaklar
 
 * [📖 Schedule tasks with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)

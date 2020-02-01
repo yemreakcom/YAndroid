@@ -2,7 +2,5 @@
 
 ## ✍ Yazılı Notlarım
 
-![](../../.gitbook/assets/asynctask_loader.png)
-
-![](../../.gitbook/assets/image.png)
+![](../../.gitbook/assets/hand_thread_overflow.png)
 
