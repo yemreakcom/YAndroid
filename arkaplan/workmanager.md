@@ -1,4 +1,4 @@
-# 👷‍♂️ WorkManager
+# 👷‍♂️ WorkManager \(👨‍🔬\)
 
 ## 🚴‍♂️ WorkManager'a Giriş
 
