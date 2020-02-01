@@ -541,6 +541,8 @@ public class WordViewModel extends AndroidViewModel {
 
 ![](../.gitbook/assets/room_livedata_hand.png)
 
+## 🚀 Main Activity
+
 {% tabs %}
 {% tab title="Kotlin" %}
 ```kotlin
