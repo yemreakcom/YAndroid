@@ -7,6 +7,19 @@
 * 🕐 Ertelenebilir işlemler
 * 💁‍♂️ Cihaz yeniden başlatılsa, uygulama kapansa bile devam eder
 
+## 🐥 Çalışma Durumları
+
+| 🔸 İşlem | 🔙 Devreye girme süresi |
+| :--- | :--- |
+| 👨‍💼️ Görev yöneticisinden kapatılma | ⌚ Belli bir süre sonra |
+| 🔁 Cihazı yeninden başlatma | 🕐 Cihaz yeniden başlatıldıktan sonra |
+| 👮‍♂️ Uygulamayı zorla durdurma | ✖️ Uygulama yeniden açılınca |
+| 🧹 Zorla cihazı yeniden başlatma | ❌ Uygulama yeniden açılınca |
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Is WorkManager running when app is closed?](https://stackoverflow.com/questions/50682061/android-is-workmanager-running-when-app-is-closed) sorusuna bakabilirsin.
+{% endhint %}
+
 ## 🕐 Periyodik Olarak Çalıştırma
 
 ```text
