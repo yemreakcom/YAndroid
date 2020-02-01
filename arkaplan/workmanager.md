@@ -41,7 +41,11 @@ workManager.enqueue(
 ## 🧐 Kaynaklar
 
 * [📖 Schedule tasks with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)
-* [🏂 Getting started with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/basics)
-* [👨‍🏫Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
+* [📖 Getting started with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/basics)
+* [👨‍🏫 Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
 * [👨‍🔬 Testing with WorkManager 2.1.0](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/testing-210)
+
+{% hint style="success" %}
+🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+{% endhint %}
 
