@@ -10,8 +10,10 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı RoomDB
 * ✨ Optimize edilmiş bir veri tabanı sunar \(`LiveData`\)
 * 💨 Kotlin Flow yapısı ile RoomDB oluşturabilir \(👨‍🔬 _Deneysel_\)
 
+> 🚀 Faydalı bağlantılara sayfanın en altından erişebilirsin
+
 {% hint style="warning" %}
-📢 Sayfanın en altındaki linklerden resmi bağlantılara erişebilirsin.
+📢 Java örneği ile Kotlin örneği birbirinden bağımsızdır
 {% endhint %}
 
 ## 🏗️ Projeye Dahil Etme
@@ -828,6 +830,12 @@ class QuakeViewModel(application: Application) : AndroidViewModel(application) {
 🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
 {% endhint %}
 
+### 🎃 Kotlin
+
+* [👨‍🏫 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
+* [👨‍🏫 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines)
+* [📖 Room KTX](https://developer.android.com/kotlin/ktx#room)
+
 ### ☕ Java
 
 * 👨‍🏫 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
@@ -835,10 +843,4 @@ class QuakeViewModel(application: Application) : AndroidViewModel(application) {
 * 📖 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
 * [📖 Accessing data using Room DAOs](https://developer.android.com/training/data-storage/room/accessing-data)
 * [📖 Android, RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
-
-### 🎃 Kotlin
-
-* [👨‍🏫 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
-* [👨‍🏫 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines)
-* [📖 Room KTX](https://developer.android.com/kotlin/ktx#room)
 
