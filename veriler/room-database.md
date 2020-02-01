@@ -1,13 +1,14 @@
 ---
-description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
+description: Android üzerinde SQLite yerine üretilmiş yeni db formatı RoomDB
 ---
 
 # 💽 Room Database
 
-## 🔰 Room Database Nedir
+## 🚴‍♂️ RoomDB'ye Giriş
 
 * 🤓 SQL komutları ile uğraşmadan direkt android kodları ile çalışmamızı sağlar
 * ✨ Optimize edilmiş bir veri tabanı sunar \(`LiveData`\)
+* 💨 Kotlin Flow yapısı ile RoomDB oluşturabilir \(👨‍🔬 _Deneysel_\)
 
 {% hint style="warning" %}
 📢 Sayfanın en altındaki linklerden resmi bağlantılara erişebilirsin.
@@ -19,6 +20,29 @@ description: Android üzerinde SQLite yerine üretilmiş yeni db formatı
 * ➕ RoomDB için Kotlin eklentilerine [Room KTX](https://developer.android.com/kotlin/ktx#room) alanından erişebilirsin
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```groovy
+dependencies {
+	// RoomDB
+	implementation "androidx.work:work-runtime-ktx:2.3.0"
+	implementation "androidx.room:room-ktx:2.2.3"
+	kapt "androidx.room:room-compiler:2.2.3"
+	androidTestImplementation "androidx.room:room-testing:2.2.3"
+	
+	// Lifecycle
+	implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+	kapt "androidx.lifecycle:lifecycle-compiler:2.2.0"
+	androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
+	// ViewModel
+	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+	
+	// Livedata - Kotlin Flow
+	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+}
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 dependencies {
@@ -26,23 +50,6 @@ dependencies {
 
   implementation "androidx.room:room-runtime:$room_version"
   annotationProcessor "androidx.room:room-compiler:$room_version"
-}
-```
-{% endtab %}
-
-{% tab title="Kotlin" %}
-```groovy
-dependencies {
-	def room_version = "2.2.3"
-	def viewmodel_version = "2.2.0"
-	def livedata_version = "2.2.0"
-
-	// Temel room paketi
-	implementation "androidx.room:room-ktx:$room_version"
-	// View model Kotlin eklentileri
-	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version'
-	// Flow - LiveData dönüşümü için Kotlin eklentileri
-	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:$livedata_version'
 }
 ```
 {% endtab %}
@@ -66,6 +73,83 @@ dependencies {
 ![](../.gitbook/assets/entity_hand.png)
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package com.yemreak.depremya.db.entity
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import com.yemreak.depremya.db.entity.Quake.Companion.TABLE_NAME
+
+/**
+ * Deprem bilgileri
+ * @see <a href="http://www.koeri.boun.edu.tr/scripts/lst0.asp">
+ *     Son depremler `~ Kandilli Rasathanesi
+ * </a>
+ */
+@Entity(tableName = TABLE_NAME)
+data class Quake(
+	@ColumnInfo(name = COLUMN_ID) @PrimaryKey(autoGenerate = true) val id: Int,
+	@ColumnInfo(name = COLUMN_DATE) val date: String,
+	@ColumnInfo(name = COLUMN_HOUR) val hour: String,
+	@ColumnInfo(name = COLUMN_LAT) val lat: String,
+	@ColumnInfo(name = COLUMN_LNG) val lng: String,
+	@ColumnInfo(name = COLUMN_DEPTH) val depth: String,
+	@ColumnInfo(name = COLUMN_MD) val md: String,
+	@ColumnInfo(name = COLUMN_ML) val ml: String,
+	@ColumnInfo(name = COLUMN_MW) val mw: String,
+	@ColumnInfo(name = COLUMN_CITY) val city: String,
+	@ColumnInfo(name = COLUMN_REGION) val region: String,
+	@ColumnInfo(name = COLUMN_RESOLUTION) val resolution: String
+) {
+	
+	companion object {
+		
+		const val TABLE_NAME = "quake"
+		const val COLUMN_ID = "id"
+		const val COLUMN_DATE = "date"
+		const val COLUMN_HOUR = "hour"
+		const val COLUMN_LAT = "lat"
+		const val COLUMN_LNG = "lng"
+		const val COLUMN_DEPTH = "depth"
+		const val COLUMN_MD = "md"
+		const val COLUMN_ML = "ml"
+		const val COLUMN_MW = "mw"
+		const val COLUMN_CITY = "city"
+		const val COLUMN_REGION = "region"
+		const val COLUMN_RESOLUTION = "resolution"
+		
+	}
+	
+	@Ignore
+	override fun equals(other: Any?): Boolean {
+		if (this === other) return true
+		if (javaClass != other?.javaClass) return false
+		
+		other as Quake
+		
+		if (date != other.date) return false
+		if (hour != other.hour) return false
+		if (lat != other.lat) return false
+		if (lng != other.lng) return false
+		if (depth != other.depth) return false
+		if (md != other.md) return false
+		if (ml != other.ml) return false
+		if (mw != other.mw) return false
+		if (city != other.city) return false
+		if (region != other.region) return false
+		if (resolution != other.resolution) return false
+		
+		return true
+	}
+
+}
+
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 @Entity(tableName = "word_table")
@@ -83,13 +167,6 @@ public class Word {
     // but they're required for Room to work if variables are private.
 }
 
-```
-{% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-@Entity(tableName = "word_table")
-class Word(@PrimaryKey @ColumnInfo(name = "word") val word: String)
 ```
 {% endtab %}
 {% endtabs %}
@@ -128,6 +205,37 @@ class Word(@PrimaryKey @ColumnInfo(name = "word") val word: String)
 ![](../.gitbook/assets/dao_hand.png)
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package com.yemreak.depremya.db.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.flow.Flow
+
+
+@Dao
+abstract class QuakeDao {
+	
+	@Insert
+	abstract suspend fun insertAll(quakes: Array<out Quake>)
+	
+	@Query("SELECT * FROM ${Quake.TABLE_NAME}")
+	abstract fun getAll(): Flow<List<Quake>>
+	
+	@Query("SELECT * FROM ${Quake.TABLE_NAME} WHERE ${Quake.COLUMN_MD} > :md")
+	abstract fun getAllHigherMd(md: Float): Flow<List<Quake>>
+	
+	@Query("DELETE FROM ${Quake.TABLE_NAME}")
+	abstract suspend fun deleteAll()
+	
+}
+
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 @Dao
@@ -157,23 +265,6 @@ public interface WordDao {
 }
 ```
 {% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-@Dao
-interface WordDao {
-
-    @Query("SELECT * from word_table ORDER BY word ASC")
-    fun getAlphabetizedWords(): List<Word>
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(word: Word)
-
-    @Query("DELETE FROM word_table")
-    suspend fun deleteAll()
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -192,6 +283,53 @@ interface WordDao {
 ![](../.gitbook/assets/roomdb_hand.png)
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package com.yemreak.depremya.db
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.yemreak.depremya.db.dao.QuakeDao
+import com.yemreak.depremya.db.entity.Quake
+
+@Database(entities = [Quake::class], version = 1, exportSchema = false)
+abstract class QuakeRoom : RoomDatabase() {
+	
+	companion object {
+		
+		const val DB_NAME = "quake_db"
+		
+		/**
+		 * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
+		 */
+		@Volatile
+		private var INSTANCE: QuakeRoom? = null
+		
+		fun getDatabase(context: Context): QuakeRoom {
+			return when (val tempInstance = INSTANCE) {
+				null -> synchronized(this) {
+					val instance = Room.databaseBuilder(
+						context,
+						QuakeRoom::class.java,
+						DB_NAME
+					).fallbackToDestructiveMigration().build()
+					INSTANCE = instance
+					
+					return instance
+				}
+				else -> tempInstance
+			}
+		}
+	}
+	
+	abstract fun quakeDao(): QuakeDao
+}
+
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 @Database(entities = {Word.class}, version = 1)
@@ -215,40 +353,6 @@ public abstract class WordRoomDatabase extends RoomDatabase {
            }
        }
        return INSTANCE;
-   }
-}
-```
-{% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-// Annotates class to be a Room Database with a table (entity) of the Word class
-@Database(entities = arrayOf(Word::class), version = 1, exportSchema = false)
-public abstract class WordRoomDatabase : RoomDatabase() {
-
-   abstract fun wordDao(): WordDao
-
-   companion object {
-        /**
-		     * Singleton yapısı ile birden fazla örneğin oluşmasını engelleme
-    		 */
-        @Volatile
-        private var INSTANCE: WordRoomDatabase? = null
-
-        fun getDatabase(context: Context): WordRoomDatabase {
-            return when (val tempInstance = INSTANCE) {
-                null -> synchronized(this) {
-                    val instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            WordRoomDatabase::class.java, 
-                            "word_database"
-                        ).build()
-                    INSTANCE = instance
-                    return instance
-                }
-                else -> tempInstance 
-            }           
-        }
    }
 }
 ```
@@ -285,6 +389,31 @@ public abstract class WordRoomDatabase : RoomDatabase() {
 ![](../.gitbook/assets/room_repo_hand.png)
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package com.yemreak.depremya
+
+import com.yemreak.depremya.db.dao.QuakeDao
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.flow.Flow
+
+class QuakeRepository(private val quakeDao: QuakeDao) {
+	
+	val allQuakes: Flow<List<Quake>> = quakeDao.getAll()
+	
+	suspend fun insert(quakes: Array<out Quake>) {
+		quakeDao.insertAll(quakes)
+	}
+	
+	suspend fun deleteAll() {
+		quakeDao.deleteAll()
+	}
+	
+}
+
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 public class WordRepository {
@@ -326,26 +455,9 @@ public class WordRepository {
 }
 ```
 {% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-// Declares the DAO as a private property in the constructor. Pass in the DAO
-// instead of the whole database, because you only need access to the DAO
-class WordRepository(private val wordDao: WordDao) {
-
-    // Room executes all queries on a separate thread.
-    // Observed LiveData will notify the observer when the data has changed.
-    val allWords: LiveData<List<Word>> = wordDao.getAlphabetizedWords()
- 
-    suspend fun insert(word: Word) {
-        wordDao.insert(word)
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
-## 🛍️ ViewHolder
+## 🛍️ ViewModel
 
 * 🧱 Yapılandırma değişikliklerine karşı dayanıklıdır
 * 🐣 Repository ile DB'ye erişir
@@ -356,6 +468,42 @@ class WordRepository(private val wordDao: WordDao) {
 ![](../.gitbook/assets/room_vh_hand.png)
 
 {% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+package com.yemreak.depremya.viewmodel
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import com.yemreak.depremya.QuakeRepository
+import com.yemreak.depremya.db.QuakeRoom
+import com.yemreak.depremya.db.entity.Quake
+import kotlinx.coroutines.launch
+
+class QuakeViewModel(application: Application) : AndroidViewModel(application) {
+	
+	private val repository: QuakeRepository
+	
+	val allQuakes: LiveData<List<Quake>>
+	
+	init {
+		val quakeDao = QuakeRoom.getDatabase(application.applicationContext).quakeDao()
+		repository = QuakeRepository(quakeDao)
+		allQuakes = repository.allQuakes.asLiveData()
+	}
+	
+	// UI threadi bloklamadan çalışır (viewModelScope)
+	fun refreshQuakes(quakes: List<Quake>) = viewModelScope.launch {
+		repository.deleteAll()
+		repository.insert(quakes.toTypedArray())
+	}
+}
+
+```
+{% endtab %}
+
 {% tab title="Java" %}
 ```java
 public class WordViewModel extends AndroidViewModel {
@@ -376,38 +524,6 @@ public class WordViewModel extends AndroidViewModel {
 }
 ```
 {% endtab %}
-
-{% tab title="Kotlin" %}
-```kotlin
-// Class extends AndroidViewModel and requires application as a parameter.
-class WordViewModel(application: Application) : AndroidViewModel(application) {
-
-    // The ViewModel maintains a reference to the repository to get data.
-    private val repository: WordRepository
-    // LiveData gives us updated words when they change.
-    val allWords: LiveData<List<Word>>
-
-    init {
-        // Gets reference to WordDao from WordRoomDatabase to construct
-        // the correct WordRepository. 
-        val wordsDao = WordRoomDatabase.getDatabase(application).wordDao()
-        repository = WordRepository(wordsDao)
-        allWords = repository.allWords
-    }
-
-    /**
-     * The implementation of insert() in the database is completely hidden from the UI.
-     * Room ensures that you're not doing any long running operations on 
-     * the main thread, blocking the UI, so we don't need to handle changing Dispatchers.
-     * ViewModels have a coroutine scope based on their lifecycle called 
-     * viewModelScope which we can use here.
-     */
-    fun insert(word: Word) = viewModelScope.launch {
-        repository.insert(word)
-    }
-}
-```
-{% endtab %}
 {% endtabs %}
 
 ## ✨ LiveData
@@ -423,6 +539,51 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
 
 ![](../.gitbook/assets/room_livedata_hand.png)
 
+{% tabs %}
+{% tab title="Kotlin" %}
+```kotlin
+class MainActivity : AppCompatActivity() {
+	
+	private var quakes: List<Quake> = emptyList()
+	private var selectedMag: Int = 0
+	
+	private lateinit var quakeViewModel: QuakeViewModel
+	
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		
+		setContentView(R.layout.activity_main)
+		// ...
+		
+		quakeViewModel = ViewModelProvider(this).get(QuakeViewModel::class.java)
+		quakeViewModel.allQuakes.observe(this, Observer {
+			it?.let {
+				quakes = it
+				/*
+				// Varsa recycleview objesine aktarılır
+				(quake_recycler_view.adapter as QuakeAdapter).setQuakesAndNotify(quakes)
+				*/
+			}
+		})
+		
+		/*
+		// İsteğe bağlı refresh layout kullanımı
+		quake_refresh_layout.setOnRefreshListener {
+			// ...
+			quake_refresh_layout.isRefreshing = false
+		}
+		*/
+		
+	}
+	
+	//...
+	
+}
+
+```
+{% endtab %}
+
+{% tab title="Java" %}
 ```java
 wordsViewModel.getAllNews().observe(
     this,
@@ -440,6 +601,8 @@ private void fillView(ArrayList<Words> words) {
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylar için [RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview) alanına bakabilirsiniz.
@@ -447,9 +610,7 @@ private void fillView(ArrayList<Words> words) {
 
 ## 👨‍💻 Kotlin Flow RoomDB
 
-* 💨 Kotlin Flow yapısı ile RoomDB oluşturabilir
-* 📢 Henüz deneysel aşamadadır
-
+* 
 {% tabs %}
 {% tab title="📦 Gradle" %}
 ```groovy
@@ -663,15 +824,21 @@ class QuakeViewModel(application: Application) : AndroidViewModel(application) {
 
 ## 🔗 Faydalı Bağlantılar
 
-* 📃 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
-* 👨‍💻 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
+{% hint style="success" %}
+🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+{% endhint %}
+
+### ☕ Java
+
+* 👨‍🏫 [Android Room with a View - Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
 * [👨‍🏫 Save data in a local database using Room ~Training](https://developer.android.com/training/data-storage/room)
-* [🐣 Accessing data using Room DAOs](https://developer.android.com/training/data-storage/room/accessing-data)
-* [👁️ Android, RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+* 📖 [Room, LiveData and ViewModel](https://google-developer-training.github.io/android-developer-fundamentals-course-concepts-v2/unit-4-saving-user-data/lesson-10-storing-data-with-room/10-1-c-room-livedata-viewmodel/10-1-c-room-livedata-viewmodel.html)
+* [📖 Accessing data using Room DAOs](https://developer.android.com/training/data-storage/room/accessing-data)
+* [📖 Android, RecycleView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
 
 ### 🎃 Kotlin
 
+* [👨‍🏫 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
+* [👨‍🏫 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines)
 * [📖 Room KTX](https://developer.android.com/kotlin/ktx#room)
-* [👨‍💻 Android Room with View](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
-* [👨‍💻 Advanced Coroutines with Kotlin Flow and LiveData](https://codelabs.developers.google.com/codelabs/advanced-kotlin-coroutines)
 
