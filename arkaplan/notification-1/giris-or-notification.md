@@ -202,5 +202,12 @@ private fun createNotification(): Notification {
 	}
 ```
 
+## 🔗 Faydalı Bağlantılar
 
+* [📖 Create and Manage Notification Channels](https://developer.android.com/training/notify-user/channels)
+* [📖 Create a Notification](https://developer.android.com/training/notify-user/build-notification)
+
+{% hint style="success" %}
+🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+{% endhint %}
 

@@ -22,13 +22,15 @@
 
 ## 🕐 Periyodik Olarak Çalıştırma
 
-```text
+* ⭐ 15 dk içerisinde, son 5 dakikalık süre içerisinde çalışır
+
+```kotlin
 workManager.enqueue(
 			PeriodicWorkRequest.Builder(
 				SyncCoWorker::class.java,
 				15,
 				TimeUnit.MINUTES,
-				15,
+				5,
 				TimeUnit.MINUTES
 			).build()
 		)
