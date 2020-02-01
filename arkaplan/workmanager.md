@@ -27,5 +27,6 @@ workManager.enqueue(
 
 * [📖 Schedule tasks with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)
 * [🏂 Getting started with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/basics)
-* [👨‍💻 Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
+* [👨‍🏫Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
+* [👨‍🔬 Testing with WorkManager 2.1.0](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/testing-210)
 
