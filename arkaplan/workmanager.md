@@ -1,11 +1,11 @@
 # 👷‍♂️ WorkManager \(👨‍🔬\)
 
-## 🚴‍♂️ WorkManager'a Giriş
+## ❔ Hangi Koşullarda Kullanılmalı
 
 * 🔄 Arka planda sunucu ile haberleşme işlemleri
 * 📜 Sunucuya raporları göndermek
 * 🕐 Ertelenebilir işlemler
-* 💁‍♂️ Cihaz yeniden başlatılsa, uygulama kapansa bile devam eder
+* 💁‍♂️ Cihaz yeniden başlatılsa, uygulama kapansa bile devam etmesi gerekenler
 
 ## 🐥 Çalışma Durumları
 
@@ -44,6 +44,8 @@ workManager.enqueue(
 * [📖 Getting started with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager/basics)
 * [👨‍🏫 Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
 * [👨‍🔬 Testing with WorkManager 2.1.0](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/testing-210)
+* [📃 Workout your tasks with WorkManager — Intro](https://proandroiddev.com/workout-your-tasks-with-workmanager-intro-db5aefe14d66)
+* [📃 Workout your tasks with WorkManager — Advanced Topics](https://proandroiddev.com/workout-your-tasks-with-workmanager-advanced-topics-c469581c235b)
 
 {% hint style="success" %}
 🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
