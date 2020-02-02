@@ -38,6 +38,12 @@ workManager.enqueue(
 
 ![](../.gitbook/assets/workmanager_period.png)
 
+## ❌ WorkManager Sonlandırma
+
+```kotlin
+WorkManager.getInstance().cancelAllWork()
+```
+
 ## 🧐 Kaynaklar
 
 * [📖 Schedule tasks with WorkManager](https://developer.android.com/topic/libraries/architecture/workmanager)
@@ -45,6 +51,7 @@ workManager.enqueue(
 * [👨‍🏫 Background Work with WorkManager - Kotlin](https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0)
 * [👨‍🔬 Testing with WorkManager 2.1.0](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/testing-210)
 * [📃 Workout your tasks with WorkManager — Intro](https://proandroiddev.com/workout-your-tasks-with-workmanager-intro-db5aefe14d66)
+* [📃 Workout your tasks with WorkManager — Main Components](https://proandroiddev.com/workout-your-tasks-with-workmanager-main-components-1c0c66317a3e)
 * [📃 Workout your tasks with WorkManager — Advanced Topics](https://proandroiddev.com/workout-your-tasks-with-workmanager-advanced-topics-c469581c235b)
 
 {% hint style="success" %}
