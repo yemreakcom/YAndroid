@@ -15,15 +15,8 @@
 
 ## 🔗 Faydalı Kaynaklar
 
-{% embed url="https://lib.yemreak.com/yazilar/kotlin-vs-java" %}
-
-{% embed url="https://kotlin.yemreak.com/faydali-kullanimlar" %}
-
-{% embed url="https://kotlin.yemreak.com" %}
-
-{% embed url="https://kotlinlang.org/community/" %}
-
-{% embed url="https://medium.com/@halilozel1903/kotlin-vs-java-719902655eb1" %}
-
-## 
+* [📖 Learn the Kotlin programming language](https://developer.android.com/kotlin/learn)
+* [📃 Kotlin'in Java'ya Göre Avantajları \(Kotlin vs Java\)](https://kotlin.yemreak.com/yazilarim/kotlin-vs-java)
+* [🌍 Kotlin ~ YEmreAk](https://kotlin.yemreak.com/)
+* [👪 Kotlin Community](https://kotlinlang.org/community/)
 
