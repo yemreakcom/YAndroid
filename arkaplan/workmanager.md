@@ -55,6 +55,6 @@ WorkManager.getInstance().cancelAllWork()
 * [📃 Workout your tasks with WorkManager — Advanced Topics](https://proandroiddev.com/workout-your-tasks-with-workmanager-advanced-topics-c469581c235b)
 
 {% hint style="success" %}
-🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+🚀 Bu alandaki bağlantılar [YEmoji ~Bağlantılar](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
 {% endhint %}
 

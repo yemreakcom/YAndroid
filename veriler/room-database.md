@@ -615,7 +615,7 @@ private void fillView(ArrayList<Words> words) {
 ## 🔗 Faydalı Bağlantılar
 
 {% hint style="success" %}
-🚀 Bu alandaki bağlantılar [YEmoji ~Bağlantılar](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+🚀 Bu bağlantıların hepsi [YEmoji](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
 {% endhint %}
 
 ### 🎃 Kotlin
