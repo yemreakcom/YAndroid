@@ -20,3 +20,7 @@
 * [🌍 Kotlin ~ YEmreAk](https://kotlin.yemreak.com/)
 * [👪 Kotlin Community](https://kotlinlang.org/community/)
 
+{% hint style="success" %}
+🚀 Bu alandaki bağlantılar [YEmoji ~Bağlantılar](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+{% endhint %}
+
