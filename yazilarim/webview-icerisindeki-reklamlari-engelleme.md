@@ -1,8 +1,10 @@
 ---
-description: WebView üzerinde reklamları engelleme
+description: >-
+  Android WebView (html kodlarını göstermeyi sağlayan view) içerisindeki
+  istenmeyen reklamları filtreleme, sınırlama, kaldırma veya engelleme
 ---
 
-# 🚫 WebView Üzerindeki Reklamları Engelleme
+# 🚫 WebView İçerisindeki Reklamları Engelleme
 
 ## 📃 URL Listesi Oluşturma
 

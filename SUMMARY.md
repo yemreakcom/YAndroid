@@ -3,7 +3,7 @@
 * [📲 Android Notlarım](README.md)
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [✍ Yazılarım](yazilarim/README.md)
-  * [🚫 WebView Üzerindeki Reklamları Engelleme](yazilarim/webview-uzerindeki-reklamlari-engelleme.md)
+  * [🚫 WebView İçerisindeki Reklamları Engelleme](yazilarim/webview-icerisindeki-reklamlari-engelleme.md)
   * [💁‍♂️ Neden Kotlin](yazilarim/neden-kotlin.md)
 * [🚩 Çalışma Yolu](calisma-yolu.md)
 * [🔰 Android'e Giriş](giris/README.md)
