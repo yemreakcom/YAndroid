@@ -14,5 +14,25 @@ Uygulamalarınızı google play store'a yüklemek için **developer** hesabı a�
   * Detaylı bilgi için [buraya](https://support.appmachine.com/hc/en-us/articles/218378068-Transfer-your-app-from-one-Google-Play-developer-account-to-another) bakabilirsin.
 * Uygulama satışlarının **%30**'u _Google_'a gitmektedir
 
+## 🛰️ Yayınlamadan Önce
 
+* 👀 Yayınlama işlemlerinden önce [📖 Publish your app](https://developer.android.com/studio/publish) yazısından yapman gerekenleri okumalısın
+* ✨ Uygulama sürümünü `build.gradle (app)` içerisinde `versionCode` ve `versionName` alanlarını artırarak yenilemelisin. [📖 Version your app](https://developer.android.com/studio/publish/versioning)
+* 👀 Son olarak [📖 App Sign In](https://developer.android.com/studio/publish/app-signing) alanında gözden geçirmek bir kaç detay var
+* [🚀 Upload your app to the Play Console](https://developer.android.com/studio/publish/upload-bundle) ile play store'a aktarabilirsin
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Faydalı Bağlantılar](google-play-store.md#faydali-baglantilar) alanına bakabilirsin.
+{% endhint %}
+
+## 🔗 Faydalı Bağlantılar
+
+* [📖 Publish your app](https://developer.android.com/studio/publish)
+* [📖 Version your app](https://developer.android.com/studio/publish/versioning)
+* [📖 App Sign In](https://developer.android.com/studio/publish/app-signing)
+* [📖 Upload your app to the Play Console](https://developer.android.com/studio/publish/upload-bundle)
+
+{% hint style="success" %}
+🚀 Bu alandaki bağlantılar [YEmoji ~Bağlantılar](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
+{% endhint %}
 
