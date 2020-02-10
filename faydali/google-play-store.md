@@ -25,6 +25,10 @@ Uygulamalarınızı google play store'a yüklemek için **developer** hesabı a�
 ‍🧙‍♂ Detaylı bilgi için [Faydalı Bağlantılar](google-play-store.md#faydali-baglantilar) alanına bakabilirsin.
 {% endhint %}
 
+{% hint style="warning" %}
+📢 Eğer key bilgini kaybedersen, [Developer Console - App singing](https://play.google.com/apps/publish/?account=8950082947306358822#KeyManagementPlace:p=com.yemreak.depremya&appid=4975744681878245790) üzerinden Google'a mail atabilirsin.
+{% endhint %}
+
 ## 🔗 Faydalı Bağlantılar
 
 * [📖 Publish your app](https://developer.android.com/studio/publish)
