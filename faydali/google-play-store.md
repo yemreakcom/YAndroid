@@ -29,6 +29,20 @@ Uygulamalarınızı google play store'a yüklemek için **developer** hesabı a�
 📢 Eğer key bilgini kaybedersen, [Developer Console - App singing](https://play.google.com/apps/publish/?account=8950082947306358822#KeyManagementPlace:p=com.yemreak.depremya&appid=4975744681878245790) üzerinden Google'a mail atabilirsin.
 {% endhint %}
 
+## 🦶 Uygulamayı Sıkıştırma
+
+* ➕ `build.gradle` \(app\) dosyasına alttaki `release` yapılandırmasını ekleyin
+* 💦 Gereksiz kodları temizleyecektir
+* 🗃️ Kaynakları sıkıştıracaktır
+
+```groovy
+release {
+   minifyEnabled true
+   shrinkResources true
+   // proguardFiles ...
+}
+```
+
 ## 🔗 Faydalı Bağlantılar
 
 * [📖 Publish your app](https://developer.android.com/studio/publish)
