@@ -36,10 +36,16 @@ Uygulamalarınızı google play store'a yüklemek için **developer** hesabı a�
 * 🗃️ Kaynakları sıkıştıracaktır
 
 ```groovy
-release {
-   minifyEnabled true
-   shrinkResources true
-   // proguardFiles ...
+android {
+    // Other settings
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            // proguardFiles ...
+        }
+    }
 }
 ```
 
