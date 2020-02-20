@@ -43,6 +43,10 @@ release {
 }
 ```
 
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Reduce App Size](https://developer.android.com/topic/performance/reduce-apk-size) alanına bakabilirsin.
+{% endhint %}
+
 ## 🔗 Faydalı Bağlantılar
 
 * [📖 Publish your app](https://developer.android.com/studio/publish)
