@@ -127,3 +127,7 @@ public class ExampleService extends Service {
 {% endtab %}
 {% endtabs %}
 
+## 🔗 Faydalı Bağlantılar
+
+* [📖 Service Overview - Android](https://developer.android.com/guide/components/services)
+

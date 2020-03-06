@@ -25,16 +25,16 @@ description: 'Android üzerinden HTTP istekleri, request ve response yapısı'
 
 ```kotlin
 fun requestEarthQuakes(context: Context, onResponse: (String) -> Unit) {
-		val queue = Volley.newRequestQueue(context)
-		val stringRequest = StringRequest(Request.Method.GET, URL,
-			Response.Listener<String> { response ->
-				onResponse(response)
-			},
-			Response.ErrorListener { onResponse(null) }
-		)
-		
-		queue.add(stringRequest)
-	}
+        val queue = Volley.newRequestQueue(context)
+        val stringRequest = StringRequest(Request.Method.GET, URL,
+            Response.Listener<String> { response ->
+                onResponse(response)
+            },
+            Response.ErrorListener { onResponse(null) }
+        )
+
+        queue.add(stringRequest)
+    }
 ```
 
 ### 🖼️ Resim İndirme İstekleri
@@ -44,18 +44,18 @@ fun requestEarthQuakes(context: Context, onResponse: (String) -> Unit) {
  * Get [Bitmap] of image from the url
  */
 fun requestImage(context: Context, onResponse: (Bitmap?) -> Unit) {
-	val requestQueue = Volley.newRequestQueue(context)
-	val imageRequest = ImageRequest(
-		IMAGE_URL,
-		Response.Listener { onResponse(it) },
-		0, // Image width
-		0, // Image height
-		ImageView.ScaleType.CENTER_CROP, // Image scale type
-		Bitmap.Config.RGB_565, //Image decode configuration
-		Response.ErrorListener { onResponse(null) }
-	)
-	
-	requestQueue.add(imageRequest)
+    val requestQueue = Volley.newRequestQueue(context)
+    val imageRequest = ImageRequest(
+        IMAGE_URL,
+        Response.Listener { onResponse(it) },
+        0, // Image width
+        0, // Image height
+        ImageView.ScaleType.CENTER_CROP, // Image scale type
+        Bitmap.Config.RGB_565, //Image decode configuration
+        Response.ErrorListener { onResponse(null) }
+    )
+
+    requestQueue.add(imageRequest)
 }
 ```
 
@@ -66,24 +66,24 @@ fun requestImage(context: Context, onResponse: (Bitmap?) -> Unit) {
  * JSONArray Request
  */
 fun requestJSONArray(
-	context: Context,
-	method: String,
-	module: String,
-	onResponse: (JSONArray?) -> Unit
+    context: Context,
+    method: String,
+    module: String,
+    onResponse: (JSONArray?) -> Unit
 ) {
-	val requestQueue = Volley.newRequestQueue(context)
-	val jsonRequest = JsonArrayRequest(
-		Request.Method.GET,
-		"https://api.github.com/orgs/octokit/repos",
-		null,
-		Response.Listener { onResponse(it) },
-		Response.ErrorListener {
-			Log.e(TAG, "requestJSON: ", it)
-			onResponse(null)
-		}
-	)
-	
-	requestQueue.add(jsonRequest)
+    val requestQueue = Volley.newRequestQueue(context)
+    val jsonRequest = JsonArrayRequest(
+        Request.Method.GET,
+        "https://api.github.com/orgs/octokit/repos",
+        null,
+        Response.Listener { onResponse(it) },
+        Response.ErrorListener {
+            Log.e(TAG, "requestJSON: ", it)
+            onResponse(null)
+        }
+    )
+
+    requestQueue.add(jsonRequest)
 }
 ```
 
