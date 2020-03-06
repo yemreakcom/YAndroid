@@ -2,6 +2,7 @@
 
 ## 📋 Tüm Değişiklikler
 
+- 06/03/2020 - 20:38:52 - [GitBook: [master] 2 pages modified](https://github.com/YEmreAk/YAndroid/commit/f510ec2cb3279fa50d74c003f3e89aa0333ec192?diff=split) ~ Yunus Emre
 - 06/03/2020 - 20:32:39 - [GitBook: [master] 5 pages modified](https://github.com/YEmreAk/YAndroid/commit/b23e79327d0a5e359ede2368d7638f12492b6149?diff=split) ~ Yunus Emre
 - 20/02/2020 - 20:30:35 - [GitBook: [master] one page modified](https://github.com/YEmreAk/YAndroid/commit/f18b159057c75ad1d095fac9bcf7d71089b0d512?diff=split) ~ Yunus Emre
 - 20/02/2020 - 20:30:19 - [GitBook: [master] one page modified](https://github.com/YEmreAk/YAndroid/commit/f4c89b1c35a62b3a1d2cdd312b4d7bcd6a1361d2?diff=split) ~ Yunus Emre
