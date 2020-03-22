@@ -169,6 +169,8 @@ class CameraXActivity : AppCompatActivity() {
 ## 👀 CameraX Ön İzlemesi
 
 * 📸 Alttaki kod ile kameraya gelen görüntüyü ekrana basacağız
+* 🎳 `PreviewView.ImplementationMode.TEXTURE_VIEW` animasyonları ve dönüşümleri destekler, daha fazla memory kullanır
+* 🕊️ `PreviewView.ImplementationMode.SURFACE_VIEW` daha hızlı ve basit çalışan bir yapıdır
 
 ```kotlin
 class CameraXActivity : AppCompatActivity() {
@@ -216,7 +218,12 @@ class CameraXActivity : AppCompatActivity() {
 ```
 
 {% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için [Android CameraX](https://proandroiddev.com/update-android-camerax-4a44c3e4cdcc) alanına bakabilirsin.
+‍🧙‍♂ Detaylı bilgi için 
+
+* [Android CameraX](https://proandroiddev.com/update-android-camerax-4a44c3e4cdcc) 
+* [SurfaceView vs TextureView for Camera?](https://stackoverflow.com/questions/27225242/surfaceview-vs-textureview-for-camera)
+
+alanlarına bakabilirsin.
 {% endhint %}
 
 ## 📸 Resim Çekme Özelliği Ekleme
@@ -225,6 +232,7 @@ class CameraXActivity : AppCompatActivity() {
 * 💠 Resmin alındığı metodu `takePicture` olarak tanımlayacağız
 * 💫 Daha önceden XML üzerinde tanımladığımız `ImageButton`'a tıklandığında `takePicture` metodu çalışacak
 * 💎 Alınan resimleri kayıt edileceği yeri ayarlamak için `companion object` tanımlayacağız
+* 👷‍♂️ Executor çeşitlerini açıkladığım [Thread Pool ~ Lib - YEmreAk](https://lib.yemreak.com/arastirmalar/thread-pool-executors-kavrami) yazısına bakmanda fayda var
 
 ```kotlin
 class CameraXActivity : AppCompatActivity() {
