@@ -448,6 +448,7 @@ alanlarına bakabilirsin.
 
 * [📃 Android CameraX](https://proandroiddev.com/update-android-camerax-4a44c3e4cdcc)
 * [👨‍🏫 Getting Started With CameraX](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#0)
+* [👨‍💻 MLKit Demo ~ AsmaaMirkhan](https://github.com/asmaamirkhan/MLKitDemo)
 
 {% hint style="success" %}
 🚀 Bu alandaki bağlantılar [YEmoji ~Bağlantılar](https://emoji.yemreak.com/kullanim/baglantilar) yapısına uygundur
