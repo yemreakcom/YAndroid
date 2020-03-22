@@ -125,7 +125,7 @@ class CameraXActivity : AppCompatActivity() {
 * ⭐ Alttaki fotoğrafta XML'in temsil ettiği çıktı gösterilmiştir
 
 {% code title="activity\_camerax.xml" %}
-```groovy
+```markup
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -170,7 +170,7 @@ class CameraXActivity : AppCompatActivity() {
 
 * 📸 Alttaki kod ile kameraya gelen görüntüyü ekrana basacağız
 
-```groovy
+```kotlin
 class CameraXActivity : AppCompatActivity() {
 	
 	private lateinit var cameraProviderFuture: 
@@ -226,7 +226,7 @@ class CameraXActivity : AppCompatActivity() {
 * 💫 Daha önceden XML üzerinde tanımladığımız `ImageButton`'a tıklandığında `takePicture` metodu çalışacak
 * 💎 Alınan resimleri kayıt edileceği yeri ayarlamak için `companion object` tanımlayacağız
 
-```groovy
+```kotlin
 class CameraXActivity : AppCompatActivity() {
 
 	companion object {
@@ -344,10 +344,100 @@ class CameraXActivity : AppCompatActivity() {
 ‍🧙‍♂ Detaylı bilgi için [Implement image capture use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#6) alanına bakabilirsin.
 {% endhint %}
 
-## 🕵️‍♂️ Resmi Analiz Etme
+## 🔥 ML Kit ile Resmi Analiz Etme
+
+* ✨ Resmin analiz işlemleri için ilk olarak `imageAnalyser` objesi tanımlanır
+* 🐥 Firebase kurulum işlemlerini [🔥 Firebase ML Kit](../faydali/firebase-ml-kit.md)  yazım ile uygulayabilirsin
+* 😅 Firebase hakimiyetin olduğunu varsayarak devam ediyorum
+* 👨‍💼 Oluşturulan `imageAnalyser` objesi içerisinde resim Firebase resmine dönüştürülüp işlenir
+* 👨‍🎨 Preview üzerine çıktıları göstermek için `drawCanvas` metodunu araştırınız
+
+> ⭐ Analiz örneği istersen [MLKit Demo ~ AsmaaMirkhan](https://github.com/asmaamirkhan/MLKitDemo) projesindeki [MLKitFaceAnalyser](https://github.com/asmaamirkhan/MLKitDemo/blob/92b3d447f8e36319a48ed22fe4280e7dd59dac35/app/src/main/java/com/asmaamir/mlkitdemo/RealTimeFaceDetection/MLKitFacesAnalyzer.java) **java** sınıfını inceleyebilirsin.
+>
+>  `imageAnalysis.setAnalyzer(executor,MLKitFaceAnalyser())` 
+>
+> şeklinde kullanılır.
+
+```kotlin
+private fun startCamera() {
+
+	// ...
+
+	imageAnalysis.setAnalyzer(
+		executor,
+		ImageAnalysis.Analyzer { imageProxy ->
+			
+			// Process image if exists
+			imageProxy.image?.let { image ->
+				val fvImage =
+					image.toFvImage(imageProxy.imageInfo.rotationDegrees, isDegree = true)
+				fvImage.detectFaces {
+					Log.i(TAG, "startCamera: Face count: ${it.size}")
+				}
+			}
+			
+			// val rotationDegree = image.imageInfo.rotationDegrees
+			// Log.i("TEMP", "startCamera: Image received ${System.currentTimeMillis()}")
+			
+			//  Once the image being analyzed is closed by calling ImageProxy.close(),
+			//  the next latest image will be delivered.
+			//  Important: The Analyzer method implementation must call image.close()
+			//  on received images when finished using them.
+			//  Otherwise, new images may not be received or the camera may stall,
+			//  depending on back pressure setting.
+			imageProxy.close()
+	})
+	
+		// ...	
+}
+
+/**
+ * Resim içerisinde bulunan yüzleri algılar, algılama tamamlandığında [onDetected] metodu
+ * çalışır
+ */
+fun FirebaseVisionImage.detectFaces(onDetected: (List<FirebaseVisionFace>) -> Unit): Task<MutableList<FirebaseVisionFace>> {
+	val options = FirebaseVisionFaceDetectorOptions.Builder()
+		.setClassificationMode(FirebaseVisionFaceDetectorOptions.ACCURATE)
+		.setLandmarkMode(FirebaseVisionFaceDetectorOptions.ALL_LANDMARKS)
+		.setClassificationMode(FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
+		.setMinFaceSize(0.15f)
+		.enableTracking()
+		.build()
+	
+	val detector = FirebaseVision.getInstance().getVisionFaceDetector(options)
+	return detector.detectInImage(this)
+		.addOnSuccessListener(onDetected)
+		.addOnFailureListener(Throwable::printStackTrace)
+}
+
+fun Image.toFvImage(rotation: Int, isDegree: Boolean = false): FirebaseVisionImage {
+	return when (isDegree) {
+		false -> FirebaseVisionImage.fromMediaImage(this, rotation)
+		true -> FirebaseVisionImage.fromMediaImage(
+			this,
+			degreesToFirebaseRotation(rotation)
+		)
+	}
+}
+
+fun degreesToFirebaseRotation(degrees: Int): Int {
+	return when (degrees) {
+		0 -> FirebaseVisionImageMetadata.ROTATION_0
+		90 -> FirebaseVisionImageMetadata.ROTATION_90
+		180 -> FirebaseVisionImageMetadata.ROTATION_180
+		270 -> FirebaseVisionImageMetadata.ROTATION_270
+		else -> throw IllegalArgumentException("Rotation must be 0, 90, 180, or 270.")
+	}
+}
+```
 
 {% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için [Implement image analysis use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#7) alanına bakabilirsin.
+‍🧙‍♂ Detaylı bilgi için 
+
+* [Implement image analysis use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#7)
+* [ML Kit for Firebase](https://firebase.google.com/docs/ml-kit)
+
+alanlarına bakabilirsin.
 {% endhint %}
 
 ## ⭐ Uygulamanın Son Çıktısı
