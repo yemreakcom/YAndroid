@@ -340,6 +340,16 @@ class CameraXActivity : AppCompatActivity() {
 }
 ```
 
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Implement image capture use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#6) alanına bakabilirsin.
+{% endhint %}
+
+## 🕵️‍♂️ Resmi Analiz Etme
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Implement image analysis use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#7) alanına bakabilirsin.
+{% endhint %}
+
 ## ⭐ Uygulamanın Son Çıktısı
 
 ![](../.gitbook/assets/camerax_take_picture.png)
