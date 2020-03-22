@@ -4,6 +4,7 @@
 * [👀 Neler Değişti](changelog.md)
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [✍ Yazılarım](yazilarim/README.md)
+  * [📸 CameraX Kullanımı](yazilarim/camerax-kullanimi.md)
   * [🚫 WebView İçerisindeki Reklamları Engelleme](yazilarim/webview-icerisindeki-reklamlari-engelleme.md)
   * [💁‍♂️ Neden Kotlin](yazilarim/neden-kotlin.md)
 * [🚩 Çalışma Yolu](calisma-yolu.md)
