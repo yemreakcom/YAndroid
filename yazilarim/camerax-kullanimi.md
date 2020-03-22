@@ -350,7 +350,7 @@ class CameraXActivity : AppCompatActivity() {
 * 🐥 Firebase kurulum işlemlerini [🔥 Firebase ML Kit](../faydali/firebase-ml-kit.md)  yazım ile uygulayabilirsin
 * 😅 Firebase hakimiyetin olduğunu varsayarak devam ediyorum
 * 👨‍💼 Oluşturulan `imageAnalyser` objesi içerisinde resim Firebase resmine dönüştürülüp işlenir
-* 👨‍🎨 Preview üzerine çıktıları göstermek için `drawCanvas` metodunu araştırınız
+* 👨‍🎨 Preview üzerine çıktıları göstermek için `canvas` işlemlerini araştırınız
 
 > ⭐ Analiz örneği istersen [MLKit Demo ~ AsmaaMirkhan](https://github.com/asmaamirkhan/MLKitDemo) projesindeki [MLKitFaceAnalyser](https://github.com/asmaamirkhan/MLKitDemo/blob/92b3d447f8e36319a48ed22fe4280e7dd59dac35/app/src/main/java/com/asmaamir/mlkitdemo/RealTimeFaceDetection/MLKitFacesAnalyzer.java) **java** sınıfını inceleyebilirsin.
 >
