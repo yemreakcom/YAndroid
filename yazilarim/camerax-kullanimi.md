@@ -1,5 +1,5 @@
 ---
-description: Android üzerinde güncel beta sürmü olan CameraX kullanımı
+description: "Android üzerinde güncel beta sürmü olan CameraX kullanımı (\U0001F468‍\U0001F52C Beta)"
 ---
 
 # 📸 CameraX Kullanımı
