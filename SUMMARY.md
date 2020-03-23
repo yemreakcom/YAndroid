@@ -1,7 +1,7 @@
 # Table of contents
 
 * [📲 Android Notlarım](README.md)
-* [👀 Neler Değişti](changelog.md)
+* [👀 Neler Değişti](CHANGELOG.md)
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
 * [✍ Yazılarım](yazilarim/README.md)
   * [📸 CameraX Kullanımı](yazilarim/camerax-kullanimi.md)
