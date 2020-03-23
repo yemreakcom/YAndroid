@@ -9,7 +9,7 @@ description: Yunus Emre Ak ~ YEmreAk (@yedhrab) 'ın android ve android programl
 🤓 Burada kaybolmaman için bilmen gerekenler:
 
 * **Sağ üstteki** [**🔍 Arama Buton**](https://iuce.yemreak.com/?q=) **'unu kullanmayı asla ama asla ihmal etme**
-  * Konuları veya konuyla alakalı kelimeleri ve terimleri aratabilirsin
+  * Konuları veya konuyla alakalı kelimeleri ve terimleri arayabilirsin
 * [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/changelog) alanından projeye katkıda bulunabilirsin
 * Tüm emojiler [🚀 YEmoji](https://learn.yemreak.com/yonetim/yemoji) sözlüğüne uygun olarak seçilmektedir
 

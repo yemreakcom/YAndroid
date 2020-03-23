@@ -7,7 +7,7 @@ description: "Android üzerinde güncel beta sürmü olan CameraX kullanımı (\
 ## 📦 Bağımlılıkları Dahil Etme
 
 * ➕ Projenizin `build.gradle` dosyasındaki `dependencies` alanına alttaki `implementation` bilgilerini ekleyin
-* 📢 CameraX java 8 kütüphanesini de kullandığı için `compileOptions` da eklenmelidir
+* 📢 CameraX, **java 8** kütüphanelerini de kullandığı için `compileOptions` da eklenmelidir
 
 {% code title="build.gradle \(app\)" %}
 ```groovy
@@ -32,89 +32,6 @@ dependencies {
 
 {% hint style="info" %}
 ‍🧙‍♂ Detaylı bilgi için [Add the Gradle dependencies](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#2) alanına bakabilirsin.
-{% endhint %}
-
-## 👮‍♂️ Gerekli İzinlerin Alınması
-
-### 📜 Manifest izinlerini alma
-
-* 😅 Kamera ile çalışacağımızdan, haliyle kamera iznine ihtiyacımız olacaktır
-* 📜 Android manifest dosyanıza alttaki izin satırını ekleyin
-
-```markup
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.yemreak.example">
-	
-	<uses-permission android:name="android.permission.CAMERA" /> 
-	
-	<!-- application alanı -->
-</manifest>
-
-```
-
-### 👮‍♂️ Uygulama içinden izin isteme
-
-```kotlin
-class CameraXActivity : AppCompatActivity() {
-
-    // Çok fazla istek olursa, isteklerin karışmasını engellemek için kullanılır
-    private const val REQUEST_CODE_PERMISSIONS = 10
-    
-    // Kamera için gereken izinler
-    private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        // ...
-        
-        
-        // Kamera izinleri alındysa işlemleri yapma
-        if (allPermissionsGranted()) {
-            // Layouta kamerayı ekleme
-            pvCameraX.post { startCamera() }
-        } else {
-            ActivityCompat.requestPermissions(
-                this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
-        }
-    }
-    
-    /**
-     * Process result from permission request dialog box, has the request
-     * been granted? If yes, start Camera. Otherwise display a toast
-     */
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
-            if (allPermissionsGranted()) {
-                viewFinder.post { startCamera() }
-            } else {
-                Toast.makeText(this,
-                    "Permissions not granted by the user.", 
-                    Toast.LENGTH_SHORT).show()
-                finish()
-            }
-        }
-    }
-    
-    /**
-     * Check if all permission specified in the manifest have been granted
-     */
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(
-               baseContext, it) == PackageManager.PERMISSION_GRANTED
-    }
-    
-    private fun startCamera() {
-        // TODO: Implement CameraX operations
-    }
-    
-}
-
-
-```
-
-{% hint style="info" %}
-‍🧙‍♂ Detaylı bilgi için[ Request camera permissions](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#4) alanına bakabilirsin.
 {% endhint %}
 
 ## 📃 CameraX XML Kodları
@@ -166,9 +83,93 @@ class CameraXActivity : AppCompatActivity() {
 ‍🧙‍♂ Detaylı bilgi için [Create the viewfinder layout](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#3) alanına bakabilirsin.
 {% endhint %}
 
+## 👮‍♂️ Gerekli İzinlerin Alınması
+
+### 📜 Manifest izinlerini alma
+
+* 😅 Kamera ile çalışacağımızdan, haliyle kamera iznine ihtiyacımız olacaktır
+* 📜 Android manifest dosyanıza alttaki izin satırını ekleyin
+
+```markup
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.yemreak.example">
+	
+	<uses-permission android:name="android.permission.CAMERA" /> 
+	
+	<!-- application alanı -->
+</manifest>
+
+```
+
+### 👮‍♂️ Uygulama içinden izin isteme
+
+```kotlin
+class CameraXActivity : AppCompatActivity() {
+
+    // Çok fazla istek olursa, isteklerin karışmasını engellemek için kullanılır
+    private const val REQUEST_CODE_PERMISSIONS = 10
+    
+    // Kamera için gereken izinler
+    private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // ...
+        
+        
+        // Kamera izinleri alındysa işlemleri yapma
+        if (allPermissionsGranted()) {
+            // Layouta kamerayı ekleme
+            pvCameraX.post { startCamera() }
+        } else {
+            ActivityCompat.requestPermissions(
+                this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
+        }
+    }
+    
+    /**
+     * İzin alındıysa aktiviteyi açma ve preview'i başlatma
+     * İzin alınmadıysa bildirim gösterip, activityi kapatma
+     */
+    override fun onRequestPermissionsResult(
+        requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (allPermissionsGranted()) {
+                viewFinder.post { startCamera() }
+            } else {
+                Toast.makeText(this,
+                    "Permissions not granted by the user.", 
+                    Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
+    }
+    
+    /**
+     * Kamera için gereken tüm izinleri kontrol etme
+     */
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(
+               baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+    
+    private fun startCamera() {
+        // TODO: CameraX işlemleri eklenecek
+    }
+    
+}
+
+
+```
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için[ Request camera permissions](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#4) alanına bakabilirsin.
+{% endhint %}
+
 ## 👀 CameraX Ön İzlemesi
 
 * 📸 Alttaki kod ile kameraya gelen görüntüyü ekrana basacağız
+* 👮‍♂️ `cameraProviderFuture.get()` ile kameranın  olduğundan emin oluyoruz
 * 🎳 `PreviewView.ImplementationMode.TEXTURE_VIEW` animasyonları ve dönüşümleri destekler, daha fazla memory kullanır
 * 🕊️ `PreviewView.ImplementationMode.SURFACE_VIEW` daha hızlı ve basit çalışan bir yapıdır
 
@@ -187,26 +188,26 @@ class CameraXActivity : AppCompatActivity() {
 		cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 		
 		cameraProviderFuture.addListener(Runnable {
-			// Camera provider is guaranteed to be available
+			// Kamera sağlayıcı ile kameranın aktif olduğundan emin oluyoruz
 			val cameraProvider = cameraProviderFuture.get()
 			
-			// More usable methods, but more memory usage 
+			// Daha kullanışlı ama daha çok memory harcar
 			// https://stackoverflow.com/a/28620918
 			pvCameraX.implementationMode = PreviewView.ImplementationMode.TEXTURE_VIEW
 			
-			// Initialize camera preview
+			// Kamera ön izlemesini tanımlama
 			val cameraPreview = Preview.Builder().apply {
 				setTargetRotation(pvCameraX.display.rotation)
 				setTargetAspectRatio(AspectRatio.RATIO_16_9)
 				setTargetName("Preview")
 			}.build().apply { setSurfaceProvider(pvCameraX.previewSurfaceProvider) }
 			
-			// Choose the camera by requiring a lens facing
+			// Ön-arka kamera seçimini yapıyoruz
 			val cameraSelector = CameraSelector.Builder()
 				.requireLensFacing(CameraSelector.LENS_FACING_BACK)
 				.build()
 			
-			// Attach use cases to camera with the same lifecycle owner
+			// Kamera kullanım durumlarını kameranın yaşam döngüsüne dahil ediyoruz
 			val camera = cameraProvider.bindToLifecycle(
 				this as LifecycleOwner, cameraSelector, cameraPreview
 			)
@@ -247,9 +248,12 @@ class CameraXActivity : AppCompatActivity() {
 			fun getOutputDirectory(context: Context): File {
 				val appContext = context.applicationContext
 				val mediaDir = context.externalMediaDirs.firstOrNull()?.let {
-					File(it, appContext.resources.getString(R.string.app_name)).apply { mkdirs() }
+					File(it, appContext.resources.getString(R.string.app_name)).apply {
+					 mkdirs() 
+					}
 				}
-				return if (mediaDir != null && mediaDir.exists()) mediaDir else appContext.filesDir
+				return if (mediaDir != null && mediaDir.exists()) mediaDir 
+							 else appContext.filesDir
 			}
 			
 		fun createFile(baseFolder: File, format: String, extension: String) =
@@ -261,18 +265,20 @@ class CameraXActivity : AppCompatActivity() {
 	}
 	
 	/**
-	 * @see <a href="https://lib.yemreak.com/arastirmalar/thread-pool-executors-kavrami">
-	 *    Thread Pool ~ Lib - YEmreAk </a>
+	 * Thread Pool ~ Lib - YEmreAk, alanına bakınız
 	 */
 	private val executor = Executors.newSingleThreadExecutor()
 	
-	private lateinit var cameraProviderFuture: ListenableFuture<ProcessCameraProvider>
+	private lateinit var cameraProviderFuture: 
+			ListenableFuture<ProcessCameraProvider>
+			
 	private lateinit var imageCapture: ImageCapture
 	private lateinit var outputDirectory: File
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
         // ...
         
+        // Çekilen fotoğraların kaydedileceği yeri tanımlama
         outputDirectory = getOutputDirectory(this)
         
         // Kamera izinleri alındysa işlemleri yapma
@@ -327,13 +333,14 @@ class CameraXActivity : AppCompatActivity() {
 			executor,
 			object : ImageCapture.OnImageSavedCallback {
 				
-				override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-					val msg = "Photo capture succeeded: ${file.absolutePath}"
+				override fun onImageSaved(outputFileResults: 
+					ImageCapture.OutputFileResults) {
+						val msg = "Photo capture succeeded: ${file.absolutePath}"
 					
-					pvCameraX.post {
-						Toast.makeText(this@MlkitActivity, msg, Toast.LENGTH_SHORT).show()
+						pvCameraX.post {
+							Toast.makeText(this@MlkitActivity, msg, Toast.LENGTH_SHORT).show()
+						}
 					}
-				}
 				
 				override fun onError(exception: ImageCaptureException) {
 					val msg = "Photo capture failed: ${file.absolutePath}"
