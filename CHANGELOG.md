@@ -2,6 +2,7 @@
 
 ## 📋 Tüm Değişiklikler
 
+- 24/03/2020 - 21:52:17 - [GitBook: [master] one page modified](https://github.com/YEmreAk/YAndroid/commit/e6dfb0736a456f179958bd6322071fd71ac19556?diff=split) ~ Yunus Emre
 - 24/03/2020 - 14:24:37 - [GitBook: [master] 80 pages modified](https://github.com/YEmreAk/YAndroid/commit/4383f5ed76b20cc8c8d44f869cc0016e28d1b96f?diff=split) ~ Yunus Emre
 - 23/03/2020 - 11:58:17 - [💦 Eski yapı kaldırıldı](https://github.com/YEmreAk/YAndroid/commit/f3edd6ad001c86e43a212a3dccdf15345d97d188?diff=split) ~ Yunus Emre
 - 23/03/2020 - 11:57:56 - [👨‍🔧 Neler değişti alanı düzletildi](https://github.com/YEmreAk/YAndroid/commit/88272eeb0622aba92488e5b32589065b7c9f3e54?diff=split) ~ Yunus Emre
