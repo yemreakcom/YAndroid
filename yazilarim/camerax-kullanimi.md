@@ -361,6 +361,7 @@ class CameraXActivity : AppCompatActivity() {
 
 ## 🔥 ML Kit ile Resmi Analiz Etme
 
+* 👮‍♂️ Yüz yanıma işlemleri için resim boyutunun en az **480x360** olması gerekmektedir
 * ✨ Resmin analiz işlemleri için ilk olarak `imageAnalyser` objesi tanımlanır
 * 🐥 Firebase kurulum işlemlerini [🔥 Firebase ML Kit](../faydali/firebase-ml-kit.md)  yazım ile uygulayabilirsin
 * 😅 Firebase hakimiyetin olduğunu varsayarak devam ediyorum
