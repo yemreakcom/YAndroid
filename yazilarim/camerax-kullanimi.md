@@ -450,6 +450,7 @@ fun degreesToFirebaseRotation(degrees: Int): Int {
 ‍🧙‍♂ Detaylı bilgi için 
 
 * [Implement image analysis use case](https://codelabs.developers.google.com/codelabs/camerax-getting-started/#7)
+* [Detect Faces with ML Kit on Android](https://firebase.google.com/docs/ml-kit/android/detect-faces)
 * [ML Kit for Firebase](https://firebase.google.com/docs/ml-kit)
 
 alanlarına bakabilirsin.
@@ -458,6 +459,16 @@ alanlarına bakabilirsin.
 ## ⭐ Uygulamanın Son Çıktısı
 
 ![](../.gitbook/assets/camerax_take_picture.png)
+
+## 🖊️ Kamera Çıktısına Çizim Yapma
+
+* 👮‍♂️ İlk olarak `PreviewView` üzerine çizim yapamazsın, çünkü kamera ile kitlenmiş durumdadır
+* 🐣 Yeni bir `SurfaceView` tanımlayıp, onun üzerine çizim yapmalısın
+* 🖼️ `FrameLayout` ile her ikisini üst üste koymalı ve çizim yaptığını daha önde göstermelisin
+
+{% hint style="info" %}
+‍🧙‍♂ Detaylı bilgi için [Android draw on camera preview](https://stackoverflow.com/a/12565208/9770490) alanına bakabilirsin.
+{% endhint %}
 
 ## 🔗 Faydalı Kaynaklar
 
