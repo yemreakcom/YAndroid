@@ -1,8 +1,8 @@
 # Table of contents
 
 * [📲 Android Notlarım](README.md)
-* [👀 Neler Değişti](changelog.md)
-* [💖 Katkıda Bulunma Rehberi](https://wiki.yemreak.com/contributing)
+* [👀 Neler Değişti](CHANGELOG.md)
+* [💖 Katkıda Bulunma Rehberi](https://lib.yemreak.com/contributing)
 * [✍ Yazılarım](yazilarim/README.md)
   * [📸 CameraX Kullanımı](yazilarim/camerax-kullanimi.md)
   * [🚫 WebView İçerisindeki Reklamları Engelleme](yazilarim/webview-icerisindeki-reklamlari-engelleme.md)
