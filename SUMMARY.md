@@ -1,7 +1,7 @@
-# Table of contents
+# 📋 Tüm İçerikler
 
 * [📲 Android Notlarım](README.md)
-* [👀 Neler Değişti](CHANGELOG.md)
+* [👀 Neler Değişti](https://github.com/YEmreAk/YAndroid/blob/master/CHANGELOG.md)
 * [💖 Katkıda Bulunma Rehberi](https://lib.yemreak.com/contributing)
 * [✍ Yazılarım](yazilarim/README.md)
   * [📸 CameraX Kullanımı](yazilarim/camerax-kullanimi.md)
@@ -107,4 +107,3 @@
 * [🔥 Firebase ve React Projem](https://github.com/yedhrab/YReact-Firebase)
 * [👨‍💻 Kişisel Scriptlerim](https://github.com/YEmreAk/YScripts)
 * [📕 Türkçe Git Kitabı](https://www.yemreak.com/book-git/)
-
